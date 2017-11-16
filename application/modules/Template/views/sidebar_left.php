@@ -58,24 +58,22 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="master.html">Kota/Kabupaten</a>
+                <a href="<?php echo base_url()?>master/provinsi">Provinsi</a>
               </li>
               <li>
-                <a href="master.html">Kecamatan</a>
+                <a href="<?php echo base_url()?>master/kota">Kota/Kabupaten</a>
               </li>
               <li>
-                <a href="master.html">Kelurahan</a>
+                <a href="<?php echo base_url()?>master/kecamatan">Kecamatan</a>
               </li>
               <li>
-                <a href="master.html">Provinsi</a>
+                <a href="<?php echo base_url()?>master/kelurahan">Kelurahan</a>
               </li>
               <li>
                 <a href="master.html">Tahun Ajaran</a>
               </li>
             </ul>
           </li>
-
-
         </ul>
       </li>
 

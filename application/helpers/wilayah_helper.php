@@ -10,7 +10,7 @@ if(!function_exists("get_provinsi")) {
         $condition['id'] = $id;
       }
       //show only active data
-      $condition['deleted'] = 1;
+      $condition['deleted'] = 0;
       $result = $CI->model->select($condition, 'm_provinsi');
       return $result;
   }
@@ -21,15 +21,19 @@ if(!function_exists("get_kota")) {
       $CI =& get_instance();
       $CI->load->model('model_adm', 'model');
 
+      //show only active data
+      $condition['deleted'] = 0;
+      $sql = "SELECT A.*, B.nama_provinsi FROM m_kabkota A";
+      $sql.=" LEFT JOIN m_provinsi B ON A.provinsi_id = B.id";
+      $sql.=" WHERE A.deleted = 0";
       if($id_kota) {
-        $condition['id'] = $id;
+        $sql.=" AND A.id = ".$id_kota;
       }
       if($id_provinsi) {
-        $condition['provinsi_id'] = $id;
+        $sql.=" AND A.provinsi_id = ".$id_provinsi;
       }
-      //show only active data
-      $condition['deleted'] = 1;
-      $result = $CI->model->select($condition, 'm_kabkota');
+      
+      $result = $CI->model->rawQuery($sql);
       return $result;
   }
 }
@@ -46,7 +50,7 @@ if(!function_exists("get_kecamatan")) {
         $condition['kabkota_id'] = $id;
       }
       //show only active data
-      $condition['deleted'] = 1;
+      $condition['deleted'] = 0;
       $result = $CI->model->select($condition, 'm_kecamatan');
 			return $result;
 	}

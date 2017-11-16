@@ -24,6 +24,10 @@ class Template extends MX_Controller {
   {
     $this->load->view('header');
   }
+  public function footer()
+  {
+    $this->load->view('footer');
+  }
   public function theme_config()
 	{
 		$this->load->view('theme_config');

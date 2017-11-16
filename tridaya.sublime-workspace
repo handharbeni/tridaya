@@ -1,0 +1,1165 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"select",
+				"selectize-dropdown"
+			],
+			[
+				"model",
+				"model_adm"
+			],
+			[
+				"json",
+				"jsonKota"
+			],
+			[
+				"mode",
+				"model_adm"
+			],
+			[
+				"data",
+				"data_db"
+			],
+			[
+				"check",
+				"checkedArray"
+			],
+			[
+				"base_",
+				"base_url"
+			],
+			[
+				"load",
+				"loadTabelProvinsi"
+			],
+			[
+				"URL_",
+				"URL_PLUGIN"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"clear",
+				"clearValidation"
+			],
+			[
+				"frm",
+				"formAdd"
+			],
+			[
+				"URL",
+				"URL_PLUGIN"
+			],
+			[
+				"param",
+				"params2"
+			],
+			[
+				"get",
+				"getProvinsiById"
+			],
+			[
+				"init",
+				"initLoad"
+			],
+			[
+				"retur",
+				"return_type"
+			],
+			[
+				"info",
+				"informasi"
+			],
+			[
+				"pdd",
+				"pdd-right-5"
+			],
+			[
+				"theme",
+				"theme_config"
+			],
+			[
+				"ULR",
+				"URL_PLUGIN"
+			],
+			[
+				"input",
+				"inputStikerCover"
+			],
+			[
+				"tet",
+				"text-center"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"enc",
+				"encrypt"
+			],
+			[
+				"lis",
+				"list_fardhu"
+			],
+			[
+				"li",
+				"list_fardhu"
+			],
+			[
+				"list",
+				"list_doa"
+			],
+			[
+				"laod",
+				"loadTableFardhu"
+			],
+			[
+				"body",
+				"bodyPuasa"
+			],
+			[
+				"nama",
+				"nama_ibadah"
+			],
+			[
+				"gl",
+				"glyphicon-edit"
+			],
+			[
+				"gly",
+				"glyphicon-edit"
+			],
+			[
+				"status",
+				"status_text"
+			],
+			[
+				"num",
+				"number_format"
+			],
+			[
+				"hidden",
+				"hiddenId"
+			],
+			[
+				"delete",
+				"delete_user"
+			],
+			[
+				"profile",
+				"profile_picture"
+			],
+			[
+				"jadwa",
+				"jadwal_sholat"
+			],
+			[
+				"jad",
+				"jadwal_sholat"
+			],
+			[
+				"loda",
+				"loadingContainer"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"array_m",
+				"array_merge"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"req",
+				"req_session"
+			],
+			[
+				"ac",
+				"active_token"
+			],
+			[
+				"se",
+				"server_output"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"img",
+				"imgSrc"
+			],
+			[
+				"colle",
+				"collectionTable"
+			],
+			[
+				"collec",
+				"collectionContainer"
+			],
+			[
+				"ge",
+				"get_date"
+			],
+			[
+				"seg",
+				"segments"
+			],
+			[
+				"loaded",
+				"loadedLength"
+			],
+			[
+				"timeline",
+				"timelineContainer"
+			],
+			[
+				"c",
+				"container"
+			],
+			[
+				"timel",
+				"timelineContainer"
+			],
+			[
+				"hide",
+				"hideStyle"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"cir",
+				"circleTimeline"
+			],
+			[
+				"circle",
+				"circle-timeline"
+			],
+			[
+				"defa",
+				"defaultHtml"
+			],
+			[
+				"btn",
+				"btnPost"
+			],
+			[
+				"messag",
+				"messageForm"
+			],
+			[
+				"imgU",
+				"imgUploadForm"
+			],
+			[
+				"post",
+				"postMessageType"
+			],
+			[
+				"user",
+				"user_exist"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"acti",
+				"active_token"
+			],
+			[
+				"kera",
+				"data_kerabat"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"fie",
+				"files"
+			],
+			[
+				"file",
+				"fileImgUpload"
+			],
+			[
+				"m",
+				"message"
+			],
+			[
+				"chek",
+				"checked"
+			],
+			[
+				"strips",
+				"stripslashes"
+			],
+			[
+				"active_",
+				"active_pass"
+			],
+			[
+				"valid",
+				"valid_pass"
+			],
+			[
+				"password",
+				"password_baru"
+			],
+			[
+				"passwo",
+				"password_baru"
+			],
+			[
+				"e",
+				"eef5f5"
+			],
+			[
+				"chec",
+				"checkGantiPassword"
+			],
+			[
+				"selec",
+				"selected"
+			],
+			[
+				"cl",
+				"click"
+			],
+			[
+				"st",
+				"stiker"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"fade",
+				"fadeIn"
+			],
+			[
+				"loading",
+				"loadingPaket"
+			],
+			[
+				"ero",
+				"errorMessage"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"raw",
+				"rawurlencode"
+			],
+			[
+				"stc",
+				"stickers"
+			],
+			[
+				"para",
+				"params"
+			],
+			[
+				"chart",
+				"chartContainer"
+			],
+			[
+				"tanggal",
+				"tanggal_daftar"
+			],
+			[
+				"tangga",
+				"tanggal_daftar"
+			],
+			[
+				"passw",
+				"password"
+			],
+			[
+				"conte",
+				"context"
+			],
+			[
+				"temp",
+				"temp_upload"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"jso",
+				"jsonData"
+			],
+			[
+				"toa",
+				"total_point"
+			],
+			[
+				"total",
+				"total_point"
+			],
+			[
+				"time",
+				"timeline"
+			],
+			[
+				"foto",
+				"foto_url"
+			],
+			[
+				"file_",
+				"file_put_contents"
+			],
+			[
+				"aktivitas",
+				"aktivitas_detail"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"daa",
+				"data_parent"
+			],
+			[
+				"chan",
+				"changeProfileForm"
+			],
+			[
+				"read",
+				"ready"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"get_pare",
+				"get_parent_info"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"accse",
+				"access_token"
+			],
+			[
+				"sess",
+				"session_data"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"acces",
+				"access_token"
+			],
+			[
+				"dec",
+				"dec_string"
+			],
+			[
+				"formS",
+				"formSignup"
+			],
+			[
+				"text",
+				"textStatus"
+			],
+			[
+				"form",
+				"formSignin"
+			],
+			[
+				"http_bui",
+				"http_build_query"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"sin",
+				"Sinkronisasi_jadwal"
+			],
+			[
+				"BASE",
+				"BASE_URL"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/modules/M_unit/controllers/M_unit.php",
+			"settings":
+			{
+				"buffer_size": 3555,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/M_unit/views/index.php",
+			"settings":
+			{
+				"buffer_size": 17465,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/js/select-wilayah.js",
+			"settings":
+			{
+				"buffer_size": 1594,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+			"settings":
+			{
+				"buffer_size": 867,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
+			"settings":
+			{
+				"buffer_size": 89053,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 342.0,
+		"last_filter": "reinde",
+		"selected_items":
+		[
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"s",
+				"Select Skin"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/xampp/htdocs/github/tridaya",
+		"/C/xampp/htdocs/github/tridaya/application",
+		"/C/xampp/htdocs/github/tridaya/application/modules",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/controllers",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit2"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views/js/select-wilayah.js",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_kota/views/view.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_kota/controllers/Master.php",
+		"/C/Users/user/AppData/Local/Temp/scp55134/var/www/html/development/application/config/database.php",
+		"/C/Users/user/AppData/Local/Temp/scp18872/var/www/html/development/application/modules/m_kota/controllers/M_kota.php",
+		"/C/Users/user/Downloads/db_tridaya.sql",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Template/views/footer.php",
+		"/C/xampp/htdocs/github/tridaya/assets/plugins/sweetalert/README.md",
+		"/C/Users/user/AppData/Local/Temp/scp00130/var/www/html/development/application/config/routes.php",
+		"/C/Users/user/AppData/Local/Temp/scp14527/var/www/html/development/application/controllers/Access.php",
+		"/C/Users/user/AppData/Local/Temp/scp58036/var/www/html/development/application/config/config.php",
+		"/C/Users/user/AppData/Local/Temp/scp54275/var/www/html/development/index.php",
+		"/C/xampp/htdocs/github/iqbalpos/.htaccess",
+		"/C/Users/user/AppData/Local/Temp/scp43805/var/www/html/development/.htaccess",
+		"/C/Users/user/AppData/Local/Temp/scp57997/var/www/html/development/application/config/database.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/views/admin/daftar_mediacetak.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/views/admin/daftar_pesanan.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/views/admin/modal_detail_pesanan.php",
+		"/C/Users/user/AppData/Local/Temp/scp40510/root/development/application/config/routes.php",
+		"/C/Users/user/AppData/Local/Temp/scp37672/root/development/application/config/config.php",
+		"/C/Users/user/AppData/Local/Temp/scp51618/var/www/html/illiyin.co/development/tridaya/application/config/routes.php",
+		"/C/Users/user/AppData/Local/Temp/scp51128/var/www/html/illiyin.co/development/tridaya/application/config/config.php",
+		"/C/Users/user/AppData/Local/Temp/scp44995/var/www/html/illiyin.co/development/tridaya/application/config/database.php",
+		"/C/Users/user/AppData/Local/Temp/scp35545/root/development/application/config/database.php",
+		"/C/Users/user/AppData/Local/Temp/scp46845/var/www/html/illiyin.co/development/tridaya/application/config/config.php",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/notification.html",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-validation.js",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-layouts.html",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/app.js",
+		"/C/xampp/htdocs/github/tridaya/application/controllers/Informasi.php",
+		"/C/xampp/htdocs/github/tridaya/application/controllers/Master.php",
+		"/C/xampp/htdocs/github/tridaya/application/config/database.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/helpers/encrypt_helper.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/helpers/user_auth_helper.php",
+		"/C/xampp/htdocs/github/tridaya/application/models/Model_tridaya.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/models/Model_fadmin.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Transaksi_pembelian/models/Transaksipembelianmodel.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/models/Gmodel.php",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Data/Data Wilayah (From mas Ilham)/db_daerah.sql",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Data/Data Provinsi, Kota-Kabupaten, Kecamatan, dan KelurahanDesa di Indonesia/mysql/indonesia.sql",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Data/Data Wilayah/db_daerah.sql",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_mapel/controllers/M_kelas.php",
+		"/C/xampp/htdocs/github/tridaya/assets/css/app.css",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/controllers/M_akun.php",
+		"/C/xampp/htdocs/github/tridaya/application/config/config.php",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Template/views/header.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_gudang/views/view.php",
+		"/C/xampp/htdocs/github/tridaya/assets/js/ui-elements/notification.js",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/master.html",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Template/controllers/Template.php",
+		"/C/xampp/htdocs/github/tridaya/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Dashboard/views/head.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Dashboard/controllers/Dashboard.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Login/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Signin/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/Signin/controllers/Signin.php",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/sign-in2.html",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/views/sidebar_left.php",
+		"/C/xampp/htdocs/github/tridaya/assets/js/app.js",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/modals.html",
+		"/C/xampp/htdocs/github/tridaya/application/config/autoload.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/views/head.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/controllers/Index.php",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_bank/models/Bankmodel.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/theme_config.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar_right.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar_left.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/head.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/header.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/controllers/Template.php",
+		"/C/xampp/htdocs/github/tridaya/application/config/constants.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/register/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/register/controllers/Register.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/dashboard/controllers/Dashboard.php",
+		"/C/xampp/htdocs/github/tridaya/application/controllers/Access_module.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/dashboard/views/dashboard.php",
+		"/C/xampp/htdocs/github/tridaya/application/controllers/Welcomes.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/welcome/views/welcome_message.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/master/controllers/siswa/Welcome.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/controllers/f-admin/Pesanan.php",
+		"/C/xampp/htdocs/github/tridaya/application/controllers/Siswa.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/config/constants.php",
+		"/C/xampp/htdocs/github/tridaya/.htaccess",
+		"/C/xampp/htdocs/github/aqilapricelist/.htaccess",
+		"/C/xampp/htdocs/github/aqilapricelist/application/.htaccess",
+		"/C/xampp/htdocs/github/tridaya/application/modules/test/controllers/Welcome.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/config/config.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/config/constants.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/sticker_detail.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/Sticker.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/index.php",
+		"/C/Users/user/AppData/Local/Temp/scp57649/gopray/application/config/constants.php",
+		"/C/Users/user/AppData/Local/Temp/scp54792/gopray/application/controllers/Signin.php",
+		"/C/xampp/htdocs/github/aqilapricelist/application/helpers/alert_helper.php",
+		"/C/xampp/htdocs/github/gopray_parent/assets/css/new_home/style.css",
+		"/C/Users/user/Downloads/Ftp admin@fentroart.com.xml",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/Sticker_payment.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/models/Parent_model.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/signin.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/admin/Manajemen_user.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/manajemen_user.php",
+		"/C/Users/user/AppData/Local/Temp/scp48229/gopray/api/application/controllers/Master.php",
+		"/C/Users/user/AppData/Local/Temp/scp47338/gopray/api/application/controllers/Users.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/config/database.php",
+		"/C/xampp/htdocs/github/GoPrayAPI/application/controllers/Users.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/Signin.php",
+		"/C/Users/user/AppData/Local/Temp/scp43690/gopray/application/config/database.php",
+		"/C/Users/user/AppData/Local/Temp/scp55258/gopray/application/config/config.php",
+		"/C/Users/user/Downloads/Kirim Project/html/html 2.html",
+		"/C/Users/user/Downloads/Kirim Project/html/html 1.html",
+		"/C/Users/user/Downloads/Kirim Project/html/html 1.txt",
+		"/C/Users/user/Downloads/Kirim Project/html/html 2.txt",
+		"/C/Users/user/Downloads/Kirim Project/NETBEANS PROJECT PKL/Database/dbpenjualan.sql",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/Timeline.php",
+		"/C/xampp/htdocs/github/GoPrayAPI/application/controllers/Resources.php",
+		"/C/Users/user/AppData/Local/Temp/scp53297/gopray/api/application/controllers/Master.php",
+		"/C/Users/user/AppData/Local/Temp/scp44427/gopray/api/application/controllers/Users.php",
+		"/C/Users/user/AppData/Local/Temp/scp02028/gopray/application/controllers/admin/Sinkronisasi_jadwal.php",
+		"/C/Users/user/AppData/Local/Temp/scp56929/gopray/application/controllers/admin/Sinkronisasi_jadwal.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/controllers/admin/Signout.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/sign_foot.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/foot.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/foot.php",
+		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/head.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"selectize",
+			"selectiz",
+			"form-control selectize-dropdown",
+			"selectize-d",
+			"selectiz",
+			"i]]",
+			"'",
+			"datetime",
+			"header",
+			"sidebar_left",
+			"footer",
+			"_header",
+			"footer",
+			"initDataTable",
+			"loadTabelProvinsi",
+			"jsonKota",
+			"showmoda",
+			"id_akun",
+			"nama_ko",
+			"nama_kota",
+			"nama_ko",
+			"getProvinsiById",
+			"getKotaById",
+			"#tableData",
+			"tableData",
+			"+",
+			"data.id",
+			"+",
+			"nestedData",
+			"model_fadmin",
+			"provin",
+			"master/provinsi",
+			"doAdd",
+			"do_add",
+			"doDe",
+			"doA",
+			"doEdit",
+			"provinsi",
+			"Provinsi",
+			"provinsi",
+			"'m_kota'",
+			"provinsi",
+			"['deleted'] = 1",
+			"deleted",
+			"iscon",
+			"delete",
+			"doMul",
+			"prepareDelete",
+			"showModalDelete",
+			"showModalDelete(",
+			"condition",
+			"dode",
+			"delete",
+			"console",
+			"i>",
+			"i",
+			"delete",
+			"doDelete",
+			"task[",
+			"run:",
+			"module",
+			"low",
+			"tableData",
+			"table",
+			"task",
+			"tambah",
+			"check",
+			"clear",
+			"delete",
+			"tambah",
+			"showModalForm",
+			"loadd",
+			"initDataTable",
+			"data",
+			"formAdd",
+			"nama pr",
+			"src",
+			"id",
+			"nama_provinsi",
+			"noty",
+			"elem",
+			"formAdd",
+			"doSubmit",
+			"validat",
+			"valida",
+			"formAdd",
+			"valida",
+			"validate",
+			"formAdd",
+			"subm",
+			"valid",
+			"form-validation",
+			"nama_prov",
+			"validat",
+			"valida",
+			"params",
+			"get_kota",
+			"get_provinsi",
+			"nama_pr",
+			"form",
+			"nama_provinsi",
+			"getProvinsiById",
+			"provinsi",
+			"Provinsi",
+			"provinsi",
+			"modal",
+			"nama_provinsi",
+			"getProvinsiById",
+			"tabelProv",
+			"tabelPaket",
+			"nama",
+			"Nama",
+			"nama",
+			"no_reg",
+			"nama",
+			"kota",
+			"tahun_ajar",
+			"rt",
+			"alamat",
+			"kelurahan",
+			"kabupaten",
+			"Kabupaten",
+			"kabupaten",
+			"kelurahan",
+			"alamat",
+			"nama",
+			"jk",
+			"datepicke"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/modules/M_unit/controllers/M_unit.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1048,
+								1048
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "application/modules/M_unit/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10092,
+								10092
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "assets/js/select-wilayah.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								780,
+								780
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 29.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tridaya.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 169.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -53,7 +53,8 @@
             <div class="page-title">
               <h4>Provinsi
                 <div class="pull-right">
-                  <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif"><i class="ti-plus pdd-right-5"></i> Tambah</a>
+                  <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
+                  <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
                 </div>
               </h4>
             </div>
@@ -65,7 +66,7 @@
                       <table id="tableData" class="table table-hover">
                         <thead>
                           <tr>
-                            <th></th>
+                            <th class="no-search"></th>
                             <th>Nama Provinsi</th>
                             <th>Aksi</th>
                           </tr>
@@ -86,9 +87,9 @@
           <div class="modal fade" id="modalForm">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <form action="" method="POST" id="formAdd">      
+                <form action="<?php echo base_url()?>master/provinsi/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Kelas</h4>
+                    <h4 id="modalFormHeader">Tambah Provinsi</h4>
                   </div>
                   <div class="modal-body">
                    <div class="row">
@@ -96,15 +97,15 @@
                         <div class="form-group">
                          <label for="nama_provinsi">Nama Provinsi</label>
                          <input type="text" name="nama_provinsi" id="nama_provinsi" class="form-control" placeholder="Nama Provinsi" required="">
-                         <input type="hidden" name="id" id="id" class="form-control" placeholder="ID Provinsi">
+                         <input type="hidden" id="id" class="form-control" placeholder="ID Provinsi">
                        </div>
                      </div>
                    </div>
                   </div>
                   <div class="modal-footer">
                     <div class="text-right">
-                      <button class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Batal</button>
-                      <button class="btn btn-primary btn-sm" data-dismiss="modal"><i class="ti-save pdd-right-5"></i>Simpan</button>
+                      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Batal</button>
+                      <button type="submit" id="btnSubmit" class="btn btn-primary btn-sm"><i class="ti-save pdd-right-5"></i>Simpan</button>
                     </div>
                   </div>
                 </form>
@@ -116,17 +117,7 @@
         <!-- Content Wrapper END -->
 
         <!-- Footer START -->
-        <footer class="content-footer">
-            <div class="footer">
-              <div class="copyright">
-                <span>Copyright © 2017 <b class="text-dark">Illiyin Studio</b>. All rights reserved.</span>
-                <span class="go-right">
-      					  <a href="" class="text-gray mrg-right-15">Term &amp; Conditions</a>
-      				    <a href="" class="text-gray">Privacy &amp; Policy</a>
-      				  </span>
-              </div>
-            </div>
-          </footer>
+        <?php echo isset($_footer) ? $_footer : '';?>
         <!-- Footer END -->
 
       </div>
@@ -148,17 +139,19 @@
   <script src="<?php echo URL_PLUGIN?>jquery-loading-overlay/src/loadingoverlay.min.js"></script>
   <script src="<?php echo URL_PLUGIN?>sweetalert/lib/sweet-alert.js"></script>
   <script src="<?php echo URL_PLUGIN?>datatables/media/js/jquery.dataTables.js"></script>
+  <script src="<?php echo URL_PLUGIN?>jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="<?php echo URL_PLUGIN?>noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
 
   <!-- build:js <?php echo URL_JS?>app.min.js -->
   <!-- core js -->
   <script src="<?php echo URL_JS?>app.js"></script>
+  <script src="<?php echo URL_JS?>ui-elements/notification_custom.js"></script>
   <!-- endbuild -->
 
   <!-- page js -->
   <script src="<?php echo URL_JS?>table/data-table.js"></script>
   <script>
     var jsonList = <?php echo json_encode(get_provinsi()->result())?>;
-    var initLoad = true;
 
     // initialize datatable
     var tableData = $("#tableData").DataTable({
@@ -166,97 +159,224 @@
               "searchable": false,
               "orderable": false,
               "targets": "no-sort"
+          },{
+              "searchable": false,
+              "orderable": true,
+              "targets": "no-search"
           } ],
           // "order": [[ 1, 'asc' ]]    
     });
     tableData.on( 'order.dt search.dt', function () {
-          tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-              cell.innerHTML = '<div class="checkbox mrg-left-20">'
-                +'<input id="task-'+i+'" name="task[]" type="checkbox">'
-                  +'<label for="task-'+i+'"></label>'
-              +'</div>';
-          } );
-    } ).draw();
+      // tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+      //     cell.innerHTML = '';
+      // });
+    }).draw();
 
+    //loading table body with json data
     loadTabelProvinsi(jsonList);
-
+    
     function loadTabelProvinsi(json){
       //clear table
       tableData.clear().draw();
-      $.each(json, function(i, data) {
+      for(var i=0, data; data = json[i]; i++) {
         tableData.row.add( [
-              '',
+              '<div class="checkbox mrg-left-20">'
+                +'<i style="display:none">'+data.id+'</i>'
+                +'<input id="task-'+data.id+'" value="'+data.id+'" name="task[]" type="checkbox">'
+                  +'<label for="task-'+data.id+'"></label>'
+              +'</div>',
               '<div class="list-info mrg-top-10">'
                   +'<p>'+data.nama_provinsi+'<p>'
               +'</div>',
               '<div class="relative mrg-top-10">'
                 +'<div class="btn-group">'
-                  +'<a href="javascript:void(0);" class="btn btn-default edit-notif" data-id="'+data.id+'" title="Ubah data"> <i class="ti-pencil-alt"></i> </a>'
-                  +'<a href="" class="btn btn-default text-danger delete-notif" data-id="'+data.id+'" title="Hapus data"> <i class="ti-trash"></i> </a>'
+                  +'<a href="javascript:void(0);" class="btn btn-default edit-notif" data-id="'+data.id+'" onclick="showModalForm(event);" title="Ubah data"> <i class="ti-pencil-alt"></i> </a>'
+                  +'<a href="" class="btn btn-default text-danger delete-notif" data-id="'+data.id+'" onclick="prepDelete(event);" title="Hapus data"> <i class="ti-trash"></i> </a>'
                 +'</div>'
               +'</div>'
           ] ).draw( false );
-      });
-      if (!initLoad) {
-        /*$('.divpopover').attr("data-content","ok");
-        $('.divpopover').popover();*/
       }
-      initLoad = false;  
     }
     function getProvinsiById(id, callback) {
       if(id) {
         $.ajax({
           url: '<?php echo base_url();?>master/provinsi/get_provinsi_by_id',
-          data: { ids: id },
+          data: { id: id },
           type: 'POST',
           dataType: 'json',
           beforeSend: function() { },
           success: function(response, status) {
             if(response.status) {
               var data = response.data;
+              //fill id & nama provinsi for edit
               $('#id').val(data.id);
               $('#nama_provinsi').val(data.nama_provinsi);
+              $('#modalForm').modal('show');
             }
           },
           error: function(jqXhr, message, errorThrown){
             console.log('Request error!', message);
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
           }
         });
-        $('#modalForm').modal('show')
       }
     }
+    
+    //initialize form validation
+    formValidation = $("#formAdd").validate({
+      validClass : '',
+      submitHandler: function(form) {
+        // form.submit();
+        doSubmit(form);
+      }
+     });
+    //clear/reset validation inside form modal on hide event
+    $('#modalForm').on('hidden.bs.modal', function(e) {
+      target = $(this).attr('id');
+      formValidation.resetForm();
+      $('#'+target+' .error').removeClass('error');
+    }); 
 
-    $('.edit-notif').on('click', function(e) {
+    //show modal form
+    function showModalForm(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
+      //jika klik tombol tambah data:
       if(!id) {
-        $('#modalFormHeader').text('Tambah Provinsi');
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/provinsi/do_add");
         $('#formAdd :input').val('');
+        $('#modalFormHeader').text('Tambah Provinsi');
         $('#modalForm').modal('show');
       }
+      //jika klik tombol edit data:
       else {
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/provinsi/do_edit");
         $('#modalFormHeader').text('Ubah Provinsi');
         getProvinsiById(id);
       }
-    })
-    $('.delete-notif').on('click', function(e) {
+    }
+    
+    //prepare delete 1 data
+    function prepDelete(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
+      var arrIds = [id];
       if(id) {
+        doMultiDelete(arrIds);
+      }
+    }
+    //prepare delete multi data
+    function prepMultiDelete(e) {
+      e.preventDefault();
+      //collecting checked checkbox values from table into array
+      var checkedArray = $('#tableData input:checkbox:checked').map(function() {
+          return $(this).val();
+      }).get();
+      // console.log(checkedArray);
+      if(id) {
+        doMultiDelete(checkedArray);
+      }
+    }
+
+    //multi delete handler
+    function doMultiDelete(arrData) {
+      let ids = arrData || [];
+      if(ids[0] != null) {
+        //konfirmasi hapus banyak data
         swal({
           title: "Hapus data?",
-        text: "Data yang telah dihapus tidak akan bisa dikembalikan lagi",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Ya, hapus data!",
-        closeOnConfirm: false
-      },
-      function(){
-        swal("Terhapus!", "Data berhasil dihapus.", "success");
-      });
+          text: "Data yang telah dihapus tidak akan bisa dikembalikan lagi",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Ya, hapus data!",
+          },
+        function(isConfirm){
+          if(isConfirm) {
+            //Hapus banyak data
+            $.ajax({
+              url: "<?php echo base_url()?>master/provinsi/do_delete",
+              data: { ids: ids },
+              type: 'POST',
+              dataType: 'json',
+              beforeSend: function() { 
+                $('.delete-notif').prop('disabled', true); 
+                $.LoadingOverlay("show"); 
+              },
+              success: function(response, status) {
+                if(response.status) {
+                  // console.log(response);
+                  if(response.result) {
+                    showNoty(response.message, 'success');
+                    loadTabelProvinsi(response.data);
+                  }
+                  else {
+                    showNoty(response.message, 'warning');
+                  }
+                }
+                else {
+                  showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',
+                   'warning');
+                }
+                $('#modalForm').modal('hide');
+              },
+              error: function(jqXhr, message, errorThrown){
+                console.log('Request error!', message);
+                showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+              }
+            });
+            $('.delete-notif').prop('disabled', false); 
+            $.LoadingOverlay("hide");
+          }
+          else {
+            return;
+          }
+        });
+      }
+      else {
+        showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',
+               'warning');
+      }
     }
-  });
+
+    //modal form submit handler
+    function doSubmit(form) {
+      let id = $('#id').val() || '';
+      if(form) {
+        $.ajax({
+          url: $(form).attr('action'),
+          data: $(form).serialize() + "&id=" + id,
+          type: 'POST',
+          dataType: 'json',
+          beforeSend: function() { 
+            $('#btnSubmit').prop('disabled', true); 
+            $.LoadingOverlay("show"); 
+          },
+          success: function(response, status) {
+            if(response.status) {
+              // console.log(response);
+              if(response.result) {
+                showNoty(response.message, 'success');
+                loadTabelProvinsi(response.data);
+              }
+              else {
+                showNoty(response.message, 'warning');
+              }
+            }
+            else {
+              showNoty('Terjadi kesalahan! Pastikan data yang anda masukkan sudah benar', 'warning');
+            }
+            $('#modalForm').modal('hide');
+          },
+          error: function(jqXhr, message, errorThrown){
+            console.log('Request error!', message);
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+          }
+        });
+      }
+      $('#btnSubmit').prop('disabled', false); 
+      $.LoadingOverlay("hide");
+    }
   </script>
 
 </body>
