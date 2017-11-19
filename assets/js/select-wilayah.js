@@ -1,4 +1,5 @@
 // Load Select Wilayah JavaScripts
+// NATIVE HTML SELECT OPTION (NO SELECTIZE)
 
 //load select provinsi
 function loadSelectProvinsi(targetId='#provinsi_id', json){

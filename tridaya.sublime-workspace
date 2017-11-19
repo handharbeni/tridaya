@@ -4,8 +4,32 @@
 		"selected_items":
 		[
 			[
+				"kecamat",
+				"kecamatan_id"
+			],
+			[
 				"select",
-				"selectize-dropdown"
+				"selectizeKelurahan"
+			],
+			[
+				"selectiz",
+				"selectizeKota"
+			],
+			[
+				"selecti",
+				"selectizeKota"
+			],
+			[
+				"selec",
+				"selectizeKota"
+			],
+			[
+				"akun",
+				"akun_id"
+			],
+			[
+				"erro",
+				"errorProvinsi"
 			],
 			[
 				"model",
@@ -336,10 +360,6 @@
 				"checkGantiPassword"
 			],
 			[
-				"selec",
-				"selected"
-			],
-			[
 				"cl",
 				"click"
 			],
@@ -494,26 +514,6 @@
 			[
 				"text",
 				"textStatus"
-			],
-			[
-				"form",
-				"formSignin"
-			],
-			[
-				"http_bui",
-				"http_build_query"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"sin",
-				"Sinkronisasi_jadwal"
-			],
-			[
-				"BASE",
-				"BASE_URL"
 			]
 		]
 	},
@@ -523,43 +523,50 @@
 			"file": "application/modules/M_unit/controllers/M_unit.php",
 			"settings":
 			{
-				"buffer_size": 3555,
+				"buffer_size": 4390,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n\nclass M_unit extends MX_Controller {\n  //Global variable\n  var $data;\n  private $response;\n\n  public function __construct() \n  {\n      parent::__construct();\n      $this->response = Array( 'status' => 0 );\n      $this->data = array(\n        '_header'        => Modules::run('template/header'),\n        '_footer'        => Modules::run('template/footer'),\n        '_sidebar_left'  => Modules::run('template/sidebar_left'),\n        '_sidebar_right' => Modules::run('template/sidebar_right'),\n        '_theme_config'  => Modules::run('template/theme_config')\n      );\n      $this->load->vars($this->data);\n      $this->load->helper('wilayah_helper');\n      $this->load->model('model_adm');\n      // $this->data can be accessed from anywhere in the controller.\n  }\n\n  public function index($params=null)\n  {\n    $sql = \"SELECT m_unit.*, m_akun.id AS id_akun, m_akun.nama AS nama_akun, m_provinsi.nama_provinsi, m_kabkota.nama_kabkota, m_kecamatan.nama_kecamatan, m_kelurahan.nama_kelurahan FROM m_unit\"\n          .\" LEFT JOIN m_akun ON m_unit.akun_id = m_akun.id\" \n          .\" LEFT JOIN m_provinsi ON m_unit.provinsi_id = m_provinsi.id\" \n          .\" LEFT JOIN m_kabkota ON m_unit.kabkota_id = m_kabkota.id\" \n          .\" LEFT JOIN m_kecamatan ON m_unit.kecamatan_id = m_kecamatan.id\" \n          .\" LEFT JOIN m_kelurahan ON m_unit.kelurahan_id = m_kelurahan.id\" \n          .\" WHERE m_unit.deleted = '0' ORDER BY m_akun.nama\";\n    $data['list'] = $this->model_adm->rawQuery($sql)->result();\n\n    $data['list_akun'] = $this->model_adm->select(array('level' => 1), 'm_akun')->result();\n    $this->load->view('index', $data);\n  }\n\n  public function get_provinsi_by_id()\n  {\n    $params = $this->input->post();\n    $response = $this->response;\n    if(isset($params['id'])) {\n      $result = get_provinsi($params['id'])->row();\n      $response = array('status' => 1, 'data' => $result);\n    }\n    echo json_encode($response);\n  }\n  public function get_unit_by_id()\n  {\n    $params = $this->input->post();\n    $response = $this->response;\n    if(isset($params['id'])) {\n      $condition = array('id' => $params['id'], 'deleted' => 0);\n      $result = $this->model_adm->select($condition, 'm_unit')->row();\n      $response = array('status' => 1, 'data' => $result);\n    }\n    echo json_encode($response);\n  }\n\n  public function do_add() {\n    $response = $this->response;\n    $params = $this->input->post();\n    if(!empty($params)) {\n      $data_db = $params;\n      $result = $this->model_adm->insert($data_db, 'm_provinsi');\n\n      $data = [];\n      $message = \"Data gagal ditambahkan!\";\n      if($result) {\n        $message = \"Data berhasil ditambahkan!\";\n        $data = get_provinsi()->result();\n      }\n      $response = array(\n        'status' => 1, 'result' => $result, \n        'message' => $message, 'data' => $data);\n    }\n    echo json_encode($response);\n  }\n\n  public function do_edit() {\n    $response = $this->response;\n    $params = $this->input->post();\n    if(!empty($params['id'])) {\n      $condition = array( \n                    'id' => $params['id'] \n                  );\n      $data_db = $params;\n      $data_db['timestamp'] = date(\"Y-m-d H:i:s\");\n      unset($data_db['id']);\n      $result = $this->model_adm->update($condition, $data_db, 'm_provinsi');\n\n      $data = [];\n      $message = \"Data gagal diubah!\";\n      if($result) {\n        $message = \"Data berhasil diubah!\";\n        $data = get_provinsi()->result();\n      }\n      $response = array(\n        'status' => 1, 'result' => $result, \n        'message' => $message, 'data' => $data);\n    }\n    echo json_encode($response);\n  }\n\n  public function do_delete() {\n    $response = $this->response;\n    $params = $this->input->post();\n    if(!empty($params['ids'])) {\n      $data_db = [];\n      foreach ($params['ids'] as $id) {\n        $data_db[] = array(\n                'id' => $id,\n                'deleted' => 1,\n                'timestamp' => date(\"Y-m-d H:i:s\")\n        );\n      }\n      $result = $this->model_adm->update_batch($data_db, 'm_provinsi', 'id');\n\n      $data = [];\n      $message = \"Data gagal dihapus!\";\n      if($result) {\n        $message = \"Data berhasil dihapus!\";\n        $data = get_provinsi()->result();\n      }\n      $response = array(\n        'status' => 1, 'result' => $result, \n        'message' => $message, 'data' => $data);\n    }\n    echo json_encode($response);\n  }\n\n}\n",
+			"settings":
+			{
+				"buffer_size": 4443,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/helpers/wilayah_helper.php",
+			"settings":
+			{
+				"buffer_size": 3618,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "application/modules/M_unit/views/index.php",
 			"settings":
 			{
-				"buffer_size": 17465,
+				"buffer_size": 22448,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/js/select-wilayah.js",
+			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no\">\n  <title>Tridaya Group - Sistem Informasi Administrasi</title>\n\n  <!-- Favicon -->\n  <link rel=\"shortcut icon\" href=\"<?php echo URL_IMG?>logo/favicon.png\">\n\n  <!-- plugins css -->\n  <link rel=\"stylesheet\" href=\"<?php echo URL_PLUGIN?>bootstrap/dist/css/bootstrap.css\" />\n  <link rel=\"stylesheet\" href=\"<?php echo URL_PLUGIN?>PACE/themes/blue/pace-theme-minimal.css\" />\n  <link rel=\"stylesheet\" href=\"<?php echo URL_PLUGIN?>perfect-scrollbar/css/perfect-scrollbar.min.css\" />\n\n  <!-- page plugins css -->\n  <link rel=\"stylesheet\" href=\"<?php echo URL_CSS?>sweetalert.css\" />\n  <link rel=\"stylesheet\" href=\"<?php echo URL_PLUGIN?>datatables/media/css/jquery.dataTables.css\" />\n  <link rel=\"stylesheet\" href=\"<?php echo URL_PLUGIN?>selectize/dist/css/selectize.default.css\" />\n\n  <!-- core css -->\n  <link href=\"<?php echo URL_CSS?>ei-icon.css\" rel=\"stylesheet\">\n  <link href=\"<?php echo URL_CSS?>themify-icons.css\" rel=\"stylesheet\">\n  <link href=\"<?php echo URL_CSS?>font-awesome.min.css\" rel=\"stylesheet\">\n  <link href=\"<?php echo URL_CSS?>animate.min.css\" rel=\"stylesheet\">\n  <link href=\"<?php echo URL_CSS?>app.css\" rel=\"stylesheet\">\n</head>\n\n<body class=\"header-info\">\n  <div class=\"app\">\n    <div class=\"layout\">\n      <?php echo json_encode(get_kelurahan()->result()); die();?>\n      <!-- Side Nav START -->\n      <?php echo isset($_sidebar_left) ? $_sidebar_left : '';?>\n      <!-- Side Nav END -->\n\n      <!-- Page Container START -->\n      <div class=\"page-container\">\n        <!-- Header START -->\n        <?php echo isset($_header) ? $_header : '';?>\n        <!-- Header END -->\n\n        <!-- Side Panel START -->\n        <?php echo isset($_sidebar_right) ? $_sidebar_right : '';?>\n        <!-- Side Panel END -->\n\n        <!-- theme configurator START -->\n        <?php echo isset($_theme_config) ? $_theme_config : '';?>\n        <!-- theme configurator END -->\n\n        <!-- Content Wrapper START -->\n        <div class=\"main-content\">\n          <div class=\"container-fluid\">\n            <div class=\"page-title\">\n              <h4>Unit/Cabang\n                <div class=\"pull-right\">\n                  <a href=\"javascript:void(0)\" class=\"btn btn-rounded btn-success edit-notif\" onclick=\"showModalForm(event);\" title=\"Tambah data\"><i class=\"ti-plus pdd-right-5\"></i> Tambah</a>\n                  <a href=\"javascript:void(0)\" id=\"btnDelete\" class=\"btn btn-rounded btn-danger delete-notif\" onclick=\"prepMultiDelete(event);\" title=\"Hapus banyak data\"><i class=\"ti-trash pdd-right-5\"></i> Hapus</a>\n                </div>\n              </h4>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-md-12\">\n                  <div class=\"card\">\n                  <div class=\"card-block\">\n                    <div class=\"table-overflow\">\n                      <table id=\"tableData\" class=\"table table-hover\">\n                        <thead>\n                          <th></th>\n                            <th>Unit/Cabang</th>\n                            <th>Alamat</th>\n                            <th>Kota</th>\n                            <th>Provinsi</th>\n                            <th>No. Telp</th>\n                            <th>Admin</th>\n                            <th>Aksi</th>\n                        </thead>\n                        <tbody> \n\n                        </tbody>\n                      </table>\n                    </div>\n                  </div>\n                </div>\n\n              </div>  \n            </div>\n          </div> \n          \n          <!-- Modal START-->\n          <div class=\"modal fade\" id=\"modalForm\">\n            <div class=\"modal-dialog\" role=\"document\">\n              <div class=\"modal-content\">\n                <form action=\"<?php echo base_url()?>master/provinsi/do_add\" method=\"POST\" id=\"formAdd\">      \n                  <div class=\"modal-header\">\n                    <h4 id=\"modalFormHeader\">Tambah Provinsi</h4>\n                  </div>\n                  <div class=\"modal-body\">\n                   <div class=\"row\">\n                     <div class=\"col-sm-6\">\n                        <div class=\"form-group\">\n                         <label for=\"nama\">Nama Unit</label>\n                         <input type=\"text\" name=\"nama\" id=\"nama\" class=\"form-control\" placeholder=\"Nama Unit\" required=\"\">\n                         <input type=\"hidden\" name=\"id\" id=\"id\" class=\"form-control\" placeholder=\"ID Unit\">\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                       <div class=\"form-group\">\n                         <label for=\"level\">Admin Unit</label>\n                         <select name=\"akun_id\" id=\"akun_id\" class=\"\" required=\"\">\n                         </select>\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                       <div class=\"form-group\">\n                         <label for=\"provinsi\">Provinsi</label>\n                         <select name=\"provinsi\" id=\"provinsi\" class=\"\" required=\"\">\n                         </select>\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                       <div class=\"form-group\">\n                         <label for=\"kota\">Kota</label>\n                         <select name=\"kota\" id=\"kota\" class=\"\" required=\"\" disabled=\"\">\n                         </select>\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                       <div class=\"form-group\">\n                         <label for=\"kelurahan\">Kelurahan</label>\n                         <select name=\"kelurahan\" id=\"kelurahan\" class=\"\" required=\"\" disabled=\"\">\n                         </select>\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                       <div class=\"form-group\">\n                         <label for=\"kecamatan\">Kecamatan</label>\n                         <select name=\"kecamatan\" id=\"kecamatan\" class=\"\" required=\"\" disabled=\"\">\n                         </select>\n                       </div>\n                     </div>\n                     <div class=\"col-sm-12\">\n                       <div class=\"form-group\">\n                         <label for=\"kota\">Alamat</label>\n                         <input type=\"text\" name=\"alamat\" id=\"alamat\" class=\"form-control\" placeholder=\"Alamat\" required=\"\">\n                       </div>\n                     </div>\n                     <div class=\"col-sm-6\">\n                        <div class=\"form-group\">\n                         <label for=\"no_telp\">No. Telepon</label>\n                         <input type=\"text\" name=\"no_telp\" id=\"no_telp\" class=\"form-control\" placeholder=\"No. Telepon\" required=\"\">\n                       </div>\n                     </div>\n                   </div>\n                  </div>\n                  <div class=\"modal-footer\">\n                    <div class=\"text-right\">\n                      <button type=\"button\" class=\"btn btn-default btn-sm\" data-dismiss=\"modal\"><i class=\"ti-close pdd-right-5\"></i>Batal</button>\n                      <button type=\"submit\" id=\"btnSubmit\" class=\"btn btn-primary btn-sm\"><i class=\"ti-save pdd-right-5\"></i>Simpan</button>\n                    </div>\n                  </div>\n                </form>\n              </div>\n            </div>\n          </div>\n          <!-- Modal END-->             \n        </div>\n        <!-- Content Wrapper END -->\n\n        <!-- Footer START -->\n        <?php echo isset($_footer) ? $_footer : '';?>\n        <!-- Footer END -->\n\n      </div>\n      <!-- Page Container END -->\n\n    </div>\n  </div>\n\n  <!-- build:js <?php echo URL_JS?>vendor.js -->\n  <!-- plugins js -->\n  <script src=\"<?php echo URL_PLUGIN?>jquery/dist/jquery.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>popper.js/dist/umd/popper.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>bootstrap/dist/js/bootstrap.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>PACE/pace.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>perfect-scrollbar/js/perfect-scrollbar.jquery.js\"></script>\n  <!-- endbuild -->\n\n  <!-- page plugins js -->\n  <script src=\"<?php echo URL_PLUGIN?>jquery-loading-overlay/src/loadingoverlay.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>sweetalert/lib/sweet-alert.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>datatables/media/js/jquery.dataTables.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>jquery-validation/dist/jquery.validate.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>noty/js/noty/packaged/jquery.noty.packaged.min.js\"></script>\n  <script src=\"<?php echo URL_PLUGIN?>selectize/dist/js/standalone/selectize.min.js\"></script>\n\n  <!-- build:js <?php echo URL_JS?>app.min.js -->\n  <!-- core js -->\n  <script src=\"<?php echo URL_JS?>app.js\"></script>\n  <script src=\"<?php echo URL_JS?>ui-elements/notification_custom.js\"></script>\n  <!-- endbuild -->\n\n  <!-- page js -->\n  <script src=\"<?php echo URL_JS?>table/data-table.js\"></script>\n  <script src=\"<?php echo URL_JS?>select-wilayah.js\"></script>\n  <script>\n    var jsonList = <?php echo json_encode($list)?>;\n    var jsonProvinsi = <?php echo json_encode(get_provinsi()->result())?>;\n    var jsonKota = <?php echo json_encode(get_kota()->result())?>;\n    var jsonKecamatan = <?php echo json_encode(get_kecamatan()->result())?>;\n    var jsonKelurahan = <?php echo json_encode(get_kelurahan()->result())?>;\n    var jsonAkun = <?php echo json_encode($list_akun)?>;\n\n    // INITIALIZE DATATABLE\n    var tableData = $(\"#tableData\").DataTable({\n      \"columnDefs\": [ {\n              \"searchable\": false,\n              \"orderable\": false,\n              \"targets\": \"no-sort\"\n          },{\n              \"searchable\": false,\n              \"orderable\": true,\n              \"targets\": \"no-search\"\n          } ],\n          // \"order\": [[ 1, 'asc' ]]    \n    });\n    tableData.on( 'order.dt search.dt', function () {\n      // tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {\n      //     cell.innerHTML = '';\n      // });\n    }).draw();\n\n    //LOADING TABLE BODY WITH JSON DATA\n    loadTabelUnit(jsonList);\n\n    function loadTabelUnit(json){\n      //clear table\n      tableData.clear().draw();\n      for(var i=0, data; data = json[i]; i++) {\n        tableData.row.add([\n          '<div class=\"checkbox mrg-left-20\">'\n            +'<i style=\"display:none\">'+data.id+'</i>'\n            +'<input id=\"task-'+data.id+'\" value=\"'+data.id+'\" name=\"task[]\" type=\"checkbox\">'\n              +'<label for=\"task-'+data.id+'\"></label>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n              +'<p>'+data.nama+'<p>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n              +'<p>'+data.alamat+'<p>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n              +'<p>'+data.nama_kabkota+'<p>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n              +'<p>'+data.nama_provinsi+'<p>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n              +'<p>'+data.no_telp+'<p>'\n          +'</div>',\n          '<div class=\"list-info mrg-top-10\">'\n            +'<div class=\"info no-pdd\">'\n              +'<span class=\"title\">'+data.nama_akun+'</span>'\n              +'<span class=\"sub-title\">ID '+data.id_akun+'</span>'\n            +'</div>'\n          +'</div>',\n          '<div class=\"relative mrg-top-10\">'\n            +'<div class=\"btn-group\">'\n              +'<a href=\"javascript:void(0);\" class=\"btn btn-default edit-notif\" data-id=\"'+data.id+'\" onclick=\"showModalForm(event);\" title=\"Ubah data\"> <i class=\"ti-pencil-alt\"></i> </a>'\n              +'<a href=\"\" class=\"btn btn-default text-danger delete-notif\" data-id=\"'+data.id+'\" onclick=\"prepDelete(event);\" title=\"Hapus data\"> <i class=\"ti-trash\"></i> </a>'\n            +'</div>'\n          +'</div>'\n        ]).draw( false );\n      }\n    }\n    function getDetail(id, callback) {\n      if(id) {\n        $.ajax({\n          url: '<?php echo base_url();?>master/unit/get_unit_by_id',\n          data: { id: id },\n          type: 'POST',\n          dataType: 'json',\n          beforeSend: function() { $.LoadingOverlay(\"show\");  },\n          success: function(response, status) {\n            if(response.status) {\n              var data = response.data;\n              console.log(data);\n              //fill id & nama unit  for edit\n              $('#id').val(data.id);\n              $('#nama').val(data.nama);\n              selectizeProvinsi.setValue(data.provinsi_id, false);\n              selectizeKota.setValue(data.kabkota_id, false);\n              selectizeKecamatan.setValue(data.kecamatan_id, false);\n              selectizeKelurahan.setValue(data.kelurahan_id, false);\n              $('#alamat').val(data.alamat);\n              $('#no_telp').val(data.no_telp);\n              $('#modalForm').modal('show');\n            }\n          },\n          error: function(jqXhr, message, errorThrown){\n            console.log('Request error!', message);\n          } \n        });\n        $.LoadingOverlay(\"hide\");\n      }\n    }\n    \n    //INITIALIZE SELECTIZE\n    var selectizeProvinsi, $selectizeProvinsi;\n    var selectizeKota, $selectizeKota;\n    var selectizeKecamatan, $selectizeKecamatan;\n    var selectizeKelurahan, $selectizeKelurahan;\n    var selectizeAkun, $selectizeAkun;\n    //loading select option provinsi\n    $selectizeProvinsi = $('#provinsi').selectize({\n      options: $.map(jsonProvinsi, function(data, i) {\n        return [{ value: data.id, text: data.nama_provinsi }];\n      }),\n      create: false,\n      sortField: { field: 'text', direction: 'asc' },\n      placeholder: 'Pilih Provinsi',\n      onChange: function(val) {\n        if(!val.length){ selectizeKota.disable(); }\n        else {\n          selectizeKota.disable();\n          selectizeKota.clearOptions();\n          let filteredArr = $.map(jsonKota, function(data, i) {\n            if((data.provinsi_id == val)){\n              return [{ value: data.id, text: data.nama_kabkota, $order: i+1 }];\n            }\n          });\n          selectizeKota.enable();\n          selectizeKota.addOption(filteredArr);\n        }\n      }\n      // valueField: 'value', labelField: 'name', dropdownParent: 'body'\n    });\n    //loading select option kecamatan\n    $selectizeKecamatan = $('#kecamatan').selectize({\n      options: $.map(jsonKota, function(data, i) {\n        return [{ value: data.id, text: data.nama_kecamatan }];\n      }),\n      create: false,\n      sortField: { field: 'text', direction: 'asc' },\n      placeholder: 'Pilih Kecamatan',\n      onChange: function(val) {\n        if(!val.length){ selectizeKecamatan.disable(); }\n        else {\n          selectizeKecamatan.disable();\n          selectizeKecamatan.clearOptions();\n          let filteredArr = $.map(jsonKecamatan, function(data, i) {\n            if((data.kabkota_id == val)){\n              return [{ value: data.id, text: data.nama_kecamatan, $order: i+1 }];\n            }\n          });\n          selectizeKecamatan.enable();\n          selectizeKecamatan.addOption(filteredArr);\n        }\n      }\n      // valueField: 'value', labelField: 'name', dropdownParent: 'body'\n    });\n    //loading select option kelurahan\n    $selectizeKelurahan = $('#kota').selectize({\n      options: $.map(jsonKota, function(data, i) {\n        return [{ value: data.id, text: data.nama_kelurahan }];\n      }),\n      create: false,\n      sortField: { field: 'text', direction: 'asc' },\n      placeholder: 'Pilih Kelurahan',\n      onChange: function(val) {\n        if(!val.length){ selectizeKelurahan.disable(); }\n        else {\n          selectizeKelurahan.disable();\n          selectizeKelurahan.clearOptions();\n          let filteredArr = $.map(jsonKelurahan, function(data, i) {\n            if((data.kecamatan_id == val)){\n              return [{ value: data.id, text: data.nama_kelurahan, $order: i+1 }];\n            }\n          });\n          selectizeKelurahan.enable();\n          selectizeKelurahan.addOption(filteredArr);\n        }\n      }\n      // valueField: 'value', labelField: 'name', dropdownParent: 'body'\n    });\n    //loading select option akun admin\n    $selectizeAkun = $('#akun_id').selectize({\n      options: $.map(jsonAkun, function(data, i) {\n        return [{ value: data.id, text: data.nama }];\n      }),\n      create: false,\n      sortField: { field: 'text', direction: 'asc' },\n      placeholder: 'Pilih Akun Admin',\n      // valueField: 'value', labelField: 'name', dropdownParent: 'body'\n    });\n    selectizeProvinsi = $selectizeProvinsi[0].selectize;\n    selectizeKota = $selectizeKota[0].selectize;\n    selectizeKecamatan = $selectizeKecamatan[0].selectize;\n    selectizeKelurahan = $selectizeKelurahan[0].selectize;\n    selectizeAkun = $selectizeAkun[0].selectize;\n\n    //INITIALIZE FORM VALIDATION\n    formValidation = $(\"#formAdd\").validate({\n      ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',\n            rules: {\n                \"provinsi\": \"required\",\n                \"kota\": \"required\",\n                \"akun_id\": \"required\"\n            },\n      validClass : '',\n      submitHandler: function(form) {\n        // form.submit();\n        doSubmit(form);\n      }\n     });\n    //clear/reset validation inside form modal on hide event\n    $('#modalForm').on('hidden.bs.modal', function(e) {\n      target = $(this).attr('id');\n      formValidation.resetForm();\n      $('#'+target+' .error').removeClass('error');\n    }); \n\n    //SHOW MODAL FORM\n    function showModalForm(e) {\n      e.preventDefault();\n      var id = $(e.currentTarget).data('id') || null;\n      //jika klik tombol tambah data:\n      if(!id) {\n        $('#formAdd').attr('action', \"<?php echo base_url()?>master/unit/do_add\");\n        $('#formAdd :input').val('');\n        $('#modalFormHeader').text('Tambah Provinsi');\n        $('#modalForm').modal('show');\n      }\n      //jika klik tombol edit data:\n      else {\n        $('#formAdd').attr('action', \"<?php echo base_url()?>master/unit/do_edit\");\n        $('#modalFormHeader').text('Ubah Provinsi');\n        getDetail(id);\n      }\n    }\n    \n    //prepare delete 1 data\n    function prepDelete(e) {\n      e.preventDefault();\n      var id = $(e.currentTarget).data('id') || null;\n      var arrIds = [id];\n      if(id) {\n        doMultiDelete(arrIds);\n      }\n    }\n    //prepare delete multi data\n    function prepMultiDelete(e) {\n      e.preventDefault();\n      //collecting checked checkbox values from table into array\n      var checkedArray = $('#tableData input:checkbox:checked').map(function() {\n          return $(this).val();\n      }).get();\n      // console.log(checkedArray);\n      if(id) {\n        doMultiDelete(checkedArray);\n      }\n    }\n\n    //MULTI DELETE HANDLER\n    function doMultiDelete(arrData) {\n      let ids = arrData || [];\n      if(ids[0] != null) {\n        //konfirmasi hapus banyak data\n        swal({\n          title: \"Hapus data?\",\n          text: \"Data yang telah dihapus tidak akan bisa dikembalikan lagi\",\n          type: \"warning\",\n          showCancelButton: true,\n          confirmButtonColor: \"#DD6B55\",\n          confirmButtonText: \"Ya, hapus data!\",\n          },\n        function(isConfirm){\n          if(isConfirm) {\n            //Hapus banyak data\n            $.ajax({\n              url: \"<?php echo base_url()?>master/provinsi/do_delete\",\n              data: { ids: ids },\n              type: 'POST',\n              dataType: 'json',\n              beforeSend: function() { \n                $('.delete-notif').prop('disabled', true); \n                $.LoadingOverlay(\"show\"); \n              },\n              success: function(response, status) {\n                if(response.status) {\n                  // console.log(response);\n                  if(response.result) {\n                    showNoty(response.message, 'success');\n                    loadTabelUnit(response.data);\n                  }\n                  else {\n                    showNoty(response.message, 'warning');\n                  }\n                }\n                else {\n                  showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',\n                   'warning');\n                }\n                $('#modalForm').modal('hide');\n              },\n              error: function(jqXhr, message, errorThrown){\n                console.log('Request error!', message);\n                showNoty('Error! Perintah tidak dapat dijalankan', 'error');\n              }\n            });\n            $('.delete-notif').prop('disabled', false); \n            $.LoadingOverlay(\"hide\");\n          }\n          else {\n            return;\n          }\n        });\n      }\n      else {\n        showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',\n               'warning');\n      }\n    }\n\n    //MODAL FORM SUBMIT HANDLER\n    function doSubmit(form) {\n      let id = $('#id').val() || '';\n      if(form) {\n        $.ajax({\n          url: $(form).attr('action'),\n          data: $(form).serialize() + \"&id=\" + id,\n          type: 'POST',\n          dataType: 'json',\n          beforeSend: function() { \n            $('#btnSubmit').prop('disabled', true); \n            $.LoadingOverlay(\"show\"); \n          },\n          success: function(response, status) {\n            if(response.status) {\n              // console.log(response);\n              if(response.result) {\n                showNoty(response.message, 'success');\n                loadTabelUnit(response.data);\n              }\n              else {\n                showNoty(response.message, 'warning');\n              }\n            }\n            else {\n              showNoty('Terjadi kesalahan! Pastikan data yang anda masukkan sudah benar', 'warning');\n            }\n            $('#modalForm').modal('hide');\n          },\n          error: function(jqXhr, message, errorThrown){\n            console.log('Request error!', message);\n            showNoty('Error! Perintah tidak dapat dijalankan', 'error');\n          }\n        });\n      }\n      $('#btnSubmit').prop('disabled', false); \n      $.LoadingOverlay(\"hide\");\n    }\n  </script>\n\n</body>\n\n</html>",
 			"settings":
 			{
-				"buffer_size": 1594,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 22508,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+			"file": "application/modules/M_provinsi/views/index.php",
 			"settings":
 			{
-				"buffer_size": 867,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
-			"settings":
-			{
-				"buffer_size": 89053,
-				"encoding": "UTF-8",
+				"buffer_size": 14471,
 				"line_ending": "Windows"
 			}
 		}
@@ -614,7 +621,10 @@
 	[
 		"/C/xampp/htdocs/github/tridaya",
 		"/C/xampp/htdocs/github/tridaya/application",
+		"/C/xampp/htdocs/github/tridaya/application/helpers",
 		"/C/xampp/htdocs/github/tridaya/application/modules",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_provinsi",
+		"/C/xampp/htdocs/github/tridaya/application/modules/M_provinsi/views",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/controllers",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views",
@@ -622,6 +632,11 @@
 	],
 	"file_history":
 	[
+		"/C/Users/user/Downloads/Compressed/selectize.js-master/selectize.js-master/examples/cities.html",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
+		"/C/xampp/htdocs/github/tridaya/assets/js/select-wilayah.js",
+		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_pegawai/views/view.php",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views/js/select-wilayah.js",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_kota/views/view.php",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_kota/controllers/Master.php",
@@ -667,8 +682,6 @@
 		"/C/xampp/htdocs/github/tridaya/assets/css/app.css",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/controllers/M_akun.php",
 		"/C/xampp/htdocs/github/tridaya/application/config/config.php",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
 		"/C/xampp/htdocs/github/tridaya/application/modules/Template/views/header.php",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_gudang/views/view.php",
 		"/C/xampp/htdocs/github/tridaya/assets/js/ui-elements/notification.js",
@@ -746,10 +759,7 @@
 		"/C/Users/user/AppData/Local/Temp/scp02028/gopray/application/controllers/admin/Sinkronisasi_jadwal.php",
 		"/C/Users/user/AppData/Local/Temp/scp56929/gopray/application/controllers/admin/Sinkronisasi_jadwal.php",
 		"/C/xampp/htdocs/github/gopray_parent/application/controllers/admin/Signout.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/sign_foot.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/foot.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/foot.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/head.php"
+		"/C/xampp/htdocs/github/gopray_parent/application/views/admin/sign_foot.php"
 	],
 	"find":
 	{
@@ -767,6 +777,50 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"get_provinsi",
+			"loadTabelUnit",
+			"selectizek",
+			"showmoda",
+			"m_kota",
+			"get_kecamatan",
+			"selectizeKecamatan",
+			"selectizeKota",
+			"loadtabe",
+			"cosnole",
+			"loadTabelUnit",
+			"Kota",
+			"kelurahan",
+			"Kelurahan",
+			"kelurahan",
+			"Kota",
+			"kota",
+			"m_kecamatan",
+			"getDetail",
+			"showModalForm",
+			"no_tel",
+			"selectizeKota",
+			"selectize",
+			"Kota",
+			"Provinsi",
+			"select_city",
+			"Provinsi",
+			"select_city",
+			"id",
+			"filte",
+			"map",
+			"get_kota(",
+			"load_kota",
+			"get_kota(",
+			"loadTabelUnit",
+			"loadTabelProvinsi",
+			"selectize",
+			"akun_id",
+			"id_akun",
+			"provin",
+			"provini",
+			"showmoda",
+			"provin",
+			"kota",
 			"selectize",
 			"selectiz",
 			"form-control selectize-dropdown",
@@ -850,51 +904,7 @@
 			"elem",
 			"formAdd",
 			"doSubmit",
-			"validat",
-			"valida",
-			"formAdd",
-			"valida",
-			"validate",
-			"formAdd",
-			"subm",
-			"valid",
-			"form-validation",
-			"nama_prov",
-			"validat",
-			"valida",
-			"params",
-			"get_kota",
-			"get_provinsi",
-			"nama_pr",
-			"form",
-			"nama_provinsi",
-			"getProvinsiById",
-			"provinsi",
-			"Provinsi",
-			"provinsi",
-			"modal",
-			"nama_provinsi",
-			"getProvinsiById",
-			"tabelProv",
-			"tabelPaket",
-			"nama",
-			"Nama",
-			"nama",
-			"no_reg",
-			"nama",
-			"kota",
-			"tahun_ajar",
-			"rt",
-			"alamat",
-			"kelurahan",
-			"kabupaten",
-			"Kabupaten",
-			"kabupaten",
-			"kelurahan",
-			"alamat",
-			"nama",
-			"jk",
-			"datepicke"
+			"validat"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -912,7 +922,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -921,7 +931,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3555,
+						"buffer_size": 4390,
 						"regions":
 						{
 						},
@@ -939,33 +949,56 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 1,
-					"file": "application/modules/M_unit/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17465,
+						"buffer_size": 4443,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10092,
-								10092
+								4443,
+								4443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1464.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/helpers/wilayah_helper.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								792,
+								792
 							]
 						],
 						"settings":
@@ -975,99 +1008,105 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3479.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "application/modules/M_unit/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9539,
+								9539
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3444.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "assets/js/select-wilayah.js",
+					"buffer": 4,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1594,
+						"buffer_size": 22508,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								230,
-								230
+								0,
+								22508
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/Vuejs Complete Package/vue.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 8604.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+					"buffer": 5,
+					"file": "application/modules/M_provinsi/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 867,
+						"buffer_size": 14471,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								120,
-								120
+								8958,
+								8958
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 89053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								780,
-								780
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 29.0,
+						"translation.y": 3354.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
