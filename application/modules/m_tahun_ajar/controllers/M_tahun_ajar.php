@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_mapel extends MX_Controller {
+class M_tahun_ajar extends MX_Controller {
   //Global variable
   var $data;
   private $response;
@@ -9,7 +9,7 @@ class M_mapel extends MX_Controller {
 	public function __construct() 
   {
       parent::__construct();
-      $this->response = array( 'status' => 0 );
+      $this->response = Array( 'status' => 0 );
       $this->data = array(
         '_header'        => Modules::run('template/header'),
         '_footer'        => Modules::run('template/footer'),
@@ -24,32 +24,26 @@ class M_mapel extends MX_Controller {
 
 	public function index($params=null)
 	{
-    $data['list'] = $this->get_data_list()->result();
-    $data['list_jenjang'] = $this->model_adm->select(array('deleted' => 0), 'm_jenjang')->result();
-    $data['list_tingkat'] = $this->model_adm->select(array('deleted' => 0), 'm_jenjang_tingkat')->result();
+    $data['list'] = $this->model_adm->select(array('deleted' => 0), 'm_tahun_ajaran')->result();
     $this->load->view('index', $data);
   }
 
   private function get_data_list($id=null)
   {
-    $sql = "SELECT m_mapel.*, m_jenjang_tingkat.nama AS nama_tingkat, m_jenjang.nama AS nama_jenjang, m_jenjang.alias AS alias_jenjang FROM m_mapel"
-      ." LEFT JOIN m_jenjang_tingkat ON m_mapel.tingkat_id = m_jenjang_tingkat.id" 
-      ." LEFT JOIN m_jenjang ON m_mapel.jenjang_id = m_jenjang.id" 
-      ." WHERE m_mapel.deleted = '0'";
-      if($id) { $sql .= " AND WHERE m_mapel.id = ".$id; }
-    $sql .= " ORDER BY m_mapel.nama";
-    return $this->model_adm->rawQuery($sql);
+    $condition['deleted'] = 0;
+    if($id) { $condition['id'] = $id; }
+    return $this->model_adm->select($condition, 'm_tahun_ajaran');
   }
-  public function get_mapel_by_id()
+  public function get_tahun_ajar_by_id()
   {
     $params = $this->input->post();
     $response = $this->response;
     if(isset($params['id'])) {
       $condition = array(
-        'deleted' => 0, 
-        'id' => $params['id']
+          'deleted' => 0,
+          'id' => $params['id']
       );
-      $result = $this->model_adm->select($condition, 'm_mapel')->row();
+      $result = $this->model_adm->select($condition, 'm_tahun_ajaran')->row();
       $response = array('status' => 1, 'data' => $result);
     }
     echo json_encode($response);
@@ -58,11 +52,9 @@ class M_mapel extends MX_Controller {
   public function do_add() {
     $response = $this->response;
     $params = $this->input->post();
-    // print_r($params); die();
     if(!empty($params)) {
       $data_db = $params;
-      if(isset($data_db['id'])) { unset($data_db['id']); }
-      $result = $this->model_adm->insert($data_db, 'm_mapel');
+      $result = $this->model_adm->insert($data_db, 'm_tahun_ajaran');
 
       $data = [];
       $message = "Data gagal ditambahkan!";
@@ -80,7 +72,6 @@ class M_mapel extends MX_Controller {
   public function do_edit() {
     $response = $this->response;
     $params = $this->input->post();
-    // print_r($params); die();
     if(!empty($params['id'])) {
       $condition = array( 
                     'id' => $params['id'] 
@@ -88,7 +79,7 @@ class M_mapel extends MX_Controller {
       $data_db = $params;
       $data_db['timestamp'] = date("Y-m-d H:i:s");
       unset($data_db['id']);
-      $result = $this->model_adm->update($condition, $data_db, 'm_mapel');
+      $result = $this->model_adm->update($condition, $data_db, 'm_tahun_ajaran');
 
       $data = [];
       $message = "Data gagal diubah!";
@@ -106,7 +97,6 @@ class M_mapel extends MX_Controller {
   public function do_delete() {
     $response = $this->response;
     $params = $this->input->post();
-    // print_r($params); die();
     if(!empty($params['ids'])) {
       $data_db = [];
       foreach ($params['ids'] as $id) {
@@ -116,7 +106,7 @@ class M_mapel extends MX_Controller {
                 'timestamp' => date("Y-m-d H:i:s")
         );
       }
-      $result = $this->model_adm->update_batch($data_db, 'm_mapel', 'id');
+      $result = $this->model_adm->update_batch($data_db, 'm_tahun_ajaran', 'id');
 
       $data = [];
       $message = "Data gagal dihapus!";

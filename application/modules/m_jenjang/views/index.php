@@ -17,7 +17,6 @@
   <!-- page plugins css -->
   <link rel="stylesheet" href="<?php echo URL_CSS?>sweetalert.css" />
   <link rel="stylesheet" href="<?php echo URL_PLUGIN?>datatables/media/css/jquery.dataTables.css" />
-  <link rel="stylesheet" href="<?php echo URL_PLUGIN?>selectize/dist/css/selectize.default.css" />
 
   <!-- core css -->
   <link href="<?php echo URL_CSS?>ei-icon.css" rel="stylesheet">
@@ -52,7 +51,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Mata Pelajaran
+              <h4>Jenjang Pendidikan
                 <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -68,8 +67,9 @@
                         <thead>
                           <tr>
                             <th class="no-search"></th>
-                            <th>Mata Pelajaran</th>
-                            <th>Jenjang</th>
+                            <th>Nama Jenjang</th>
+                            <th>Alias</th>
+                            <!-- <th>Keterangan</th> -->
                             <th class="no-sort">Aksi</th>
                           </tr>
                         </thead>
@@ -89,33 +89,31 @@
           <div class="modal fade" id="modalForm">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <form action="<?php echo base_url()?>master/mapel/do_add" method="POST" id="formAdd">      
+                <form action="<?php echo base_url()?>master/jenjang/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Mata Pelajaran</h4>
+                    <h4 id="modalFormHeader">Tambah Jenjang Pendidikan</h4>
                   </div>
                   <div class="modal-body">
                    <div class="row">
                      <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="jenjang_id">Jenjang</label>
-                         <select name="jenjang_id" id="jenjang" class="" required="">
-                         </select>
+                        <div class="form-group">
+                         <label for="nama">Nama Jenjang</label>
+                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Jenjang Pendidikan" required="">
+                         <input type="hidden" id="id" class="form-control" placeholder="ID Jenjang">
                        </div>
                      </div>
                      <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="tingkat_id">Tingkat Jenjang</label>
-                         <select name="tingkat_id" id="tingkat" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-12">
                         <div class="form-group">
-                         <label for="nama">Nama Mata Pelajaran</label>
-                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Mata Pelajaran" required="">
-                         <input type="hidden" id="id" class="form-control" placeholder="ID Mapel">
+                         <label for="alias">Alias</label>
+                         <input type="text" name="alias" id="alias" class="form-control" placeholder="Alias Jenjang Pendidikan" required="">
                        </div>
                      </div>
+                     <!-- <div class="col-sm-12">
+                        <div class="form-group">
+                         <label for="keterangan">Keterangan</label>
+                         <textarea type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Keterangan" required=""></textarea>
+                       </div>
+                     </div> -->
                    </div>
                   </div>
                   <div class="modal-footer">
@@ -157,7 +155,6 @@
   <script src="<?php echo URL_PLUGIN?>datatables/media/js/jquery.dataTables.js"></script>
   <script src="<?php echo URL_PLUGIN?>jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="<?php echo URL_PLUGIN?>noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
-  <script src="<?php echo URL_PLUGIN?>selectize/dist/js/standalone/selectize.min.js"></script>
 
   <!-- build:js <?php echo URL_JS?>app.min.js -->
   <!-- core js -->
@@ -169,11 +166,8 @@
   <script src="<?php echo URL_JS?>table/data-table.js"></script>
   <script>
     var jsonList = <?php echo json_encode($list)?>;
-    var jsonJenjang = <?php echo json_encode($list_jenjang)?>;
-    var jsonTingkat = <?php echo json_encode($list_tingkat)?>;
-    console.log(jsonTingkat);
 
-    // INITIALIZE DATATABLE
+    // initialize datatable
     var tableData = $("#tableData").DataTable({
       "columnDefs": [ {
               "searchable": false,
@@ -192,16 +186,13 @@
       // });
     }).draw();
 
-    //LOADING TABLE BODY WITH JSON DATA
-    loadTabelMapel(jsonList);
-
-    function loadTabelMapel(json){
-      console.log(json);
+    //loading table body with json data
+    loadTabelJenjang(jsonList);
+    
+    function loadTabelJenjang(json){
       //clear table
       tableData.clear().draw();
-      let namaMapel;
       for(var i=0, data; data = json[i]; i++) {
-        namaMapel = data.alias_jenjang +' kelas '+ data.nama_tingkat;
         tableData.row.add( [
               '<div class="checkbox mrg-left-20">'
                 +'<i style="display:none">'+data.id+'</i>'
@@ -209,13 +200,13 @@
                   +'<label for="task-'+data.id+'"></label>'
               +'</div>',
               '<div class="list-info mrg-top-10">'
-                  +'<p>'+data.nama+'</p>'
+                  +'<p>'+data.nama+'<p>'
               +'</div>',
               '<div class="list-info mrg-top-10">'
-                  +'<p>'+ namaMapel +'</p>'
+                  +'<p>'+data.alias+'<p>'
               +'</div>',
               // '<div class="list-info mrg-top-10">'
-              //     +'<p> Kelas '+ data.nama_tingkat +'</p>'
+              //     +'<p>'+data.keterangan+'<p>'
               // +'</div>',
               '<div class="relative mrg-top-10">'
                 +'<div class="btn-group">'
@@ -226,11 +217,10 @@
           ] ).draw( false );
       }
     }
-    
     function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>master/mapel/get_mapel_by_id',
+          url: '<?php echo base_url();?>master/jenjang/get_jenjang_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
@@ -238,11 +228,11 @@
           success: function(response, status) {
             if(response.status) {
               var data = response.data;
-              //fill id & nama kota for edit
+              //fill id & nama provinsi for edit
               $('#id').val(data.id);
-              selectizeJenjang.setValue(data.jenjang_id, false);
-              selectizeTingkat.setValue(data.tingkat_id, false);
               $('#nama').val(data.nama);
+              $('#alias').val(data.alias);
+              // $('#keterangan').val(data.keterangan);
               $('#modalForm').modal('show');
             }
           },
@@ -253,53 +243,9 @@
         });
       }
     }
-
-    //INITIALIZE SELECTIZE
-    var selectizeJenjang, $selectizeJenjang;
-    var selectizeTingkat, $selectizeTingkat;
-    //loading select option jenjang
-    $selectizeJenjang = $('#jenjang').selectize({
-      options: $.map(jsonJenjang, function(data, i) {
-        return [{ value: data.id, text: data.alias }];
-      }),
-      create: false,
-      sortField: { field: 'value', direction: 'asc' },
-      placeholder: 'Pilih Jenjang',
-      onChange: function(val) {
-        // console.log('Selectize Prov Onchange!');
-        if(!val.length){ selectizeTingkat.disable(); }
-        else {
-          selectizeTingkat.disable();
-          selectizeTingkat.clearOptions();
-          let filteredArr = $.map(jsonTingkat, function(data, i) {
-            if((data.jenjang_id == val)){
-              return [{ value: data.id, text: data.nama, $order: i+1 }];
-            }
-          });
-          filteredArr.push({ value: 0, text: 'Semua Tingkat' });
-          selectizeTingkat.enable();
-          selectizeTingkat.addOption(filteredArr);
-        }
-      }
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
-    //loading select option tingkat jenjang
-    $selectizeTingkat = $('#tingkat').selectize({
-      options: $.map(jsonTingkat, function(data, i) {
-        return [{ value: data.id, text: data.nama }];
-      }),
-      create: false,
-      sortField: { field: 'value', direction: 'asc' },
-      placeholder: 'Pilih Tingkat Jenjang',
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
-    selectizeJenjang = $selectizeJenjang[0].selectize;
-    selectizeTingkat = $selectizeTingkat[0].selectize;
     
     //initialize form validation
     formValidation = $("#formAdd").validate({
-      ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
-            rules: { "jenjang_id": "required", "tingkat_id": "required" },
       validClass : '',
       submitHandler: function(form) {
         // form.submit();
@@ -317,19 +263,17 @@
     function showModalForm(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
-      //clear inputs & selects
-      $('#formAdd :input').val('');
-      selectizeJenjang.clear(); selectizeTingkat.clear();
       //jika klik tombol tambah data:
       if(!id) {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/mapel/do_add");
-        $('#modalFormHeader').text('Tambah Mata Pelajaran');
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/jenjang/do_add");
+        $('#formAdd :input').val('');
+        $('#modalFormHeader').text('Tambah Jenjang Pendidikan');
         $('#modalForm').modal('show');
       }
       //jika klik tombol edit data:
       else {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/mapel/do_edit");
-        $('#modalFormHeader').text('Ubah Mata Pelajaran');
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/jenjang/do_edit");
+        $('#modalFormHeader').text('Ubah Jenjang Pendidikan');
         getDetail(id);
       }
     }
@@ -373,7 +317,7 @@
           if(isConfirm) {
             //Hapus banyak data
             $.ajax({
-              url: "<?php echo base_url()?>master/mapel/do_delete",
+              url: "<?php echo base_url()?>master/jenjang/do_delete",
               data: { ids: ids },
               type: 'POST',
               dataType: 'json',
@@ -386,7 +330,7 @@
                   // console.log(response);
                   if(response.result) {
                     showNoty(response.message, 'success');
-                    loadTabelMapel(response.data);
+                    loadTabelJenjang(response.data);
                   }
                   else {
                     showNoty(response.message, 'warning');
@@ -434,9 +378,8 @@
             if(response.status) {
               // console.log(response);
               if(response.result) {
-                jsonList = response.data;
                 showNoty(response.message, 'success');
-                loadTabelMapel(response.data);
+                loadTabelJenjang(response.data);
               }
               else {
                 showNoty(response.message, 'warning');

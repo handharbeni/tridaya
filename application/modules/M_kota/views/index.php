@@ -17,6 +17,7 @@
   <!-- page plugins css -->
   <link rel="stylesheet" href="<?php echo URL_CSS?>sweetalert.css" />
   <link rel="stylesheet" href="<?php echo URL_PLUGIN?>datatables/media/css/jquery.dataTables.css" />
+  <link rel="stylesheet" href="<?php echo URL_PLUGIN?>selectize/dist/css/selectize.default.css" />
 
   <!-- core css -->
   <link href="<?php echo URL_CSS?>ei-icon.css" rel="stylesheet">
@@ -51,7 +52,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Kota
+              <h4>Kota/Kabupaten
                 <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -67,9 +68,9 @@
                         <thead>
                           <tr>
                             <th class="no-search"></th>
-                            <th>Nama Provinsi</th>
-                            <th>Nama Kota</th>
-                            <th>Aksi</th>
+                            <th>Provinsi</th>
+                            <th>Kota</th>
+                            <th class="no-sort">Aksi</th>
                           </tr>
                         </thead>
                         <tbody> 
@@ -90,14 +91,14 @@
               <div class="modal-content">
                 <form action="<?php echo base_url()?>master/kota/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Kota</h4>
+                    <h4 id="modalFormHeader">Tambah Kota/Kabupaten</h4>
                   </div>
                   <div class="modal-body">
                    <div class="row">
                       <div class="col-sm-6">
                        <div class="form-group">
                          <label for="provinsi_id">Provinsi</label>
-                         <select onchange="" name="provinsi_id" id="provinsi_id" class="form-control" required="">
+                         <select onchange="" name="provinsi_id" id="provinsi" required="">
                            
                          </select>
                        </div>
@@ -150,6 +151,7 @@
   <script src="<?php echo URL_PLUGIN?>datatables/media/js/jquery.dataTables.js"></script>
   <script src="<?php echo URL_PLUGIN?>jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="<?php echo URL_PLUGIN?>noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+  <script src="<?php echo URL_PLUGIN?>selectize/dist/js/standalone/selectize.min.js"></script>
 
   <!-- build:js <?php echo URL_JS?>app.min.js -->
   <!-- core js -->
@@ -167,7 +169,7 @@
     var initDataTable = $('#tableData').DataTable({
       "bProcessing": true,
       "bServerSide": true,
-      "order": [[1, 'DESC']],
+      "order": [[1, 'ASC']],
       "ajax":{
             url :"<?php echo base_url()?>master/kota/get_datatable",
             type: "post",  // type of method  , by default would be get
@@ -189,17 +191,8 @@
 
     //loading table body with json data
     // loadTabelProvinsi(jsonList);
-    loadSelectProvinsi(jsonProvinsi);
-
-    function loadSelectProvinsi(json){
-      var html = "<option value='' selected disabled>Pilih Provinsi</option>";
-      for (var i=0; i<json.length; i++){
-       html = html+ "<option value='"+json[i].id+"'>"+json[i].nama_provinsi+"</option>";
-     }
-     $("#provinsi_id").html(html);
-    }
     
-    function getKotaById(id, callback) {
+    function getDetail(id, callback) {
       if(id) {
         $.ajax({
           url: '<?php echo base_url();?>master/kota/get_kota_by_id',
@@ -212,6 +205,7 @@
               var data = response.data;
               //fill id & nama kota for edit
               $('#id').val(data.id);
+              selectizeProvinsi.setValue(data.provinsi_id, false);
               $('#nama_kabkota').val(data.nama_kabkota);
               $('#modalForm').modal('show');
             }
@@ -223,9 +217,27 @@
         });
       }
     }
+
+    //INITIALIZE SELECTIZE
+    var selectizeProvinsi, $selectizeProvinsi;
+    //loading select option provinsi
+    $selectizeProvinsi = $('#provinsi').selectize({
+      options: $.map(jsonProvinsi, function(data, i) {
+        return [{ value: data.id, text: data.nama_provinsi }];
+      }),
+      create: false,
+      sortField: { field: 'text', direction: 'asc' },
+      placeholder: 'Pilih Provinsi',
+      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
+    });
+    selectizeProvinsi = $selectizeProvinsi[0].selectize;
     
-    //initialize form validation
+    //INITIALIZE FORM VALIDATION
     formValidation = $("#formAdd").validate({
+      ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
+            rules: {
+                "provinsi_id": "required"
+            },
       validClass : '',
       submitHandler: function(form) {
         // form.submit();
@@ -239,7 +251,7 @@
       $('#'+target+' .error').removeClass('error');
     }); 
 
-    //show modal form
+    //SHOW MODAL FORM
     function showModalForm(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
@@ -247,19 +259,18 @@
       if(!id) {
         $('#formAdd').attr('action', "<?php echo base_url()?>master/kota/do_add");
         $('#formAdd :input').val('');
-        $('#modalFormHeader').text('Tambah Kota');
+        $('#modalFormHeader').text('Tambah Kota/Kabupaten');
         $('#modalForm').modal('show');
       }
       //jika klik tombol edit data:
       else {
         $('#formAdd').attr('action', "<?php echo base_url()?>master/kota/do_edit");
-        $('#modalFormHeader').text('Ubah Kota');
-        $('#provinsi_id').val(jsonList[id].provinsi_id);
-        getKotaById(id);
+        $('#modalFormHeader').text('Ubah Kota/Kabupaten');
+        getDetail(id);
       }
     }
     
-    //prepare delete 1 data
+    //PREPARE DELETE 1 DATA
     function prepDelete(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
@@ -268,7 +279,7 @@
         doMultiDelete(arrIds);
       }
     }
-    //prepare delete multi data
+    //PREPARE DELETE MULTI DATA
     function prepMultiDelete(e) {
       e.preventDefault();
       //collecting checked checkbox values from table into array
@@ -281,7 +292,7 @@
       }
     }
 
-    //multi delete handler
+    //MULTI DELETE HANDLER
     function doMultiDelete(arrData) {
       let ids = arrData || [];
       if(ids[0] != null) {
@@ -342,7 +353,7 @@
       }
     }
 
-    //modal form submit handler
+    //MODAL FORM SUBMIT HANDLER
     function doSubmit(form) {
       let id = $('#id').val() || '';
       if(form) {

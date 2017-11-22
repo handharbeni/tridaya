@@ -38,8 +38,7 @@ class M_unit extends MX_Controller {
       // ." LEFT JOIN m_kecamatan ON m_unit.kecamatan_id = m_kecamatan.id" 
       // ." LEFT JOIN m_kelurahan ON m_unit.kelurahan_id = m_kelurahan.id" 
       ." WHERE m_unit.deleted = '0' ORDER BY m_akun.nama";
-      $result = $this->model_adm->rawQuery($sql);
-      return $result;
+      return $this->model_adm->rawQuery($sql);
   }
   public function get_unit_by_id()
   {

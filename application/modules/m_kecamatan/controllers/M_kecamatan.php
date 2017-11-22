@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_kota extends MX_Controller {
+class M_kecamatan extends MX_Controller {
   //Global variable
   var $data;
   private $response;
@@ -9,7 +9,7 @@ class M_kota extends MX_Controller {
 	public function __construct() 
   {
       parent::__construct();
-      $this->response = Array( 'status' => 0 );
+      $this->response = array( 'status' => 0 );
       $this->data = array(
         '_header'        => Modules::run('template/header'),
         '_footer'        => Modules::run('template/footer'),
@@ -28,12 +28,12 @@ class M_kota extends MX_Controller {
     $this->load->view('index');
   }
 
-  public function get_kota_by_id()
+  public function get_kecamatan_by_id()
   {
     $params = $this->input->post();
     $response = $this->response;
     if(isset($params['id'])) {
-      $result = get_kota($params['id'])->row();
+      $result = get_kecamatan($params['id'])->row();
       $response = array('status' => 1, 'data' => $result);
     }
     echo json_encode($response);
@@ -45,17 +45,20 @@ class M_kota extends MX_Controller {
       0   =>  'id', 
       1   =>  'nama_provinsi',
       2   =>  'nama_kabkota',
-      3   =>  'aksi'
+      3   =>  'nama_kecamatan',
+      4   =>  'aksi'
     );
-    $query = get_kota();
+    $query = get_kecamatan();
     $totalData = $query->num_rows();
     
-    $sql = "SELECT A.*, B.nama_provinsi FROM m_kabkota A "
-      ." LEFT JOIN m_provinsi B ON A.provinsi_id = B.id"
-      ." WHERE A.deleted = 0"; 
+    $sql = "SELECT m_provinsi.nama_provinsi, m_kabkota.nama_kabkota, m_kecamatan.* FROM m_kecamatan "
+      ." LEFT JOIN m_kabkota ON m_kecamatan.kabkota_id = m_kabkota.id"
+      ." LEFT JOIN m_provinsi ON m_kabkota.provinsi_id = m_provinsi.id"
+      ." WHERE m_kecamatan.deleted = 0"; 
     if(!empty($requestData['search']['value'])) {
-      $sql.=" AND (B.nama_provinsi LIKE '%".$requestData['search']['value']."%'"; 
-      $sql.=" OR A.nama_kabkota LIKE '%".$requestData['search']['value']."%')";
+      $sql.=" AND (m_provinsi.nama_provinsi LIKE '%".$requestData['search']['value']."%'"; 
+      $sql.=" OR m_kabkota.nama_kabkota LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_kecamatan.nama_kecamatan LIKE '%".$requestData['search']['value']."%')";
     }
     $query = $this->model_adm->rawQuery($sql);
     $totalFiltered = $query->num_rows();
@@ -76,6 +79,9 @@ class M_kota extends MX_Controller {
                         .'</div>';
       $tableData[] = '<div class="list-info mrg-top-10">'
                         .'<p>'.$row["nama_kabkota"].'<p>'
+                      .'</div>';
+      $tableData[] = '<div class="list-info mrg-top-10">'
+                        .'<p>'.$row["nama_kecamatan"].'<p>'
                       .'</div>';
       $tableData[] = '<div class="relative mrg-top-10">'
                       .'<div class="btn-group">'
@@ -98,16 +104,17 @@ class M_kota extends MX_Controller {
   public function do_add() {
     $response = $this->response;
     $params = $this->input->post();
+    // print_r($params); die();
     if(!empty($params)) {
       $data_db = $params;
       if(isset($data_db['id'])) { unset($data_db['id']); }
-      $result = $this->model_adm->insert($data_db, 'm_kabkota');
+      $result = $this->model_adm->insert($data_db, 'm_kecamatan');
 
       $data = [];
       $message = "Data gagal ditambahkan!";
       if($result) {
         $message = "Data berhasil ditambahkan!";
-        $data = get_kota()->result();
+        // $data = get_kecamatan()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 
@@ -119,6 +126,7 @@ class M_kota extends MX_Controller {
   public function do_edit() {
     $response = $this->response;
     $params = $this->input->post();
+    // print_r($params); die();
     if(!empty($params['id'])) {
       $condition = array( 
                     'id' => $params['id'] 
@@ -126,13 +134,13 @@ class M_kota extends MX_Controller {
       $data_db = $params;
       $data_db['timestamp'] = date("Y-m-d H:i:s");
       unset($data_db['id']);
-      $result = $this->model_adm->update($condition, $data_db, 'm_kabkota');
+      $result = $this->model_adm->update($condition, $data_db, 'm_kecamatan');
 
       $data = [];
       $message = "Data gagal diubah!";
       if($result) {
         $message = "Data berhasil diubah!";
-        $data = get_kota()->result();
+        // $data = get_kecamatan()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 
@@ -144,6 +152,7 @@ class M_kota extends MX_Controller {
   public function do_delete() {
     $response = $this->response;
     $params = $this->input->post();
+    // print_r($params); die();
     if(!empty($params['ids'])) {
       $data_db = [];
       foreach ($params['ids'] as $id) {
@@ -153,13 +162,13 @@ class M_kota extends MX_Controller {
                 'timestamp' => date("Y-m-d H:i:s")
         );
       }
-      $result = $this->model_adm->update_batch($data_db, 'm_kabkota', 'id');
+      $result = $this->model_adm->update_batch($data_db, 'm_kecamatan', 'id');
 
       $data = [];
       $message = "Data gagal dihapus!";
       if($result) {
         $message = "Data berhasil dihapus!";
-        $data = get_kota()->result();
+        // $data = get_kecamatan()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 

@@ -52,7 +52,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Unit/Cabang
+              <h4>Kecamatan
                 <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -66,14 +66,13 @@
                     <div class="table-overflow">
                       <table id="tableData" class="table table-hover">
                         <thead>
+                          <tr>
                             <th class="no-search"></th>
-                            <th>Unit/Cabang</th>
-                            <th>Alamat</th>
-                            <th>Kota</th>
                             <th>Provinsi</th>
-                            <th>No. Telp</th>
-                            <th>Admin</th>
+                            <th>Kota</th>
+                            <th>Kecamatan</th>
                             <th class="no-sort">Aksi</th>
+                          </tr>
                         </thead>
                         <tbody> 
 
@@ -91,30 +90,16 @@
           <div class="modal fade" id="modalForm">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <form action="<?php echo base_url()?>master/unit/do_add" method="POST" id="formAdd">      
+                <form action="<?php echo base_url()?>master/kecamatan/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Unit/Cabang</h4>
+                    <h4 id="modalFormHeader">Tambah Kecamatan</h4>
                   </div>
                   <div class="modal-body">
                    <div class="row">
                      <div class="col-sm-6">
-                        <div class="form-group">
-                         <label for="nama">Nama Unit</label>
-                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Unit" required="">
-                         <input type="hidden" name="id" id="id" class="form-control" placeholder="ID Unit">
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="level">Admin Unit</label>
-                         <select name="akun_id" id="akun_id" class="" required="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
                        <div class="form-group">
                          <label for="provinsi">Provinsi</label>
-                         <select name="provinsi_id" id="provinsi" class="" required="">
+                         <select name="" id="provinsi" class="" required="">
                          </select>
                        </div>
                      </div>
@@ -125,30 +110,11 @@
                          </select>
                        </div>
                      </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="kecamatan">Kecamatan</label>
-                         <select name="kecamatan_id" id="kecamatan" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="kelurahan">Kelurahan</label>
-                         <select name="kelurahan_id" id="kelurahan" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
                      <div class="col-sm-12">
-                       <div class="form-group">
-                         <label for="kota">Alamat</label>
-                         <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat" required="">
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
                         <div class="form-group">
-                         <label for="no_telp">No. Telepon</label>
-                         <input type="text" name="no_telp" id="no_telp" class="form-control" placeholder="No. Telepon" required="">
+                         <label for="nama_kecamatan">Nama Kecamatan</label>
+                         <input type="text" name="nama_kecamatan" id="nama_kecamatan" class="form-control" placeholder="Nama Kecamatan" required="">
+                         <input type="hidden" id="id" class="form-control" placeholder="ID Kecamatan">
                        </div>
                      </div>
                    </div>
@@ -202,118 +168,68 @@
 
   <!-- page js -->
   <script src="<?php echo URL_JS?>table/data-table.js"></script>
-  <script src="<?php echo URL_JS?>select-wilayah.js"></script>
   <script>
-    var jsonList = <?php echo json_encode($list)?>;
+    var jsonList = <?php echo json_encode(get_kota()->result())?>;
     var jsonProvinsi = <?php echo json_encode(get_provinsi()->result())?>;
     var jsonKota = <?php echo json_encode(get_kota()->result())?>;
-    var jsonKecamatan = [];
-    var jsonKelurahan = [];
-    var jsonAkun = <?php echo json_encode($list_akun)?>;
 
-    // INITIALIZE DATATABLE
-    var tableData = $("#tableData").DataTable({
+    // INITIALIZE DATATABLE SERVERSIDE
+    var initDataTable = $('#tableData').DataTable({
+      "bProcessing": true,
+      "bServerSide": true,
+      "order": [[1, 'ASC']],
+      "ajax":{
+            url :"<?php echo base_url()?>master/kecamatan/get_datatable",
+            type: "post",  // type of method  , by default would be get
+            error: function(){  // error handling code
+              // $("#employee_grid_processing").css("display","none");
+            }
+          },
       "columnDefs": [ {
-              "searchable": false,
-              "orderable": false,
-              "targets": "no-sort"
-          },{
-              "searchable": false,
-              "orderable": true,
-              "targets": "no-search"
-          } ],
-          // "order": [[ 1, 'asc' ]]    
+        "targets"  : 'no-sort',
+        "orderable": false,
+      },{
+        "targets"  : 'no-search',
+        "searchable": false,
+      }],
+      "drawCallback": function( settings ) {
+        // maskInputMoney();
+      }
     });
-    tableData.on( 'order.dt search.dt', function () {
-      // tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-      //     cell.innerHTML = '';
-      // });
-    }).draw();
 
     //LOADING TABLE BODY WITH JSON DATA
-    loadTabelUnit(jsonList);
-
-    function loadTabelUnit(json){
-      //clear table
-      tableData.clear().draw();
-      for(var i=0, data; data = json[i]; i++) {
-        tableData.row.add([
-          '<div class="checkbox mrg-left-20">'
-            +'<i style="display:none">'+data.id+'</i>'
-            +'<input id="task-'+data.id+'" value="'+data.id+'" name="task[]" type="checkbox">'
-              +'<label for="task-'+data.id+'"></label>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.alamat+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama_kabkota+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama_provinsi+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.no_telp+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-            +'<div class="info no-pdd">'
-              +'<span class="title">'+data.nama_akun+'</span>'
-              +'<span class="sub-title">ID '+data.id_akun+'</span>'
-            +'</div>'
-          +'</div>',
-          '<div class="relative mrg-top-10">'
-            +'<div class="btn-group">'
-              +'<a href="javascript:void(0);" class="btn btn-default edit-notif" data-id="'+data.id+'" onclick="showModalForm(event);" title="Ubah data"> <i class="ti-pencil-alt"></i> </a>'
-              +'<a href="" class="btn btn-default text-danger delete-notif" data-id="'+data.id+'" onclick="prepDelete(event);" title="Hapus data"> <i class="ti-trash"></i> </a>'
-            +'</div>'
-          +'</div>'
-        ]).draw( false );
-      }
-    }
+    // loadTabelProvinsi(jsonList);
+    
     function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>master/unit/get_unit_by_id',
+          url: '<?php echo base_url();?>master/kecamatan/get_kecamatan_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
-          beforeSend: function() { $.LoadingOverlay("show");  },
+          beforeSend: function() { },
           success: function(response, status) {
             if(response.status) {
               var data = response.data;
-              // console.log(data);
-              //fill id & nama unit  for edit
+              //fill id & nama kota for edit
               $('#id').val(data.id);
-              $('#nama').val(data.nama);
               selectizeProvinsi.setValue(data.provinsi_id, false);
               selectizeKota.setValue(data.kabkota_id, false);
-              selectizeKecamatan.setValue(data.kecamatan_id, false);
-              selectizeKelurahan.setValue(data.kelurahan_id, false);
-              selectizeAkun.setValue(data.akun_id, false);
-              $("<input type='hidden' id='hddKecId' value='"+data.kecamatan_id+"' readonly=''>").insertAfter("#kecamatan");
-              $("<input type='hidden' id='hddKelId' value='"+data.kelurahan_id+"' readonly=''>").insertAfter("#kelurahan");
-              $('#alamat').val(data.alamat);
-              $('#no_telp').val(data.no_telp);
+              $('#nama_kecamatan').val(data.nama_kecamatan);
               $('#modalForm').modal('show');
             }
           },
           error: function(jqXhr, message, errorThrown){
             console.log('Request error!', message);
-          } 
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+          }
         });
-        $.LoadingOverlay("hide");
       }
     }
-    
+
     //INITIALIZE SELECTIZE
     var selectizeProvinsi, $selectizeProvinsi;
     var selectizeKota, $selectizeKota;
-    var selectizeKecamatan, $selectizeKecamatan;
-    var selectizeKelurahan, $selectizeKelurahan;
-    var selectizeAkun, $selectizeAkun;
     //loading select option provinsi
     $selectizeProvinsi = $('#provinsi').selectize({
       options: $.map(jsonProvinsi, function(data, i) {
@@ -330,7 +246,7 @@
           selectizeKota.clearOptions();
           let filteredArr = $.map(jsonKota, function(data, i) {
             if((data.provinsi_id == val)){
-              return [{ value: data.id, text: data.nama_kabkota, $order: i+1 }];
+              return [{ value: data.id, text: data.nama_kabkota}];
             }
           });
           selectizeKota.enable();
@@ -347,120 +263,20 @@
       create: false,
       sortField: { field: 'text', direction: 'asc' },
       placeholder: 'Pilih Kota/Kabupaten',
-      onChange: function(val) {
-        // console.log('Selectize Kota Onchange!');
-        var xhr;
-        if(!val.length){ 
-          selectizeKecamatan.clear(); selectizeKelurahan.clear();
-          selectizeKecamatan.disable(); selectizeKelurahan.disable(); 
-        }
-        else {
-          selectizeKecamatan.disable(); selectizeKelurahan.disable();
-          selectizeKecamatan.clearOptions(); selectizeKelurahan.clearOptions();
-          selectizeKecamatan.load(function(callback) {
-            // console.log('Loading Kecamatan!!');
-            xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>master/unit/get_kecamatan_by_kota", {id: val}, function(response, status) {
-                  if(status == 'success') {
-                    let filteredArr = $.map(response.data, function(data, i) {
-                      if((data.kabkota_id == val)){
-                        return [{ value: data.id, text: data.nama_kecamatan, $order: i+1 }];
-                      }
-                    });
-                    callback(filteredArr);
-                    selectizeKecamatan.enable();
-                    //workaround to select option on edit data
-                    let hddKecId = $("#hddKecId").val() || '';
-                    selectizeKecamatan.setValue(hddKecId, false);
-                  }
-                  else {
-                    callback();
-                  }
-                }, "json"
-            )
-          });
-        }
-      }
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
-    //loading select option kecamatan
-    $selectizeKecamatan = $('#kecamatan').selectize({
-      options: $.map(jsonKecamatan, function(data, i) {
-        return [{ value: data.id, text: data.nama_kecamatan }];
-      }),
-      create: false,
-      sortField: { field: 'text', direction: 'asc' },
-      placeholder: 'Pilih Kecamatan',
-      onChange: function(val) {
-        // console.log('Selectize Kecamatan Onchange!');
-        var xhr;
-        if(!val.length){ selectizeKelurahan.disable(); }
-        else {
-          selectizeKelurahan.disable();
-          selectizeKelurahan.clearOptions();
-          selectizeKelurahan.load(function(callback) {
-            // console.log('Loading Kelurahan!!');
-            xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>master/unit/get_kelurahan_by_kecamatan", {id: val}, function(response, status) {
-                  // console.log(response);
-                  if(status == 'success') {
-                    let filteredArr = $.map(response.data, function(data, i) {
-                      if((data.kecamatan_id == val)){
-                        return [{ value: data.id, text: data.nama_kelurahan, $order: i+1 }];
-                      }
-                    });
-                    callback(filteredArr);
-                    selectizeKelurahan.enable();
-                    //workaround to select option on edit data
-                    let hddKelId = $("#hddKelId").val() || '';
-                    selectizeKelurahan.setValue(hddKelId, false);
-                  }
-                  else {
-                    callback();
-                  }
-                }, "json"
-            )
-          });
-        }
-      }
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
-    //loading select option kelurahan
-    $selectizeKelurahan = $('#kelurahan').selectize({
-      options: $.map(jsonKelurahan, function(data, i) {
-        return [{ value: data.id, text: data.nama_kelurahan }];
-      }),
-      create: false,
-      sortField: { field: 'text', direction: 'asc' },
-      placeholder: 'Pilih Kelurahan',
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
-    //loading select option akun admin
-    $selectizeAkun = $('#akun_id').selectize({
-      options: $.map(jsonAkun, function(data, i) {
-        return [{ value: data.id, text: data.nama }];
-      }),
-      create: false,
-      sortField: { field: 'text', direction: 'asc' },
-      placeholder: 'Pilih Akun Admin',
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });
     selectizeProvinsi = $selectizeProvinsi[0].selectize;
     selectizeKota = $selectizeKota[0].selectize;
-    selectizeKecamatan = $selectizeKecamatan[0].selectize;
-    selectizeKelurahan = $selectizeKelurahan[0].selectize;
-    selectizeAkun = $selectizeAkun[0].selectize;
-
+    
     //INITIALIZE FORM VALIDATION
     formValidation = $("#formAdd").validate({
       ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
             rules: {
-                "provinsi_id": "required", "kabkota_id": "required",
-                "kecamatan_id": "required", "kelurahan_id": "required",
-                "akun_id": "required"
+                "provinsi_id": "required", "kabkota_id": "required"
             },
       validClass : '',
       submitHandler: function(form) {
+        // form.submit();
         doSubmit(form);
       }
      });
@@ -478,23 +294,21 @@
       //clear inputs & selects
       $('#formAdd :input').val('');
       selectizeProvinsi.clear(); selectizeKota.clear();
-      selectizeKecamatan.clear(); selectizeKelurahan.clear(); 
-      selectizeAkun.clear();
       //jika klik tombol tambah data:
       if(!id) {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/unit/do_add");
-        $('#modalFormHeader').text('Tambah Unit/Cabang');
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/kecamatan/do_add");
+        $('#modalFormHeader').text('Tambah Kecamatan');
         $('#modalForm').modal('show');
       }
       //jika klik tombol edit data:
       else {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/unit/do_edit");
-        $('#modalFormHeader').text('Ubah Unit/Cabang');
+        $('#formAdd').attr('action', "<?php echo base_url()?>master/kecamatan/do_edit");
+        $('#modalFormHeader').text('Ubah Kecamatan');
         getDetail(id);
       }
     }
     
-    //prepare delete 1 data
+    //PREPARE DELETE 1 DATA
     function prepDelete(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
@@ -503,7 +317,7 @@
         doMultiDelete(arrIds);
       }
     }
-    //prepare delete multi data
+    //PREPARE DELETE MULTI DATA
     function prepMultiDelete(e) {
       e.preventDefault();
       //collecting checked checkbox values from table into array
@@ -533,7 +347,7 @@
           if(isConfirm) {
             //Hapus banyak data
             $.ajax({
-              url: "<?php echo base_url()?>master/unit/do_delete",
+              url: "<?php echo base_url()?>master/kecamatan/do_delete",
               data: { ids: ids },
               type: 'POST',
               dataType: 'json',
@@ -546,7 +360,7 @@
                   // console.log(response);
                   if(response.result) {
                     showNoty(response.message, 'success');
-                    loadTabelUnit(response.data);
+                    initDataTable.ajax.reload();
                   }
                   else {
                     showNoty(response.message, 'warning');
@@ -594,8 +408,9 @@
             if(response.status) {
               // console.log(response);
               if(response.result) {
+                jsonList = response.data;
                 showNoty(response.message, 'success');
-                loadTabelUnit(response.data);
+                initDataTable.ajax.reload();
               }
               else {
                 showNoty(response.message, 'warning');

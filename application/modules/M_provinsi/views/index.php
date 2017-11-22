@@ -67,8 +67,8 @@
                         <thead>
                           <tr>
                             <th class="no-search"></th>
-                            <th>Nama Provinsi</th>
-                            <th>Aksi</th>
+                            <th>Provinsi</th>
+                            <th class="no-sort">Aksi</th>
                           </tr>
                         </thead>
                         <tbody> 
@@ -164,7 +164,7 @@
               "orderable": true,
               "targets": "no-search"
           } ],
-          // "order": [[ 1, 'asc' ]]    
+          "order": [[ 1, 'asc' ]]    
     });
     tableData.on( 'order.dt search.dt', function () {
       // tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
@@ -197,7 +197,7 @@
           ] ).draw( false );
       }
     }
-    function getProvinsiById(id, callback) {
+    function getDetail(id, callback) {
       if(id) {
         $.ajax({
           url: '<?php echo base_url();?>master/provinsi/get_provinsi_by_id',
@@ -252,7 +252,7 @@
       else {
         $('#formAdd').attr('action', "<?php echo base_url()?>master/provinsi/do_edit");
         $('#modalFormHeader').text('Ubah Provinsi');
-        getProvinsiById(id);
+        getDetail(id);
       }
     }
     

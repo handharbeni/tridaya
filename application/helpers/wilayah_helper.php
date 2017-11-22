@@ -43,7 +43,7 @@ if(!function_exists("get_kecamatan")) {
 
      //show only active data
       $condition['deleted'] = 0;
-      $sql = "SELECT m_provinsi.nama_provinsi, m_kabkota.nama_kabkota, m_kecamatan.* FROM m_kecamatan";
+      $sql = "SELECT m_provinsi.nama_provinsi, m_kabkota.provinsi_id, m_kabkota.nama_kabkota, m_kecamatan.* FROM m_kecamatan";
       $sql.=" LEFT JOIN m_kabkota ON m_kecamatan.kabkota_id = m_kabkota.id";
       $sql.=" LEFT JOIN m_provinsi ON m_kabkota.provinsi_id = m_provinsi.id";
       $sql.=" WHERE m_kecamatan.deleted = 0";
@@ -68,7 +68,7 @@ if(!function_exists("get_kelurahan")) {
 
      //show only active data
       $condition['deleted'] = 0;
-      $sql = "SELECT m_provinsi.nama_provinsi, m_kabkota.nama_kabkota, m_kecamatan.nama_kecamatan, m_kelurahan.* FROM m_kelurahan";
+      $sql = "SELECT m_provinsi.nama_provinsi, m_kabkota.provinsi_id, m_kabkota.nama_kabkota, m_kecamatan.kabkota_id, m_kecamatan.nama_kecamatan, m_kelurahan.* FROM m_kelurahan";
       $sql.=" LEFT JOIN m_kecamatan ON m_kelurahan.kecamatan_id = m_kecamatan.id";
       $sql.=" LEFT JOIN m_kabkota ON m_kecamatan.kabkota_id = m_kabkota.id";
       $sql.=" LEFT JOIN m_provinsi ON m_kabkota.provinsi_id = m_provinsi.id";
