@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_jenjang extends MX_Controller {
+class I_kategori extends MX_Controller {
   //Global variable
   var $data;
   private $response;
@@ -18,42 +18,24 @@ class M_jenjang extends MX_Controller {
         '_theme_config'  => Modules::run('template/theme_config')
       );
       $this->load->vars($this->data);
-      $this->load->helper('wilayah_helper');
       $this->load->model('model_adm');
       // $this->data can be accessed from anywhere in the controller.
   }
 
 	public function index($params=null)
 	{
-    $data['list'] = $this->get_data_list();
+    $data['list'] = $this->get_data_list()->result();
     $this->load->view('index', $data);
   }
 
   private function get_data_list($id=null)
   {
     $condition['deleted'] = 0;
-    $condition['id !='] = "0";
     if($id) { $condition['id'] = $id; }
-    $data_jenjang = $this->model_adm->select($condition, 'm_jenjang');
-
-    if(!empty($data_jenjang->num_rows())) {
-      $data_jenjang = $data_jenjang->result();
-      $data_tingkat = $this->get_tingkat_jenjang()->result();
-      $join_tingkat = [];
-
-      //get data tingkat_jenjang by id_jenjang then push it into array data_jenjang as tingkat_jenjang field
-      foreach ($data_jenjang as $key => $jenjang) {
-        foreach ($data_tingkat as $key2 => $tingkat) {
-          if($jenjang->id == $tingkat->jenjang_id) {
-            $join_tingkat[$key][] = $tingkat->nama;
-          }
-        }
-        $data_jenjang[$key]->tingkat_jenjang = join(", ", $join_tingkat[$key]);
-      }
-    }
-    return $data_jenjang;
+    $result = $this->model_adm->select($condition, 'i_kategori');
+    return $result;
   }
-  public function get_jenjang_by_id()
+  public function get_kategori_by_id()
   {
     $params = $this->input->post();
     $response = $this->response;
@@ -62,17 +44,10 @@ class M_jenjang extends MX_Controller {
           'deleted' => 0,
           'id' => $params['id']
       );
-      $result = $this->model_adm->select($condition, 'm_jenjang')->row();
+      $result = $this->model_adm->select($condition, 'i_kategori')->row();
       $response = array('status' => 1, 'data' => $result);
     }
     echo json_encode($response);
-  }
-  private function get_tingkat_jenjang($id=null)
-  {
-    $condition['deleted'] = 0;
-    $condition['id !='] = "0";
-    if($id) { $condition['id'] = $id; }
-    return $this->model_adm->select($condition, 'm_jenjang_tingkat');
   }
 
   public function do_add() {
@@ -80,13 +55,13 @@ class M_jenjang extends MX_Controller {
     $params = $this->input->post();
     if(!empty($params)) {
       $data_db = $params;
-      $result = $this->model_adm->insert($data_db, 'm_jenjang');
+      $result = $this->model_adm->insert($data_db, 'i_kategori');
 
       $data = [];
       $message = "Data gagal ditambahkan!";
       if($result) {
         $message = "Data berhasil ditambahkan!";
-        $data = $this->get_data_list();
+        $data = $this->get_data_list()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 
@@ -105,13 +80,13 @@ class M_jenjang extends MX_Controller {
       $data_db = $params;
       $data_db['timestamp'] = date("Y-m-d H:i:s");
       unset($data_db['id']);
-      $result = $this->model_adm->update($condition, $data_db, 'm_jenjang');
+      $result = $this->model_adm->update($condition, $data_db, 'i_kategori');
 
       $data = [];
       $message = "Data gagal diubah!";
       if($result) {
         $message = "Data berhasil diubah!";
-        $data = $this->get_data_list();
+        $data = $this->get_data_list()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 
@@ -132,13 +107,13 @@ class M_jenjang extends MX_Controller {
                 'timestamp' => date("Y-m-d H:i:s")
         );
       }
-      $result = $this->model_adm->update_batch($data_db, 'm_jenjang', 'id');
+      $result = $this->model_adm->update_batch($data_db, 'i_kategori', 'id');
 
       $data = [];
       $message = "Data gagal dihapus!";
       if($result) {
         $message = "Data berhasil dihapus!";
-        $data = $this->get_data_list();
+        $data = $this->get_data_list()->result();
       }
       $response = array(
         'status' => 1, 'result' => $result, 

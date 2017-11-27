@@ -51,7 +51,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Jenjang Pendidikan
+              <h4>Kategori Informasi
                 <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -67,9 +67,7 @@
                         <thead>
                           <tr>
                             <th class="no-search"></th>
-                            <th>Nama Jenjang</th>
-                            <th>Alias</th>
-                            <th>Tingkat Jenjang</th>
+                            <th>Nama Kategori</th>
                             <!-- <th>Keterangan</th> -->
                             <th class="no-sort">Aksi</th>
                           </tr>
@@ -90,23 +88,17 @@
           <div class="modal fade" id="modalForm">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <form action="<?php echo base_url()?>master/jenjang/do_add" method="POST" id="formAdd">      
+                <form action="<?php echo base_url()?>informasi/kategori/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Jenjang Pendidikan</h4>
+                    <h4 id="modalFormHeader">Tambah Kategori</h4>
                   </div>
                   <div class="modal-body">
                    <div class="row">
-                     <div class="col-sm-6">
+                     <div class="col-sm-12">
                         <div class="form-group">
-                         <label for="nama">Nama Jenjang</label>
-                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Jenjang Pendidikan" required="">
-                         <input type="hidden" id="id" class="form-control" placeholder="ID Jenjang">
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                        <div class="form-group">
-                         <label for="alias">Alias</label>
-                         <input type="text" name="alias" id="alias" class="form-control" placeholder="Alias Jenjang Pendidikan" required="">
+                         <label for="nama">Nama Kategori</label>
+                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Kategori" required="">
+                         <input type="hidden" id="id" class="form-control" placeholder="ID Kategori">
                        </div>
                      </div>
                      <!-- <div class="col-sm-12">
@@ -188,9 +180,9 @@
     }).draw();
 
     //loading table body with json data
-    loadTabelJenjang(jsonList);
+    loadTabelKategori(jsonList);
     
-    function loadTabelJenjang(json){
+    function loadTabelKategori(json){
       //clear table
       tableData.clear().draw();
       for(var i=0, data; data = json[i]; i++) {
@@ -202,12 +194,6 @@
               +'</div>',
               '<div class="list-info mrg-top-10">'
                   +'<p>'+data.nama+'<p>'
-              +'</div>',
-              '<div class="list-info mrg-top-10">'
-                  +'<p>'+data.alias+'<p>'
-              +'</div>',
-              '<div class="list-info mrg-top-10">'
-                  +'<p>'+data.tingkat_jenjang+'<p>'
               +'</div>',
               // '<div class="list-info mrg-top-10">'
               //     +'<p>'+data.keterangan+'<p>'
@@ -224,7 +210,7 @@
     function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>master/jenjang/get_jenjang_by_id',
+          url: '<?php echo base_url();?>informasi/kategori/get_kategori_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
@@ -235,7 +221,6 @@
               //fill id & nama provinsi for edit
               $('#id').val(data.id);
               $('#nama').val(data.nama);
-              $('#alias').val(data.alias);
               // $('#keterangan').val(data.keterangan);
               $('#modalForm').modal('show');
             }
@@ -269,15 +254,15 @@
       var id = $(e.currentTarget).data('id') || null;
       //jika klik tombol tambah data:
       if(!id) {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/jenjang/do_add");
+        $('#formAdd').attr('action', "<?php echo base_url()?>informasi/kategori/do_add");
         $('#formAdd :input').val('');
-        $('#modalFormHeader').text('Tambah Jenjang Pendidikan');
+        $('#modalFormHeader').text('Tambah Kategori');
         $('#modalForm').modal('show');
       }
       //jika klik tombol edit data:
       else {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/jenjang/do_edit");
-        $('#modalFormHeader').text('Ubah Jenjang Pendidikan');
+        $('#formAdd').attr('action', "<?php echo base_url()?>informasi/kategori/do_edit");
+        $('#modalFormHeader').text('Ubah Kategori');
         getDetail(id);
       }
     }
@@ -321,7 +306,7 @@
           if(isConfirm) {
             //Hapus banyak data
             $.ajax({
-              url: "<?php echo base_url()?>master/jenjang/do_delete",
+              url: "<?php echo base_url()?>informasi/kategori/do_delete",
               data: { ids: ids },
               type: 'POST',
               dataType: 'json',
@@ -334,7 +319,7 @@
                   // console.log(response);
                   if(response.result) {
                     showNoty(response.message, 'success');
-                    loadTabelJenjang(response.data);
+                    loadTabelKategori(response.data);
                   }
                   else {
                     showNoty(response.message, 'warning');
@@ -383,7 +368,7 @@
               // console.log(response);
               if(response.result) {
                 showNoty(response.message, 'success');
-                loadTabelJenjang(response.data);
+                loadTabelKategori(response.data);
               }
               else {
                 showNoty(response.message, 'warning');

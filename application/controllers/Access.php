@@ -34,10 +34,19 @@ class Access extends MX_Controller {
   public function informasi($params=null, $params2='index', $params3=null)
   {
     if($params) {
-      echo modules::run('m_'.$params.'/'.$params2);
+      echo modules::run('i_'.$params.'/'.$params2);
     }
     else {
-      echo modules::run('m_informasi/index');
+      echo modules::run('i_informasi/index');
+    }
+  }
+  public function welkam($params=null, $params2='index', $params3=null)
+  {
+    if($params) {
+      echo modules::run($params.'/'.$params2);
+    }
+    else {
+      echo modules::run('welkam/index');
     }
   }
 }
