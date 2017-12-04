@@ -161,16 +161,29 @@
           
         </ul>
       </li>
+      
       <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">
-            <i class="ti-announcement"></i>
+            <i class="ti-user"></i>
           </span>
           <span class="title">Informasi</span>
-          
+          <span class="arrow">
+            <i class="ti-angle-right"></i>
+          </span>
         </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="<?php echo base_url()?>informasi">Informasi</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url()?>informasi/kategori">Kategori</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url()?>informasi/tag">Tag</a>
+          </li>
+        </ul>
       </li>
-      
       
       <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="nvd3.html">

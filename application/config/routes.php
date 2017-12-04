@@ -59,6 +59,14 @@ $route['master/(:any)/(:any)'] = 'master/index/$1/$2';*/
 /*$route['(:any)/(:any)'] = '$1/index/$2';
 $route['(:any)/(:any)/(:any)'] = '$1/index/$2/$3';*/
 
-$route['(:any)/(:any)/(:any)'] = 'access/$1/$2/$3';
-$route['(:any)/(:any)'] = 'access/$1/$2';
 $route['(:any)'] = 'access/$1';
+$route['(:any)/(:any)'] = 'access/$1/$2';
+$route['(:any)/(:any)/(:any)'] = 'access/$1/$2/$3';
+
+// $route['(:any)'] = 'access/$1';
+
+// $route['access/(:any)/(:any)'] = 'access/$1/$2/$3';
+// $route['access/(:any)'] = 'access/$1/$2';
+
+// $route['batik/(:any)/(:any)'] = 'batik/$1/$2/$3';
+// $route['batik/(:any)'] = 'batik/$1/$2';

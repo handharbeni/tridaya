@@ -74,7 +74,7 @@
                         <thead>
                           <tr>
                             <th class="no-search"></th>
-                            <th>Thumbnail</th>
+                            <th class="no-sort">Thumbnail</th>
                             <th>Kategori</th>
                             <th>Judul</th>
                             <th>Informasi</th>
