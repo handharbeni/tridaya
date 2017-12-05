@@ -37,6 +37,102 @@ class Sekolah_pendaftar extends MX_Controller {
     $sql .= " ORDER BY m_siswa_sekolah.timestamp DESC";
     return $this->model_adm->rawQuery($sql);
   }
+  public function get_ortu_by_id()
+  {
+    $params = $this->input->post();
+    $response = $this->response;
+    $condition = [];
+    if(isset($params['id'])) {
+      $condition['m_orangtua_sekolah.id'] = $params['id'];
+    }
+    if(isset($params['siswa_id'])) {
+      $condition['m_orangtua_sekolah.siswa_id'] = $params['siswa_id'];
+    }
+    if(!empty($condition)) {
+      $select = 'm_orangtua_sekolah.*, m_agama.nama AS nama_agama';
+      $join[] = ['m_agama', 'm_agama.id = m_orangtua_sekolah.agama_id', 'left'];
+      $condition['m_orangtua_sekolah.deleted'] = 0;
+
+      $result = $this->model_adm->select_join($condition, 'm_orangtua_sekolah', $select, $join)->result();
+      $response = array('status' => 1, 'data' => $result);
+    }
+    // print('<pre>'.print_r($response, true).'</pre>');
+    echo json_encode($response);
+  }
+  public function get_kesehatan_by_id()
+  {
+    $params = $this->input->post();
+    $response = $this->response;
+    $condition = [];
+    if(isset($params['id'])) {
+      $condition['id'] = $params['id'];
+    }
+    if(isset($params['siswa_id'])) {
+      $condition['siswa_id'] = $params['siswa_id'];
+    }
+    if(!empty($condition)) {
+      //First, get pertanyaan keehatan
+      $pertanyaan = $this->model_adm->get('m_kesehatan_pertanyaan')->result();
+      $jawaban = $this->model_adm->select($condition, 'm_kesehatan_sekolah')->row();
+
+      $data_kesehatan = [];
+      if(!empty($jawaban)) {
+        $arr_jawaban = json_decode($jawaban->jawaban);
+        foreach ($arr_jawaban as $key_jawab => $jawab) {
+          foreach ($pertanyaan as $key_tanya => $tanya) {
+            if($key_jawab == $tanya->id) {
+              $data_kesehatan['kat_'.$tanya->kategori_id]['nama_kategori'] = $tanya->kategori;
+
+              $data_kesehatan['kat_'.$tanya->kategori_id]['data'][] = array(
+                      'id_pertanyaan' => $tanya->id,
+                      'pertanyaan' => $tanya->pertanyaan,
+                      'jawaban' => $jawab
+                    );
+            }
+          }
+        }
+      }
+      $response = array('status' => 1, 'data' => $data_kesehatan);
+    }
+    // print('<pre>'.print_r($response, true).'</pre>');
+    echo json_encode($response);
+  }
+  public function get_isian_by_id()
+  {
+    $params = $this->input->post();
+    $response = $this->response;
+    $condition = [];
+    if(isset($params['id'])) {
+      $condition['id'] = $params['id'];
+    }
+    if(isset($params['siswa_id'])) {
+      $condition['siswa_id'] = $params['siswa_id'];
+    }
+    if(!empty($condition)) {
+      //First, get pertanyaan keehatan
+      $pertanyaan = $this->model_adm->get('m_isian_pertanyaan')->result();
+      $jawaban = $this->model_adm->select($condition, 'm_isian_sekolah')->row();
+
+      $data_kesehatan = [];
+      if(!empty($jawaban)) {
+        $arr_jawaban = json_decode($jawaban->jawaban);
+        foreach ($arr_jawaban as $key_jawab => $jawab) {
+          foreach ($pertanyaan as $key_tanya => $tanya) {
+            if($key_jawab == $tanya->id) {
+              $data_kesehatan['isi_'.$tanya->id] = array(
+                      'id_pertanyaan' => $tanya->id,
+                      'pertanyaan' => (!empty($tanya->pertanyaan_lanjutan) ? $tanya->pertanyaan.' ('.$tanya->pertanyaan_lanjutan.')' : $tanya->pertanyaan),
+                      'jawaban' => (!empty($jawab) ? $jawab : '-')
+                    );
+            }
+          }
+        }
+      }
+      $response = array('status' => 1, 'data' => $data_kesehatan);
+    }
+    // print('<pre>'.print_r($response, true).'</pre>');
+    echo json_encode($response);
+  }
   public function get_kelurahan_by_id()
   {
     $params = $this->input->post();
@@ -66,9 +162,9 @@ class Sekolah_pendaftar extends MX_Controller {
       ." LEFT JOIN m_agama ON m_siswa_sekolah.agama_id = m_agama.id"
       ." WHERE m_siswa_sekolah.deleted = 0"; 
     if(!empty($requestData['search']['value'])) {
-      $sql.=" AND (m_siswa_sekolah.nama LIKE '%".$requestData['search']['value']."%'"; 
+      $sql.=" AND (m_siswa_sekolah.nama_lengkap LIKE '%".$requestData['search']['value']."%'"; 
       $sql.=" OR m_siswa_sekolah.tanggal_lahir LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_siswa_sekolah.usia LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_siswa_sekolah.usia_tahun LIKE '%".$requestData['search']['value']."%'";
       $sql.=" OR m_siswa_sekolah.no_telp LIKE '%".$requestData['search']['value']."%')";
     }
     $query = $this->model_adm->rawQuery($sql);

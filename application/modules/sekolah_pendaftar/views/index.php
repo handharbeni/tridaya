@@ -138,7 +138,110 @@
               </div>
             </div>
           </div>
-          <!-- Modal END-->             
+          <!-- Modal END-->    
+
+          <!-- Modal Detail Orang Tua START-->
+          <div class="modal fade" id="modalOrtu">
+            <div class="modal-dialog modal-lg" role="document" style="max-width:1300px">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 id="modalOrtuHeader">Detail Orang Tua</h4>
+                </div>
+                <div class="modal-body">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-block">
+                        <table id="tableDataOrtu" class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th class="no-search">#</th>
+                              <th>Nama Lengkap</th>
+                              <th>Peran</th>
+                              <th>Tempat, Tanggal Lahir</th>
+                              <th>Pekerjaan</th>
+                              <th>Pendidikan</th>
+                              <th>Agama</th>
+                              <th>Alamat</th>
+                              <th>Email</th>
+                              <th>No. Telp/HP</th>
+                              <th class="no-sort">Aksi</th>
+                            </tr>
+                          </thead>
+                          <tbody> 
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="text-right">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Detail Orang Tua END-->             
+
+          <!-- Modal Detail Kesehatan START-->
+          <div class="modal fade" id="modalKesehatan">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 id="modalKesehatanHeader">Detail Kesehatan</h4>
+                </div>
+                <div class="modal-body">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-block">
+                        <div id="modalKesehatanBody"></div>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="text-right">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Detail Orang Tua END-->
+
+          <!-- Modal Detail isian START-->
+          <div class="modal fade" id="modalIsian">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 id="modalIsianHeader">Detail Isian</h4>
+                </div>
+                <div class="modal-body">
+                 <div class="row">
+                  <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-block">
+                        <div id="modalIsianBody"></div>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="text-right">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Detail Orang Tua END-->             
         </div>
         <!-- Content Wrapper END -->
 
@@ -168,6 +271,7 @@
   <script src="<?php echo URL_PLUGIN?>jquery-validation/dist/jquery.validate.min.js"></script>
   <script src="<?php echo URL_PLUGIN?>noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
   <script src="<?php echo URL_PLUGIN?>selectize/dist/js/standalone/selectize.min.js"></script>
+  <script src="<?php echo URL_PLUGIN?>moment/min/moment.min.js"></script>
 
   <!-- build:js <?php echo URL_JS?>app.min.js -->
   <!-- core js -->
@@ -182,8 +286,9 @@
     var jsonProvinsi = <?php echo json_encode(get_provinsi()->result())?>;
     var jsonKota = <?php echo json_encode(get_kota()->result())?>;
     var jsonKecamatan = '';
+    var jsonOrtu = '';
 
-    // Initialize datatable Serverside
+    // INITIALIZE DATATABLE SERVERSIDE
     var initDataTable = $('#tableData').DataTable({
       "bProcessing": true,
       "bServerSide": true,
@@ -206,9 +311,61 @@
         // maskInputMoney();
       }
     });
+    // INITIALIZE DATATABLE ORTU
+    var tableDataOrtu = $("#tableDataOrtu").DataTable({
+      "columnDefs": [ 
+            { "targets": "no-sort", "searchable": false, "orderable": false },
+            { "targets": "no-search", "searchable": false, "orderable": true } 
+          ],
+          "order": [[ 1, 'asc' ]]    
+    });
+    tableDataOrtu.on( 'order.dt search.dt', function () {
+      // tableData.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+      //     cell.innerHTML = '';
+      // });
+    }).draw();
 
     //loading table body with json data
-    // loadTabelProvinsi(jsonList);
+    // loadTabelOrtu(jsonOrtu);
+
+    function loadTabelOrtu(json){
+      //clear table
+      console.log('masuk');
+      tableDataOrtu.clear().draw();
+      if(json) {
+        console.log('masuk if');
+        console.log(json);
+        for(var i=0, data; data = json[i]; i++) {
+          console.log('MASUK FOR');
+          let peran = (data.peran == 1) ? 'Ayah' : ((data.peran == 2) ? 'Ibu' : 'Wali');
+          tableDataOrtu.row.add( [
+            '<div class="list-info mrg-top-10 text-center">'+ (i+1) +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.nama_lengkap +'</div>',
+            '<div class="list-info mrg-top-10">'+ peran +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.tempat_lahir+', '
+              +moment(data.tanggal_lahir).format("DD-MM-YYYY") +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.pekerjaan +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.pendidikan +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.nama_agama +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.alamat +'</div>',
+            '<div class="list-info mrg-top-10">'+ data.email +'</div>',
+            '<div class="list-info mrg-top-10">'
+              +'<div class="info no-pdd">'
+                +'<p class="title">'+ data.no_telp +'</p>'
+                +'<p class="title">'+ data.no_hp +'</p>'
+              +'</div>'
+            +'</div>',
+
+            '<div class="relative mrg-top-10">'
+              +'<div class="btn-group btn-sm">'
+                +'<a href="javascript:void(0);" class="btn btn-default edit-notif" data-id="'+data.id+'" onclick="showModalForm(event);" title="Ubah data"> <i class="ti-pencil-alt"></i> </a>'
+                +'<a href="" class="btn btn-default text-danger delete-notif" data-id="'+data.id+'" onclick="prepDelete(event);" title="Hapus data"> <i class="ti-trash"></i> </a>'
+              +'</div>'
+            +'</div>'
+          ] ).draw( false );
+        }
+      }
+    }
     
     function getDetail(id, callback) {
       if(id) {
@@ -238,7 +395,7 @@
         });
       }
     }
-
+    
     //INITIALIZE SELECTIZE
     var selectizeProvinsi, $selectizeProvinsi;
     var selectizeKota, $selectizeKota;
@@ -343,7 +500,7 @@
       $('#'+target+' .error').removeClass('error');
     }); 
 
-    //show modal form
+    //SHOW MODAL FORM
     function showModalForm(e) {
       e.preventDefault();
       var id = $(e.currentTarget).data('id') || null;
@@ -364,6 +521,108 @@
         getDetail(id);
       }
     }
+    // SHOW MODAL DETAIL ORTU
+    function showDetailOrtu(e) {
+      e.preventDefault();
+      var id = $(e.currentTarget).data('id') || null;
+      if(id) {
+        $.ajax({
+          url: '<?php echo base_url();?>sekolah/pendaftar/get_ortu_by_id',
+          data: { siswa_id : id },
+          type: 'POST',
+          dataType: 'json',
+          beforeSend: () => { $.LoadingOverlay("show"); },
+          success: function(response, status) {
+            if(response.status) {
+              var data = response.data;
+              loadTabelOrtu(data);
+              $('#modalOrtu').modal('show');
+            }
+          },
+          error: function(jqXhr, message, errorThrown){
+            console.log('Request error!', message);
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+          },
+          complete: () => { $.LoadingOverlay("hide"); }
+        });
+      }
+    }
+    // SHOW MODAL DETAIL KESEHATAN
+    function showDetailKesehatan(e) {
+      e.preventDefault();
+      var id = $(e.currentTarget).data('id') || null;
+      if(id) {
+        $.ajax({
+          url: '<?php echo base_url();?>sekolah/pendaftar/get_kesehatan_by_id',
+          data: { siswa_id : id },
+          type: 'POST',
+          dataType: 'json',
+          beforeSend: () => { $.LoadingOverlay("show"); },
+          success: function(response, status) {
+            if(response.status) {
+              var html = '';
+              $.map(response.data, function(row, i) {
+                html += '<h5>'+row.nama_kategori+'</h5>'
+                + '<ol>';
+                $.map(row.data, function(jawab, j) {
+                  html += '<li>'+jawab.pertanyaan
+                        + '<br><p>'+(jawab.jawaban || "-")+'</p></li>';
+                });
+                html += '</ol>';
+              });
+
+              if(response.data.length <= 0) {
+                html = '<h5 class="text-center">Tidak ada data</h5>';
+              }
+              $('#modalKesehatanBody').html(html);
+              $('#modalKesehatan').modal('show');
+            }
+          },
+          error: function(jqXhr, message, errorThrown){
+            console.log('Request error!', message);
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+          },
+          complete: () => { $.LoadingOverlay("hide"); }
+        });
+      }
+    }
+    // SHOW MODAL DETAIL ISIAN
+    function showDetailIsian(e) {
+      e.preventDefault();
+      var id = $(e.currentTarget).data('id') || null;
+      if(id) {
+        $.ajax({
+          url: '<?php echo base_url();?>sekolah/pendaftar/get_isian_by_id',
+          data: { siswa_id : id },
+          type: 'POST',
+          dataType: 'json',
+          beforeSend: () => { $.LoadingOverlay("show"); },
+          success: function(response, status) {
+            if(response.status) {
+              var html = '<h5>Detail Isian Siswa</h5>'
+                      +'<ol>';
+              $.map(response.data, function(row, i) {
+                html += '<li>'+row.pertanyaan
+                      + '<br><p>'+(row.jawaban || "-")+'</p></li>';
+              });
+              html += '</ol>';
+
+              if(response.data.length <= 0) {
+                html = '<h5 class="text-center">Tidak ada data</h5>';
+              }
+              $('#modalIsianBody').html(html);
+              $('#modalIsian').modal('show');
+            }
+          },
+          error: function(jqXhr, message, errorThrown){
+            console.log('Request error!', message);
+            showNoty('Error! Perintah tidak dapat dijalankan', 'error');
+          },
+          complete: () => { $.LoadingOverlay("hide"); }
+        });
+      }
+    }
+
     
     //prepare delete 1 data
     function prepDelete(e) {

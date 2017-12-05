@@ -37,17 +37,17 @@
           <li>
             <a href="<?php echo base_url();?>master/unit">Unit/Cabang</a>
           </li>
-          <li>
-            <a href="<?php echo base_url();?>master/siswa">Siswa</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url();?>master/guru">Guru</a>
-          </li>
-          <li>
+          <!-- <li>
             <a href="<?php echo base_url();?>master/kelas">Kelas</a>
-          </li>
+          </li> -->
           <li>
             <a href="<?php echo base_url();?>master/mapel">Mata Pelajaran</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url();?>master/jenjang">Jenjang</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url();?>master/tingkat_jenjang">Tingkat Jenjang</a>
           </li>
           <li class="nav-item dropdown">
             <a href="javascript:void(0);">
@@ -122,13 +122,19 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="<?php echo base_url()?>master/sekolah">Data Sekolah</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>sekolah/pendatar">Data Pendaftar</a>
+                <a href="<?php echo base_url()?>sekolah/pendaftar">Data Pendaftar</a>
               </li>
               <li>
                 <a href="<?php echo base_url()?>sekolah/siswa">Data Siswa</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>master/sekolah">Data Sekolah</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>sekolah/guru">Data Guru</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>sekolah/kelas">Data Kelas</a>
               </li>
               <!-- <li>
                 <a href="<?php echo base_url()?>master/kelas">Kelas</a>
@@ -164,7 +170,7 @@
         </ul>
       </li> -->
       
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">
             <i class="ti-time"></i>
@@ -182,7 +188,7 @@
             <a href="invoice.html">Absensi Guru</a>
           </li>   
         </ul>
-      </li>
+      </li> -->
       <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">

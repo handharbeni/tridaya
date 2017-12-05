@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"modal-",
+				"modal-body"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"arr",
+				"arr_jawaban"
+			],
+			[
+				"key_",
+				"key_jawab"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"html",
+				"htmlBodyKesehatan"
+			],
+			[
+				"load",
+				"loadingoverlay"
+			],
+			[
+				"kee",
+				"kesehatan"
+			],
+			[
+				"strrep",
+				"str_replace"
+			],
+			[
+				"int",
+				"intval"
+			],
+			[
+				"data_",
+				"data_db"
+			],
+			[
 				"no_te",
 				"no_telp_ibu"
 			],
@@ -26,10 +70,6 @@
 			[
 				"bootst",
 				"bootstrapWizard"
-			],
-			[
-				"arr",
-				"arr_data"
 			],
 			[
 				"ke",
@@ -76,10 +116,6 @@
 				"tags"
 			],
 			[
-				"json",
-				"json_tags"
-			],
-			[
 				"ini",
 				"initDataTable"
 			],
@@ -114,10 +150,6 @@
 			[
 				"val",
 				"value"
-			],
-			[
-				"load",
-				"loadTabelMapel"
 			],
 			[
 				"dele",
@@ -202,10 +234,6 @@
 			[
 				"URL_",
 				"URL_PLUGIN"
-			],
-			[
-				"res",
-				"result"
 			],
 			[
 				"clear",
@@ -486,34 +514,6 @@
 			[
 				"passwo",
 				"password_baru"
-			],
-			[
-				"e",
-				"eef5f5"
-			],
-			[
-				"chec",
-				"checkGantiPassword"
-			],
-			[
-				"cl",
-				"click"
-			],
-			[
-				"st",
-				"stiker"
-			],
-			[
-				"le",
-				"length"
-			],
-			[
-				"fade",
-				"fadeIn"
-			],
-			[
-				"loading",
-				"loadingPaket"
 			]
 		]
 	},
@@ -575,7 +575,7 @@
 			"file": "application/controllers/Access.php",
 			"settings":
 			{
-				"buffer_size": 1621,
+				"buffer_size": 1853,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -584,7 +584,7 @@
 			"file": "application/models/Model_adm.php",
 			"settings":
 			{
-				"buffer_size": 2521,
+				"buffer_size": 3017,
 				"encoding": "UTF-8",
 				"line_ending": "CR"
 			}
@@ -691,16 +691,52 @@
 			"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
 			"settings":
 			{
-				"buffer_size": 5863,
+				"buffer_size": 8327,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_pendaftar/controllers/Sekolah_pendaftar.php",
+			"settings":
+			{
+				"buffer_size": 11539,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/reg_private/controllers/Reg_private.php",
+			"settings":
+			{
+				"buffer_size": 8327,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/reg_private/views/index.php",
+			"settings":
+			{
+				"buffer_size": 57032,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_pendaftar/views/index.php",
+			"settings":
+			{
+				"buffer_size": 29657,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "application/modules/reg_sekolah/views/index.php",
 			"settings":
 			{
-				"buffer_size": 63587,
+				"buffer_size": 63665,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -718,7 +754,7 @@
 			"file": "application/modules/template/views/sidebar_left.php",
 			"settings":
 			{
-				"buffer_size": 8994,
+				"buffer_size": 9291,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -830,6 +866,15 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"contents": "*PROGRESS ADMIN SIDE*\n*1. MASTER (85%)* => kemungkinan masih ada tambahan module nanti (tergantung kebutuhan)\n*Sudah:*\n> Unit/Cabang\n> Mapel\n> Jenjang\n> Tingkat_jenjang\n> Data Pendukung:\n  - Provinsi\n  - Kota \n  - Kecamatan \n  - Kelurahan \n  - Tahun_ajaran\n\n*Belum:*\n> Menu\n> Hak Akses\n\n*2. OPERASIONAL (20%)*\n*Sudah: *\n> Registrasi:\n  - Sekolah\n> Sekolah (PG/TK/SD):\n  - Data Pendaftar (Kurang Upd/Del data pendaftar dan orang tua)\n\n*Belum:*\n> Registrasi:\n  - Private\n  - Bimbel\n  - Batik\n> Sekolah (PG/TK/SD):\n  - Data Siswa\n  - Data Guru\n  - Data Sekolah\n  - Data Kelas\n> Private\n  - Data Pendaftar\n  - Data Siswa\n  - Data Guru\n> Bimbel\n  - Data Pendaftar\n  - Data Siswa\n  - Data Guru\n> Batik\n  - Data Pendaftar\n  - Data Siswa\n  - Data Guru\n\n*3. JADWAL (0%)*\n*Belum:*\n> Penjadwalan\n  - Sekolah\n  - Private\n  - Bimbel\n  - Batik\n\n*4. PEMBAYARAN (0%)*\n*Belum:*\n> Riwayat Pembayaran\n  - Sekolah\n  - Private\n  - Bimbel\n  - Batik\n> Pengaturan Biaya\n  - Sekolah\n  - Private\n  - Bimbel\n  - Batik\n\n*5. INFORMASI (90%)*\n*Sudah:*\n> Informasi\n> Kategori\n> Tag\n  \n*Belum:*\n> Detail informasi (Tergantung kebutuhan)\n\n*6. MATERI (0%)*\n*Belum:*\n> Upload Materi\n\n*7. LAPORAN (0%)*\n*Belum:*\n> Laporan",
+			"settings":
+			{
+				"buffer_size": 1185,
+				"line_ending": "Windows",
+				"name": "*PROGRESS ADMIN SIDE*"
+			}
 		}
 	],
 	"build_system": "",
@@ -839,7 +884,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 207.0,
+		"height": 342.0,
 		"last_filter": "reinde",
 		"selected_items":
 		[
@@ -860,7 +905,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 420.0
+		"width": 453.0
 	},
 	"console":
 	{
@@ -896,6 +941,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/user/AppData/Local/Temp/scp14069/var/www/html/development/application/modules/template/views/sidebar_left.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar_left.php",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Stok_pesanan/views/view.php",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Produk/views/view.php",
@@ -1022,8 +1068,7 @@
 		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/index.php",
 		"/C/Users/user/AppData/Local/Temp/scp57649/gopray/application/config/constants.php",
 		"/C/Users/user/AppData/Local/Temp/scp54792/gopray/application/controllers/Signin.php",
-		"/C/xampp/htdocs/github/aqilapricelist/application/helpers/alert_helper.php",
-		"/C/xampp/htdocs/github/gopray_parent/assets/css/new_home/style.css"
+		"/C/xampp/htdocs/github/aqilapricelist/application/helpers/alert_helper.php"
 	],
 	"find":
 	{
@@ -1041,6 +1086,69 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"alamat",
+			"addRowNilai",
+			"nama map",
+			"e.targe",
+			"event",
+			"(countRow+1)",
+			"minus",
+			"btn",
+			"btn0",
+			"span",
+			"mrg-",
+			"input-sm",
+			"mapel_tidak_suka",
+			"5",
+			"4",
+			"nama_panggilan",
+			"nama_lengkap",
+			"ya ",
+			"ya",
+			"alamat",
+			"%)",
+			"Belum:",
+			"Sudah:",
+			".",
+			"-",
+			"M_",
+			"jawab",
+			"modalIsianBody",
+			"modalKesehatan",
+			"Kesehatan",
+			"m_kesehatan_sekolah",
+			"modalkeseha",
+			"modalKesehatanBody",
+			"htmlBodyKesehatan",
+			"modalkese",
+			"h4",
+			"h3",
+			"m_orangtua_sekolah",
+			"beforeSend: function() { $.LoadingOverlay(\"show\"); },",
+			"no.",
+			"modal-",
+			"tabledatao",
+			"Tanggal",
+			"modalor",
+			"tabledata",
+			"loadingoverlay",
+			"show",
+			"tableda",
+			"modal",
+			"Tambah",
+			"get_data_list",
+			"registras",
+			"selectP",
+			"validat",
+			"LoadingOverlay",
+			"btns",
+			"btnSubmit",
+			"thanks fo",
+			"KESEHATAN",
+			"kesehatan",
+			"pertanyaan",
+			"params",
+			"keseha",
 			"jawaban-<",
 			"validate",
 			"validato",
@@ -1105,70 +1213,7 @@
 			"path",
 			"url_up",
 			"akun_id",
-			"tag",
-			"price",
-			"pref",
-			"max w",
-			"max_w",
-			"datata",
-			"popo",
-			"showpop",
-			"show",
-			"popo",
-			"foto_url",
-			"foto\"",
-			"foto",
-			"foto_url",
-			"wilayah_helper",
-			"process_image",
-			"unit_id",
-			"selectizeUnit",
-			"pilih un",
-			"akun_id",
-			"akun",
-			"loadTabelTingkatJenjang",
-			"loadTabelTingkatJenjang ",
-			"proses",
-			"process_files",
-			"get_last_id",
-			"proses_foto",
-			"foto",
-			"thumb",
-			"hddPublished",
-			"published",
-			"toggle",
-			"summer",
-			"thumbna",
-			"summerno",
-			"textarea",
-			"konten",
-			"div",
-			"tags",
-			"publis",
-			"dosubm",
-			"doSubmit",
-			"showno",
-			"noty",
-			"formAdd",
-			"doSub",
-			"i_kategori",
-			"noty",
-			"overla",
-			"$.LoadingOverlay(\"show\"); ",
-			"doSubmit",
-			"valida",
-			"doSubmit",
-			"btnSubmit",
-			"btnSubmit\n",
-			"btnSubmit",
-			"files",
-			"selectizeK",
-			"selectizek",
-			"$tag",
-			"tableData",
-			"form",
-			"kategori",
-			"#info"
+			"tag"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1186,7 +1231,7 @@
 	"groups":
 	[
 		{
-			"selected": 19,
+			"selected": 20,
 			"sheets":
 			[
 				{
@@ -1216,7 +1261,7 @@
 						"translation.y": 1992.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
@@ -1244,7 +1289,7 @@
 						"translation.y": 3748.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -1272,7 +1317,7 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -1302,7 +1347,7 @@
 						"translation.y": 6.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -1330,7 +1375,7 @@
 						"translation.y": 784.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -1358,7 +1403,7 @@
 						"translation.y": 501.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -1367,15 +1412,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1621,
+						"buffer_size": 1853,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1213,
-								1213
+								1622,
+								1622
 							]
 						],
 						"settings":
@@ -1385,10 +1430,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 279.0,
+						"translation.y": 501.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -1397,15 +1442,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2521,
+						"buffer_size": 3017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2120,
-								2120
+								1098,
+								1098
 							]
 						],
 						"settings":
@@ -1414,10 +1459,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1001.0,
+						"translation.y": 173.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1447,7 +1492,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
@@ -1477,7 +1522,7 @@
 						"translation.y": 1632.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
@@ -1507,7 +1552,7 @@
 						"translation.y": 522.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -1537,7 +1582,7 @@
 						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
@@ -1567,7 +1612,7 @@
 						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
@@ -1597,7 +1642,7 @@
 						"translation.y": 246.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
@@ -1627,7 +1672,7 @@
 						"translation.y": 351.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -1657,7 +1702,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
@@ -1687,7 +1732,7 @@
 						"translation.y": 27.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1717,7 +1762,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -1733,8 +1778,8 @@
 						"selection":
 						[
 							[
-								2571,
-								2571
+								1753,
+								1349
 							]
 						],
 						"settings":
@@ -1744,10 +1789,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1756,15 +1801,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5863,
+						"buffer_size": 8327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3718,
-								3718
+								3865,
+								3865
 							]
 						],
 						"settings":
@@ -1774,10 +1819,70 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1325.0,
+						"translation.y": 36.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "application/modules/sekolah_pendaftar/controllers/Sekolah_pendaftar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7906,
+								8088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2969.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "application/modules/reg_private/controllers/Reg_private.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								549,
+								549
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 36.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1787,20 +1892,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 20,
-					"file": "application/modules/reg_sekolah/views/index.php",
+					"buffer": 22,
+					"file": "application/modules/reg_private/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 63587,
+						"buffer_size": 57032,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								37600,
-								37600
+								23280,
+								23280
 							]
 						],
 						"settings":
@@ -1810,14 +1915,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10398.0,
+						"translation.y": 7299.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 23,
+					"file": "application/modules/sekolah_pendaftar/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23678,
+								23678
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9345.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "application/modules/reg_sekolah/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 63665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10582,
+								11104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3194.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
 					"file": "application/modules/i_informasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1843,24 +2008,24 @@
 						"translation.y": 5699.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 26,
 					"file": "application/modules/template/views/sidebar_left.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8994,
+						"buffer_size": 9291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3588,
-								3588
+								5896,
+								6464
 							]
 						],
 						"settings":
@@ -1870,14 +2035,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 900.0,
+						"translation.y": 2444.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 27,
 					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
 					"semi_transient": false,
 					"settings":
@@ -1903,11 +2068,11 @@
 						"translation.y": 800.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 28,
 					"file": "application/modules/i_kategori/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1933,11 +2098,11 @@
 						"translation.y": 2399.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 29,
 					"file": "application/modules/i_tag/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1949,8 +2114,8 @@
 						"selection":
 						[
 							[
-								7958,
-								7958
+								9705,
+								9705
 							]
 						],
 						"settings":
@@ -1960,14 +2125,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3047.0,
+						"translation.y": 3753.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 30,
 					"file": "application/modules/m_tingkat_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1993,11 +2158,11 @@
 						"translation.y": 923.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 31,
 					"file": "application/modules/m_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2023,11 +2188,11 @@
 						"translation.y": 4784.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 32,
 					"file": "application/modules/m_mapel/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2053,11 +2218,11 @@
 						"translation.y": 6824.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 33,
 					"file": "application/modules/m_kecamatan/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2083,11 +2248,11 @@
 						"translation.y": 3212.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 34,
 					"file": "application/modules/m_tahun_ajar/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2113,11 +2278,11 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 35,
 					"file": "application/modules/m_kelurahan/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2143,11 +2308,11 @@
 						"translation.y": 374.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 36,
 					"file": "application/modules/m_unit/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2173,11 +2338,11 @@
 						"translation.y": 1685.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 37,
 					"file": "application/modules/m_provinsi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2203,11 +2368,11 @@
 						"translation.y": 899.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 38,
 					"file": "application/modules/m_kota/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2233,7 +2398,35 @@
 						"translation.y": 615.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1185
+							]
+						],
+						"settings":
+						{
+							"auto_name": "*PROGRESS ADMIN SIDE*",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
