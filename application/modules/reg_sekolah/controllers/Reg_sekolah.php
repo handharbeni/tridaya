@@ -28,7 +28,7 @@ class Reg_sekolah extends MX_Controller {
     $data['list'] = $this->get_data_list()->result();
     $data['list_agama'] = $this->model_adm->select(array('deleted' => 0), 'm_agama')->result();
     $data['list_pertanyaan'] = $this->model_adm->select(array('deleted' => 0), 'm_kesehatan_pertanyaan')->result();
-    $data['list_isian'] = $this->model_adm->select(array('deleted' => 0), 'm_isian_pertanyaan')->result();
+    $data['list_isian'] = $this->model_adm->select(array('deleted' => 0, 'kategori_unit' => 1), 'm_isian_pertanyaan')->result(); //kategori_unit (1=Sekolah, 2=Privat, 3=Bimbel, 4=batik)
     $data['list_akun'] = $this->model_adm->select(array('level' => 1), 'm_akun')->result();
     $this->load->view('index', $data);
   }

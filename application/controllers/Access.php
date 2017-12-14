@@ -27,7 +27,7 @@ class Access extends MX_Controller {
     die();*/
     if($params) {
       // echo $params.'/'.$params2;
-      echo modules::run('m_'.$params.'/'.$params2);
+      echo modules::run('m_'.$params.'/'.$params2, $params3);
     }
     else {
       // echo "dashboard";
@@ -55,12 +55,40 @@ class Access extends MX_Controller {
   public function sekolah($params=null, $params2='index', $params3=null)
   {
     if($params) {
-      echo modules::run('sekolah_'.$params.'/'.$params2);
+      echo modules::run('sekolah_'.$params.'/'.$params2, $params3);
     }
     else {
-      echo modules::run('sekolah_pendaftar/index');
+      echo modules::run('sekolah_siswa/index');
     }
   }
+  public function privat($params=null, $params2='index', $params3=null)
+  {
+    if($params) {
+      echo modules::run('privat_'.$params.'/'.$params2);
+    }
+    else {
+      echo modules::run('privat_siswa/index');
+    }
+  }
+  public function bimbel($params=null, $params2='index', $params3=null)
+  {
+    if($params) {
+      echo modules::run('bimbel_'.$params.'/'.$params2);
+    }
+    else {
+      echo modules::run('bimbel_siswa/index');
+    }
+  }
+  public function batik($params=null, $params2='index', $params3=null)
+  {
+    if($params) {
+      echo modules::run('batik_'.$params.'/'.$params2);
+    }
+    else {
+      echo modules::run('batik_siswa/index');
+    }
+  }
+  
   public function welkam($params=null, $params2='index', $params3=null)
   {
     if($params) {

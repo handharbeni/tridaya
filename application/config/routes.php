@@ -62,6 +62,7 @@ $route['(:any)/(:any)/(:any)'] = '$1/index/$2/$3';*/
 $route['(:any)'] = 'access/$1';
 $route['(:any)/(:any)'] = 'access/$1/$2';
 $route['(:any)/(:any)/(:any)'] = 'access/$1/$2/$3';
+$route['(:any)/(:any)/(:any)/(:any)'] = 'access/$1/$2/$3/$4';
 
 // $route['(:any)'] = 'access/$1';
 

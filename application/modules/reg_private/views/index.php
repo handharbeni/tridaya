@@ -53,7 +53,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Registrasi Private
+              <h4>Registrasi Privat
                 <!-- <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -104,7 +104,7 @@
                             </div>
                             <div class="tab-content">
                               <div id="step1" class="tab-pane fade in active">
-                                <form action ="<?php echo base_url()?>registrasi/sekolah/do_add" id="formReg1" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>registrasi/private/do_add" id="formReg1" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div class="row">
@@ -117,7 +117,8 @@
                                       <div class="col-md-6">
                                         <div class="form-group">
                                           <label>Unit Daftar</label>
-                                          <input type="text" name="unit" id="unit" class="form-control" placeholder="Unit Daftar" required="">
+                                          <select name="unit_id" id="unit" class="" placeholder="Unit Daftar" required=""></select>
+                                          <label for="unit" generated="true" class="error"></label>
                                         </div>
                                       </div>
                                     </div>
@@ -223,7 +224,7 @@
                               </div>
 
                               <div id="step2" class="tab-pane fade">
-                                <form action ="<?php echo base_url()?>registrasi/sekolah/do_add" id="formReg2" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>registrasi/private/do_add" id="formReg2" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <h4 class="card-title">Nilai Raport/rata-rata nilai ulangan sebelumnya (Mapel yang diprivatkan)</h4>
@@ -271,7 +272,7 @@
                               </div>
 
                               <div id="step3" class="tab-pane fade">
-                                <form action ="<?php echo base_url()?>registrasi/sekolah/do_add" id="formReg3" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>registrasi/private/do_add" id="formReg3" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div id="dataAyah">
@@ -380,7 +381,7 @@
                               </div>
                               
                               <div id="step4" class="tab-pane fade">
-                                <form action ="<?php echo base_url()?>registrasi/sekolah/do_add" id="formReg4" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>registrasi/private/do_add" id="formReg4" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div class="row">
@@ -477,83 +478,6 @@
             </div>
           </div> 
           
-          <!-- Modal START-->
-          <!-- <div class="modal fade" id="modalForm">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <form action="<?php echo base_url()?>master/unit/do_add" method="POST" id="formAdd">      
-                  <div class="modal-header">
-                    <h4 id="modalFormHeader">Tambah Unit/Cabang</h4>
-                  </div>
-                  <div class="modal-body">
-                   <div class="row">
-                     <div class="col-sm-6">
-                        <div class="form-group">
-                         <label for="nama">Nama Unit</label>
-                         <input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Unit" required="">
-                         <input type="hidden" name="id" id="id" class="form-control" placeholder="ID Unit">
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="level">Admin Unit</label>
-                         <select name="akun_id" id="akun_id" class="" required="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="provinsi">Provinsi</label>
-                         <select name="provinsi_id" id="provinsi" class="" required="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="kota">Kota</label>
-                         <select name="kabkota_id" id="kota" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="kecamatan">Kecamatan</label>
-                         <select name="kecamatan_id" id="kecamatan" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                       <div class="form-group">
-                         <label for="kelurahan">Kelurahan</label>
-                         <select name="kelurahan_id" id="kelurahan" class="" required="" disabled="">
-                         </select>
-                       </div>
-                     </div>
-                     <div class="col-sm-12">
-                       <div class="form-group">
-                         <label for="kota">Alamat</label>
-                         <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Alamat" required="">
-                       </div>
-                     </div>
-                     <div class="col-sm-6">
-                        <div class="form-group">
-                         <label for="no_telp">No. Telepon</label>
-                         <input type="text" name="no_telp" id="no_telp" class="form-control" placeholder="No. Telepon" required="">
-                       </div>
-                     </div>
-                   </div>
-                  </div>
-                  <div class="modal-footer">
-                    <div class="text-right">
-                      <button type="button" class="btn btn-default btn-sm" data-dismiss="modal"><i class="ti-close pdd-right-5"></i>Batal</button>
-                      <button type="submit" id="btnSubmit" class="btn btn-primary btn-sm"><i class="ti-save pdd-right-5"></i>Simpan</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div> -->
-          <!-- Modal END-->             
         </div>
         <!-- Content Wrapper END -->
 
@@ -598,6 +522,7 @@
   <script>
 
     var jsonList = <?php echo json_encode($list)?>;
+    var jsonUnit = <?php echo json_encode($list_unit)?>;
     var jsonAgama = <?php echo json_encode($list_agama)?>;
     var jsonProvinsi = <?php echo json_encode(get_provinsi()->result())?>;
     var jsonKota = <?php echo json_encode(get_kota()->result())?>;
@@ -628,46 +553,6 @@
     // loadTabelUnit(jsonList);
     addRowNilai();
 
-    function loadTabelUnit(json){
-      //clear table
-      tableData.clear().draw();
-      for(var i=0, data; data = json[i]; i++) {
-        tableData.row.add([
-          '<div class="checkbox mrg-left-20">'
-            +'<i style="display:none">'+data.id+'</i>'
-            +'<input id="task-'+data.id+'" value="'+data.id+'" name="task[]" type="checkbox">'
-              +'<label for="task-'+data.id+'"></label>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.alamat+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama_kabkota+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.nama_provinsi+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-              +'<p>'+data.no_telp+'<p>'
-          +'</div>',
-          '<div class="list-info mrg-top-10">'
-            +'<div class="info no-pdd">'
-              +'<span class="title">'+data.nama_akun+'</span>'
-              +'<span class="sub-title">ID '+data.id_akun+'</span>'
-            +'</div>'
-          +'</div>',
-          '<div class="relative mrg-top-10">'
-            +'<div class="btn-group">'
-              +'<a href="javascript:void(0);" class="btn btn-default edit-notif" data-id="'+data.id+'" onclick="showModalForm(event);" title="Ubah data"> <i class="ti-pencil-alt"></i> </a>'
-              +'<a href="" class="btn btn-default text-danger delete-notif" data-id="'+data.id+'" onclick="prepDelete(event);" title="Hapus data"> <i class="ti-trash"></i> </a>'
-            +'</div>'
-          +'</div>'
-        ]).draw( false );
-      }
-    }
     /*function getDetail(id, callback) {
       if(id) {
         $.ajax({
@@ -704,12 +589,22 @@
     }*/
     
     //INITIALIZE SELECTIZE
-    var selectizeAgama, $selectizeAgama;
+    var selectizeUnit, $selectizeUnit;
     var selectizeProvinsi, $selectizeProvinsi;
     var selectizeKota, $selectizeKota;
     var selectizeKecamatan, $selectizeKecamatan;
     var selectizeKelurahan, $selectizeKelurahan;
     var selectizeAkun, $selectizeAkun;
+    //loading select option unit
+    $selectizeUnit = $('#unit').selectize({
+      options: $.map(jsonUnit, function(data, i) {
+        return [{ value: data.id, text: data.nama }];
+      }),
+      create: false,
+      sortField: { field: 'text', direction: 'asc' },
+      placeholder: 'Pilih Unit/Cabang',
+      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
+    });
     //loading select option agama
     // $selectizeAgama = $('[name="agama_id"]').selectize({
     //   options: $.map(jsonAgama, function(data, i) {
@@ -851,6 +746,7 @@
       placeholder: 'Pilih Akun Admin',
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });*/
+    selectizeUnit = $selectizeUnit[0].selectize;
     // selectizeAgama = $selectizeAgama[0].selectize;
     /*selectizeProvinsi = $selectizeProvinsi[0].selectize;
     selectizeKota = $selectizeKota[0].selectize;
@@ -912,127 +808,21 @@
       }
     }
 
-    //SHOW MODAL FORM
-    function showModalForm(e) {
-      e.preventDefault();
-      var id = $(e.currentTarget).data('id') || null;
-      //clear inputs & selects
-      $('#formAdd :input').val('');
-      selectizeProvinsi.clear(); selectizeKota.clear();
-      selectizeKecamatan.clear(); selectizeKelurahan.clear(); 
-      selectizeAkun.clear();
-      //jika klik tombol tambah data:
-      if(!id) {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/unit/do_add");
-        $('#modalFormHeader').text('Tambah Unit/Cabang');
-        $('#modalForm').modal('show');
-      }
-      //jika klik tombol edit data:
-      else {
-        $('#formAdd').attr('action', "<?php echo base_url()?>master/unit/do_edit");
-        $('#modalFormHeader').text('Ubah Unit/Cabang');
-        getDetail(id);
-      }
-    }
-    
-    //prepare delete 1 data
-    function prepDelete(e) {
-      e.preventDefault();
-      var id = $(e.currentTarget).data('id') || null;
-      var arrIds = [id];
-      if(id) {
-        doMultiDelete(arrIds);
-      }
-    }
-    //prepare delete multi data
-    function prepMultiDelete(e) {
-      e.preventDefault();
-      //collecting checked checkbox values from table into array
-      var checkedArray = $('#tableData input:checkbox:checked').map(function() {
-          return $(this).val();
-      }).get();
-      // console.log(checkedArray);
-      if(id) {
-        doMultiDelete(checkedArray);
-      }
-    }
-
-    //MULTI DELETE HANDLER
-    function doMultiDelete(arrData) {
-      let ids = arrData || [];
-      if(ids[0] != null) {
-        //konfirmasi hapus banyak data
-        swal({
-          title: "Hapus data?",
-          text: "Data yang telah dihapus tidak akan bisa dikembalikan lagi",
-          type: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#DD6B55",
-          confirmButtonText: "Ya, hapus data!",
-          },
-        function(isConfirm){
-          if(isConfirm) {
-            //Hapus banyak data
-            $.ajax({
-              url: "<?php echo base_url()?>master/unit/do_delete",
-              data: { ids: ids },
-              type: 'POST',
-              dataType: 'json',
-              beforeSend: function() { 
-                $('.delete-notif').prop('disabled', true); 
-                $.LoadingOverlay("show"); 
-              },
-              success: function(response, status) {
-                if(response.status) {
-                  // console.log(response);
-                  if(response.result) {
-                    showNoty(response.message, 'success');
-                    loadTabelUnit(response.data);
-                  }
-                  else {
-                    showNoty(response.message, 'warning');
-                  }
-                }
-                else {
-                  showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',
-                   'warning');
-                }
-                $('#modalForm').modal('hide');
-              },
-              error: function(jqXhr, message, errorThrown){
-                console.log('Request error!', message);
-                showNoty('Error! Perintah tidak dapat dijalankan', 'error');
-              }
-            });
-            $('.delete-notif').prop('disabled', false); 
-            $.LoadingOverlay("hide");
-          }
-          else {
-            return;
-          }
-        });
-      }
-      else {
-        showNoty('Anda belum memilih data untuk dihapus! <br> <small>Centang checkbox pada tabel untuk memilih baris yang ingin dihapus</small>',
-               'warning');
-      }
-    }
-
     //MODAL FORM SUBMIT HANDLER
     function doSubmit(form, event) {
       event.preventDefault();
       let arrData = {
             siswa:$("#formReg1 *[name]").serialize(),
-            ayah: $("#formReg2 #dataAyah *[name]").serialize(),
-            ibu: $("#formReg2 #dataIbu *[name]").serialize(),
-            kesehatan: $("#formReg3 *[name]").serialize(),
+            nilai:$("#formReg2 *[name]").serialize(),
+            ayah: $("#formReg3 #dataAyah *[name]").serialize(),
+            ibu: $("#formReg3 #dataIbu *[name]").serialize(),
             isian: $("#formReg4 *[name]").serialize()
           };
       // console.log($("#formReg #step1 *[name]").serialize());
       // let id = $('#id').val() || '';
       if(form) {
         $.ajax({
-          url: '<?php echo base_url()?>registrasi/sekolah/do_add',
+          url: '<?php echo base_url()?>registrasi/private/do_add',
           data: { arr_data: arrData},
           type: 'POST',
           dataType: 'json',
@@ -1045,7 +835,7 @@
               // console.log(response);
               if(response.result) {
                 showNoty(response.message, 'success');
-                loadTabelUnit(response.data);
+                // loadTabelUnit(response.data);
               }
               else {
                 showNoty(response.message, 'warning');
@@ -1077,7 +867,6 @@
     var $valid = false;
     var currentIndex = $('#rootwizard').bootstrapWizard('currentIndex')+1;
     // console.log(currentIndex);
-    return true;
     var $validator = $('#formReg'+currentIndex).validate({
       errorElement: 'label', validClass : ''
     });

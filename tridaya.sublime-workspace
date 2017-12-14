@@ -4,6 +4,106 @@
 		"selected_items":
 		[
 			[
+				"star",
+				"start-date"
+			],
+			[
+				"first",
+				"firstdate"
+			],
+			[
+				"get_ja",
+				"get_jadwal_by_month"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"data",
+				"data_db"
+			],
+			[
+				"eve",
+				"eventList"
+			],
+			[
+				"load",
+				"loadEventList"
+			],
+			[
+				"bulle",
+				"bulletClass"
+			],
+			[
+				"Even",
+				"eventList"
+			],
+			[
+				"agama",
+				"agama_id"
+			],
+			[
+				"data_",
+				"data_nilai"
+			],
+			[
+				"btn-s",
+				"btn-submit"
+			],
+			[
+				"aga",
+				"agamaOptions"
+			],
+			[
+				"agama_",
+				"agama_ortu"
+			],
+			[
+				"tangg",
+				"tanggal_lahir_ortu"
+			],
+			[
+				"json",
+				"jsonOrtu"
+			],
+			[
+				"get_data",
+				"get_data_list_ortu"
+			],
+			[
+				"target",
+				"targetTable"
+			],
+			[
+				"targe",
+				"targetTable"
+			],
+			[
+				"jum",
+				"jml_bersaudara"
+			],
+			[
+				"siswa",
+				"siswa_id"
+			],
+			[
+				"opsi",
+				"opsi_radio"
+			],
+			[
+				"unse",
+				"unset"
+			],
+			[
+				"kategori",
+				"kategori_unit"
+			],
+			[
 				"modal-",
 				"modal-body"
 			],
@@ -20,16 +120,8 @@
 				"key_jawab"
 			],
 			[
-				"json",
-				"json_decode"
-			],
-			[
 				"html",
 				"htmlBodyKesehatan"
-			],
-			[
-				"load",
-				"loadingoverlay"
 			],
 			[
 				"kee",
@@ -44,16 +136,8 @@
 				"intval"
 			],
 			[
-				"data_",
-				"data_db"
-			],
-			[
 				"no_te",
 				"no_telp_ibu"
-			],
-			[
-				"agama",
-				"agama_ibu"
 			],
 			[
 				"tang",
@@ -78,10 +162,6 @@
 			[
 				"pre",
 				"preventDefault"
-			],
-			[
-				"kategori",
-				"kategori_id"
 			],
 			[
 				"selec",
@@ -132,16 +212,8 @@
 				"selectizeTags"
 			],
 			[
-				"get_data",
-				"get_data_list"
-			],
-			[
 				"error",
 				"errorThrown"
-			],
-			[
-				"data",
-				"data_jenjang"
 			],
 			[
 				"join",
@@ -442,78 +514,6 @@
 			[
 				"defa",
 				"defaultHtml"
-			],
-			[
-				"btn",
-				"btnPost"
-			],
-			[
-				"messag",
-				"messageForm"
-			],
-			[
-				"imgU",
-				"imgUploadForm"
-			],
-			[
-				"post",
-				"postMessageType"
-			],
-			[
-				"user",
-				"user_exist"
-			],
-			[
-				"array_key",
-				"array_key_exists"
-			],
-			[
-				"acti",
-				"active_token"
-			],
-			[
-				"kera",
-				"data_kerabat"
-			],
-			[
-				"max",
-				"max-height"
-			],
-			[
-				"fie",
-				"files"
-			],
-			[
-				"file",
-				"fileImgUpload"
-			],
-			[
-				"m",
-				"message"
-			],
-			[
-				"chek",
-				"checked"
-			],
-			[
-				"strips",
-				"stripslashes"
-			],
-			[
-				"active_",
-				"active_pass"
-			],
-			[
-				"valid",
-				"valid_pass"
-			],
-			[
-				"password",
-				"password_baru"
-			],
-			[
-				"passwo",
-				"password_baru"
 			]
 		]
 	},
@@ -538,14 +538,6 @@
 			}
 		},
 		{
-			"file": "application/logs/log-2017-11-28.txt",
-			"settings":
-			{
-				"buffer_size": 148495,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "application/helpers/string_helper.php",
 			"settings":
 			{
@@ -558,7 +550,7 @@
 			"file": "application/config/routes.php",
 			"settings":
 			{
-				"buffer_size": 2530,
+				"buffer_size": 2592,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -575,7 +567,7 @@
 			"file": "application/controllers/Access.php",
 			"settings":
 			{
-				"buffer_size": 1853,
+				"buffer_size": 2544,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -584,7 +576,7 @@
 			"file": "application/models/Model_adm.php",
 			"settings":
 			{
-				"buffer_size": 3017,
+				"buffer_size": 3494,
 				"encoding": "UTF-8",
 				"line_ending": "CR"
 			}
@@ -594,42 +586,6 @@
 			"settings":
 			{
 				"buffer_size": 5188,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/m_kota/controllers/M_kota.php",
-			"settings":
-			{
-				"buffer_size": 5899,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/m_kecamatan/controllers/M_kecamatan.php",
-			"settings":
-			{
-				"buffer_size": 6475,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/m_kelurahan/controllers/M_kelurahan.php",
-			"settings":
-			{
-				"buffer_size": 6854,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/m_tahun_ajar/controllers/M_tahun_ajar.php",
-			"settings":
-			{
-				"buffer_size": 3692,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -691,16 +647,7 @@
 			"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
 			"settings":
 			{
-				"buffer_size": 8327,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/sekolah_pendaftar/controllers/Sekolah_pendaftar.php",
-			"settings":
-			{
-				"buffer_size": 11539,
+				"buffer_size": 8406,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -709,25 +656,241 @@
 			"file": "application/modules/reg_private/controllers/Reg_private.php",
 			"settings":
 			{
-				"buffer_size": 8327,
+				"buffer_size": 8185,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/reg_bimbel/controllers/Reg_bimbel.php",
+			"settings":
+			{
+				"buffer_size": 7547,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/reg_batik/controllers/Reg_batik.php",
+			"settings":
+			{
+				"buffer_size": 8193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_siswa/controllers/Sekolah_siswa.php",
+			"settings":
+			{
+				"buffer_size": 14165,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/privat_siswa/controllers/Privat_siswa.php",
+			"settings":
+			{
+				"buffer_size": 13098,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_siswa/controllers/Bimbel_siswa.php",
+			"settings":
+			{
+				"buffer_size": 13267,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/batik_siswa/controllers/Batik_siswa.php",
+			"settings":
+			{
+				"buffer_size": 13970,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/m_guru/controllers/M_guru.php",
+			"settings":
+			{
+				"buffer_size": 10737,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_guru/controllers/Sekolah_guru.php",
+			"settings":
+			{
+				"buffer_size": 10919,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/privat_guru/controllers/Privat_guru.php",
+			"settings":
+			{
+				"buffer_size": 10896,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_guru/controllers/Bimbel_guru.php",
+			"settings":
+			{
+				"buffer_size": 10896,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/batik_guru/controllers/Batik_guru.php",
+			"settings":
+			{
+				"buffer_size": 10873,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_jadwal/controllers/Sekolah_jadwal.php",
+			"settings":
+			{
+				"buffer_size": 5831,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_jadwal/views/index.php",
+			"settings":
+			{
+				"buffer_size": 18781,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_jadwal/views/js/calendar.js",
+			"settings":
+			{
+				"buffer_size": 1732,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/batik_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 30677,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 30687,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/privat_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 30687,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 30708,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/m_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 30680,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/batik_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 46883,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 48447,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/privat_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 44562,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 49155,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/reg_batik/views/index.php",
+			"settings":
+			{
+				"buffer_size": 47532,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/reg_bimbel/views/index.php",
+			"settings":
+			{
+				"buffer_size": 48160,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "application/modules/reg_private/views/index.php",
 			"settings":
 			{
-				"buffer_size": 57032,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/sekolah_pendaftar/views/index.php",
-			"settings":
-			{
-				"buffer_size": 29657,
+				"buffer_size": 48231,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -736,7 +899,7 @@
 			"file": "application/modules/reg_sekolah/views/index.php",
 			"settings":
 			{
-				"buffer_size": 63665,
+				"buffer_size": 63664,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -754,16 +917,7 @@
 			"file": "application/modules/template/views/sidebar_left.php",
 			"settings":
 			{
-				"buffer_size": 9291,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
-			"settings":
-			{
-				"buffer_size": 89053,
+				"buffer_size": 10898,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -814,55 +968,10 @@
 			}
 		},
 		{
-			"file": "application/modules/m_kecamatan/views/index.php",
-			"settings":
-			{
-				"buffer_size": 16584,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/m_tahun_ajar/views/index.php",
-			"settings":
-			{
-				"buffer_size": 15113,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/m_kelurahan/views/index.php",
-			"settings":
-			{
-				"buffer_size": 19124,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "application/modules/m_unit/views/index.php",
 			"settings":
 			{
 				"buffer_size": 25161,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/m_provinsi/views/index.php",
-			"settings":
-			{
-				"buffer_size": 14467,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/m_kota/views/index.php",
-			"settings":
-			{
-				"buffer_size": 14971,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -937,10 +1046,38 @@
 		"/C/xampp/htdocs/github/tridaya/application/modules/m_provinsi/views",
 		"/C/xampp/htdocs/github/tridaya/application/modules/m_unit",
 		"/C/xampp/htdocs/github/tridaya/application/modules/m_unit/controllers",
-		"/C/xampp/htdocs/github/tridaya/application/modules/m_unit/views"
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_unit/views",
+		"/C/xampp/htdocs/github/tridaya/application/modules/template",
+		"/C/xampp/htdocs/github/tridaya/application/modules/template/views"
 	],
 	"file_history":
 	[
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
+		"/C/xampp/htdocs/github/tridaya/assets/plugins/bootstrap-daterangepicker/README.md",
+		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kota/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_provinsi/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kelurahan/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_tahun_ajar/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kecamatan/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_tahun_ajar/controllers/M_tahun_ajar.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kelurahan/controllers/M_kelurahan.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kota/controllers/M_kota.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_kecamatan/controllers/M_kecamatan.php",
+		"/C/xampp/htdocs/github/tridaya/application/logs/log-2017-11-28.txt",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_guru_old/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_guru_old/controllers/M_guru_old.php",
+		"/C/xampp/htdocs/github/tridaya/db/db_tridaya.sql",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_guru/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/m_guru/controllers/M_guru.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/private_siswa/controllers/Private_siswa.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/private_siswa/views/index.php",
+		"/D/Urusan/Urusan Pasca Pendidikan/WORK @IlliyinStudio/My Duty/COO (Chief Operational Officer)/Data Mingguan/12_2017/Mingguan 12_1.txt",
+		"/D/Urusan/Urusan Pasca Pendidikan/WORK @IlliyinStudio/My Duty/COO (Chief Operational Officer)/Data Mingguan/12_2017/Mingguan 11_1.txt",
+		"/C/Users/user/Desktop/Sasas.txt",
+		"/C/xampp/htdocs/github/tridaya/assets/plugins/bootstrap-datepicker/README.md",
+		"/C/xampp/htdocs/github/tridaya/application/modules/sekolah_pendaftar/controllers/Sekolah_pendaftar.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/sekolah_pendaftar/views/index.php",
 		"/C/Users/user/AppData/Local/Temp/scp14069/var/www/html/development/application/modules/template/views/sidebar_left.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar_left.php",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Stok_pesanan/views/view.php",
@@ -962,18 +1099,14 @@
 		"/C/xampp/htdocs/github/gopray_parent/application/config/database.php",
 		"/C/xampp/htdocs/github/gopray_parent/application/config/constants.php",
 		"/C/xampp/htdocs/github/gopray_parent/application/config/config.php",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
 		"/C/xampp/htdocs/github/tridaya/application/controllers/Access.php",
 		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-wizard.js",
 		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/registrasi.html",
-		"/C/xampp/htdocs/github/tridaya/application/modules/m_kota/controllers/M_kota.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/m_provinsi/views/index.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/controllers/M_unit.php",
 		"/C/xampp/htdocs/github/tridaya/application/helpers/wilayah_helper.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_provinsi/views/index.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views/index.php",
 		"/C/Users/user/Downloads/Compressed/selectize.js-master/selectize.js-master/examples/cities.html",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
 		"/C/xampp/htdocs/github/tridaya/assets/js/select-wilayah.js",
 		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_pegawai/views/view.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_unit/views/js/select-wilayah.js",
@@ -1046,29 +1179,7 @@
 		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/header.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/index.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/_template/controllers/Template.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/register/views/index.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/register/controllers/Register.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/dashboard/controllers/Dashboard.php",
-		"/C/xampp/htdocs/github/tridaya/application/controllers/Access_module.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/dashboard/views/dashboard.php",
-		"/C/xampp/htdocs/github/tridaya/application/controllers/Welcomes.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/welcome/views/welcome_message.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/master/controllers/siswa/Welcome.php",
-		"/C/xampp/htdocs/github/aqilapricelist/application/controllers/f-admin/Pesanan.php",
-		"/C/xampp/htdocs/github/tridaya/application/controllers/Siswa.php",
-		"/C/xampp/htdocs/github/aqilapricelist/application/config/constants.php",
-		"/C/xampp/htdocs/github/tridaya/.htaccess",
-		"/C/xampp/htdocs/github/aqilapricelist/.htaccess",
-		"/C/xampp/htdocs/github/aqilapricelist/application/.htaccess",
-		"/C/xampp/htdocs/github/tridaya/application/modules/test/controllers/Welcome.php",
-		"/C/xampp/htdocs/github/aqilapricelist/application/config/config.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/sticker_detail.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/controllers/Sticker.php",
-		"/C/xampp/htdocs/github/gopray_parent/application/views/parent/index.php",
-		"/C/Users/user/AppData/Local/Temp/scp57649/gopray/application/config/constants.php",
-		"/C/Users/user/AppData/Local/Temp/scp54792/gopray/application/controllers/Signin.php",
-		"/C/xampp/htdocs/github/aqilapricelist/application/helpers/alert_helper.php"
+		"/C/xampp/htdocs/github/tridaya/application/modules/register/views/index.php"
 	],
 	"find":
 	{
@@ -1086,134 +1197,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"alamat",
-			"addRowNilai",
-			"nama map",
-			"e.targe",
-			"event",
-			"(countRow+1)",
-			"minus",
-			"btn",
-			"btn0",
-			"span",
-			"mrg-",
-			"input-sm",
-			"mapel_tidak_suka",
-			"5",
-			"4",
-			"nama_panggilan",
-			"nama_lengkap",
-			"ya ",
-			"ya",
-			"alamat",
-			"%)",
-			"Belum:",
-			"Sudah:",
-			".",
-			"-",
-			"M_",
-			"jawab",
-			"modalIsianBody",
-			"modalKesehatan",
-			"Kesehatan",
-			"m_kesehatan_sekolah",
-			"modalkeseha",
-			"modalKesehatanBody",
-			"htmlBodyKesehatan",
-			"modalkese",
-			"h4",
-			"h3",
-			"m_orangtua_sekolah",
-			"beforeSend: function() { $.LoadingOverlay(\"show\"); },",
-			"no.",
-			"modal-",
-			"tabledatao",
-			"Tanggal",
-			"modalor",
-			"tabledata",
-			"loadingoverlay",
-			"show",
+			"loadCalendarEvents",
+			"loadEventList",
+			"loadCalendarEvents",
+			"selectiz",
+			"get_jadwal_by_date",
+			"get_jadwal_by_id",
 			"tableda",
-			"modal",
-			"Tambah",
+			"getDetail",
+			"$('#full-calendar')",
+			"date.",
+			"date",
+			"Date",
+			"date",
+			"sekolahCalendar",
+			"full-ca",
+			"console.lo",
+			"console.log",
+			"loadCalendarEvents",
+			"loade",
+			"full-calendar",
+			"initia",
+			"calendar.",
+			"moment",
+			"pre",
 			"get_data_list",
-			"registras",
-			"selectP",
-			"validat",
-			"LoadingOverlay",
-			"btns",
-			"btnSubmit",
-			"thanks fo",
-			"KESEHATAN",
-			"kesehatan",
-			"pertanyaan",
-			"params",
-			"keseha",
-			"jawaban-<",
-			"validate",
-			"validato",
-			"validationChecking",
-			"ibu",
-			"alamat ti",
-			"formRe",
-			"formReg2",
-			"tempat_lahi",
-			"tempat_lahit",
-			"formReg",
-			"formReg2",
-			"formRe",
-			"tanggal_",
-			"valida",
-			"css",
-			"jawaban_la",
-			"doSubmit",
-			"submi\n",
-			"submi",
-			"serializeArray",
-			"arrData",
-			"serialize",
-			"doSubmit",
-			"formreg",
-			"dosu",
-			"doSubmit",
-			"step1",
-			"rado",
-			"step",
-			"pertanyaan",
-			"label",
-			"Tambah",
-			"h3",
-			"$pertanyaan",
-			"pertanyaan",
-			"step3",
-			"step2",
-			"alamat tin",
-			"selectize",
-			"Agama",
-			"agama",
-			"pendidikan",
-			"pekerjaan",
-			"nama_lengkap",
-			"selectizeaga",
-			"reg",
-			"i_",
-			"thumbna",
+			"datera",
+			"do_su",
+			"do_add",
+			"loadEventList",
+			"do_de",
+			"loade",
+			"prepde",
+			"showde",
+			"deleted",
+			"DD-MM-YYYY",
+			"momen",
+			"html",
+			"loadEventList",
+			"start_date",
+			"scroll",
+			"patch",
+			"patc",
+			"scroll",
+			"                        </div>\ndate-range-picker",
+			"date-range-picker",
+			"no_telp",
+			"alamat",
+			"unit_id",
+			"nama",
+			"m_unit",
+			"id",
+			"m_unit",
+			"event ti",
+			"Kelurahan",
+			"akun",
+			"Akun",
+			"master/unit",
+			"Unit/Cabang",
+			"tambah un",
+			"../bower_components/",
+			"../bower_components",
+			"master/",
 			"master",
-			"access",
-			"Log",
-			"access",
-			"informas",
-			"var_dump",
-			"console",
-			"setToggle",
-			"toggle",
-			"updateStatus",
-			"confirmStatus",
+			"m_guru",
+			"master/guru",
+			"m_guru",
+			"master/guru",
+			"m_guru",
+			"/$3",
+			"idsiswa",
+			"let idSiswa = $('#idSiswa').val() || '';",
+			"m_siswa_bimbel",
+			"siswa",
+			"bimbe",
+			"idSiswa",
+			"tersedia_parkir",
+			"Siswa Bimbel",
+			"jenis",
+			"tambah",
+			"Tambah",
+			"tambah",
+			"bimbel/siswa",
+			"unit",
+			"m_siswa_bimbel",
+			"m_siswa_sekolah",
+			"response.data",
+			"fo",
+			"response.data",
+			"privat",
+			"privat/siswa",
+			"modaljad",
+			"modalNilai",
+			"MODAL DETAIL ISI",
+			"modalni",
+			"nilai_mapel",
+			"show modal isian",
+			"show isian",
+			"isian",
+			"nilai",
+			"step2",
+			"Inves",
+			"inves",
+			"datepi",
+			"ranking",
+			"getdeta",
 			"selectizeUnit",
-			"path",
-			"url_up",
-			"akun_id",
-			"tag"
+			"step1",
+			"_bimbel",
+			"agama",
+			"m_siswa_bimbel",
+			"bimbe",
+			"Siswa Bimbel",
+			"Bimbel",
+			"bimbel/siswa",
+			"nilai",
+			"do_edit",
+			"getdeta",
+			"nama lengka",
+			"formaddo",
+			"modalformo",
+			"modalfor",
+			"loadTabelOrtu",
+			"modalOrtu",
+			"detail oran",
+			"tableDataOrtu",
+			"step2",
+			"peran",
+			"bimbel\"siswa"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1231,7 +1342,7 @@
 	"groups":
 	[
 		{
-			"selected": 20,
+			"selected": 27,
 			"sheets":
 			[
 				{
@@ -1261,7 +1372,7 @@
 						"translation.y": 1992.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
@@ -1289,39 +1400,11 @@
 						"translation.y": 3748.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "application/logs/log-2017-11-28.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 148495,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1427,
-								1427
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "application/helpers/string_helper.php",
 					"semi_transient": false,
 					"settings":
@@ -1347,24 +1430,24 @@
 						"translation.y": 6.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "application/config/routes.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2530,
+						"buffer_size": 2592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2197,
-								2197
+								2356,
+								2356
 							]
 						],
 						"settings":
@@ -1372,14 +1455,14 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 784.0,
+						"translation.y": 724.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "application/config/constants.php",
 					"semi_transient": false,
 					"settings":
@@ -1403,24 +1486,24 @@
 						"translation.y": 501.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "application/controllers/Access.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1853,
+						"buffer_size": 2544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1622,
-								1622
+								1653,
+								1653
 							]
 						],
 						"settings":
@@ -1430,27 +1513,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 501.0,
+						"translation.y": 324.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "application/models/Model_adm.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3017,
+						"buffer_size": 3494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1098,
-								1098
+								2411,
+								2411
 							]
 						],
 						"settings":
@@ -1459,14 +1542,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 173.0,
+						"translation.y": 1101.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "application/modules/m_unit/controllers/M_unit.php",
 					"semi_transient": false,
 					"settings":
@@ -1478,8 +1561,8 @@
 						"selection":
 						[
 							[
-								353,
-								353
+								302,
+								302
 							]
 						],
 						"settings":
@@ -1489,134 +1572,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "application/modules/m_kota/controllers/M_kota.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5899,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4258,
-								4258
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1632.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 38,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "application/modules/m_kecamatan/controllers/M_kecamatan.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1216,
-								4230
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 522.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "application/modules/m_kelurahan/controllers/M_kelurahan.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4733,
-								4733
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 266.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 37,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "application/modules/m_tahun_ajar/controllers/M_tahun_ajar.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3692,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								929,
-								853
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 66.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 35,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 8,
 					"file": "application/modules/m_mapel/controllers/M_mapel.php",
 					"semi_transient": false,
 					"settings":
@@ -1642,11 +1605,11 @@
 						"translation.y": 246.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 9,
 					"file": "application/modules/m_jenjang/controllers/M_jenjang.php",
 					"semi_transient": false,
 					"settings":
@@ -1669,14 +1632,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 291.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 10,
 					"file": "application/modules/m_tingkat_jenjang/controllers/M_tingkat_jenjang.php",
 					"semi_transient": false,
 					"settings":
@@ -1702,11 +1665,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 11,
 					"file": "application/modules/i_tag/controllers/I_tag.php",
 					"semi_transient": false,
 					"settings":
@@ -1732,11 +1695,11 @@
 						"translation.y": 27.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 12,
 					"file": "application/modules/i_kategori/controllers/I_kategori.php",
 					"semi_transient": false,
 					"settings":
@@ -1762,11 +1725,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 13,
 					"file": "application/modules/i_informasi/controllers/I_informasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1778,8 +1741,8 @@
 						"selection":
 						[
 							[
-								1753,
-								1349
+								1802,
+								2161
 							]
 						],
 						"settings":
@@ -1789,87 +1752,117 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1272,
+								1328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
-					"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3865,
-								3865
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 36.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "application/modules/sekolah_pendaftar/controllers/Sekolah_pendaftar.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11539,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7906,
-								8088
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2969.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
+					"buffer": 15,
 					"file": "application/modules/reg_private/controllers/Reg_private.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8327,
+						"buffer_size": 8185,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								549,
-								549
+								5352,
+								5352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1751.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "application/modules/reg_bimbel/controllers/Reg_bimbel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3391,
+								2460
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 439.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "application/modules/reg_batik/controllers/Reg_batik.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1125,
+								1029
 							]
 						],
 						"settings":
@@ -1882,7 +1875,391 @@
 						"translation.y": 36.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 36,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "application/modules/sekolah_siswa/controllers/Sekolah_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8905,
+								8905
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3329.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "application/modules/privat_siswa/controllers/Privat_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3109,
+								3711
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1232.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "application/modules/bimbel_siswa/controllers/Bimbel_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8173,
+								8173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3134.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "application/modules/batik_siswa/controllers/Batik_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4435,
+								4435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1731.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "application/modules/m_guru/controllers/M_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1113,
+								1113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "application/modules/sekolah_guru/controllers/Sekolah_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1199,
+								1199
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 267.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "application/modules/privat_guru/controllers/Privat_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1197,
+								1197
+							],
+							[
+								1272,
+								1272
+							],
+							[
+								1316,
+								1316
+							],
+							[
+								1382,
+								1382
+							],
+							[
+								1435,
+								1435
+							],
+							[
+								1495,
+								1495
+							],
+							[
+								1546,
+								1546
+							],
+							[
+								2844,
+								2844
+							],
+							[
+								3358,
+								3358
+							],
+							[
+								3433,
+								3433
+							],
+							[
+								3478,
+								3478
+							],
+							[
+								3544,
+								3544
+							],
+							[
+								3597,
+								3597
+							],
+							[
+								3694,
+								3694
+							],
+							[
+								3862,
+								3862
+							],
+							[
+								3953,
+								3953
+							],
+							[
+								4045,
+								4045
+							],
+							[
+								4130,
+								4130
+							],
+							[
+								4216,
+								4216
+							],
+							[
+								7219,
+								7219
+							],
+							[
+								8043,
+								8043
+							],
+							[
+								9696,
+								9696
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3837.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "application/modules/bimbel_guru/controllers/Bimbel_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1197,
+								1197
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "application/modules/batik_guru/controllers/Batik_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1072,
+								976
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "application/modules/sekolah_jadwal/controllers/Sekolah_jadwal.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								358,
+								358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1892,20 +2269,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 22,
-					"file": "application/modules/reg_private/views/index.php",
+					"buffer": 28,
+					"file": "application/modules/sekolah_jadwal/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 57032,
+						"buffer_size": 18781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23280,
-								23280
+								12011,
+								12011
 							]
 						],
 						"settings":
@@ -1915,57 +2292,55 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7299.0,
+						"translation.y": 4304.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "application/modules/sekolah_pendaftar/views/index.php",
+					"buffer": 29,
+					"file": "application/modules/sekolah_jadwal/views/js/calendar.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29657,
+						"buffer_size": 1732,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23678,
-								23678
+								172,
+								61
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 9345.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
-					"file": "application/modules/reg_sekolah/views/index.php",
+					"buffer": 30,
+					"file": "application/modules/batik_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 63665,
+						"buffer_size": 30677,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10582,
-								11104
+								2424,
+								2424
 							]
 						],
 						"settings":
@@ -1975,14 +2350,382 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3194.0,
+						"translation.y": 834.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 31,
+					"file": "application/modules/bimbel_guru/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30687,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4093,
+								4093
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "application/modules/privat_guru/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30687,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4093,
+								4093
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "application/modules/sekolah_guru/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4111,
+								4111
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "application/modules/m_guru/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30680,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26908,
+								26915
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10034.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "application/modules/batik_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21232,
+								21237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7619.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "application/modules/bimbel_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24014,
+								24019
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8414.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 37,
+					"file": "application/modules/privat_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36733,
+								36987
+							],
+							[
+								37597,
+								37489
+							],
+							[
+								37644,
+								37612
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13739.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "application/modules/sekolah_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29059,
+								29106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10334.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "application/modules/reg_batik/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 47532,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2364,
+								2365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 674.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 40,
+					"file": "application/modules/reg_bimbel/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33847,
+								33847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10484.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 41,
+					"file": "application/modules/reg_private/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2218,
+								2218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 644.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 42,
+					"file": "application/modules/reg_sekolah/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 63664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8968,
+								9958
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2729.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 43,
 					"file": "application/modules/i_informasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -1994,8 +2737,8 @@
 						"selection":
 						[
 							[
-								15362,
-								15346
+								13401,
+								13784
 							]
 						],
 						"settings":
@@ -2005,27 +2748,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5699.0,
+						"translation.y": 4997.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 44,
 					"file": "application/modules/template/views/sidebar_left.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9291,
+						"buffer_size": 10898,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5896,
-								6464
+								1868,
+								1868
 							]
 						],
 						"settings":
@@ -2035,44 +2778,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2444.0,
+						"translation.y": 576.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 89053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2483,
-								2483
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 800.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
+					"buffer": 45,
 					"file": "application/modules/i_kategori/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2084,8 +2797,8 @@
 						"selection":
 						[
 							[
-								6810,
-								6733
+								4275,
+								4351
 							]
 						],
 						"settings":
@@ -2095,14 +2808,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2399.0,
+						"translation.y": 1394.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 46,
 					"file": "application/modules/i_tag/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2128,11 +2841,11 @@
 						"translation.y": 3753.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 47,
 					"file": "application/modules/m_tingkat_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2144,8 +2857,8 @@
 						"selection":
 						[
 							[
-								7862,
-								7862
+								2246,
+								2420
 							]
 						],
 						"settings":
@@ -2155,14 +2868,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 923.0,
+						"translation.y": 674.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 48,
 					"file": "application/modules/m_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2188,11 +2901,11 @@
 						"translation.y": 4784.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 49,
 					"file": "application/modules/m_mapel/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2218,101 +2931,11 @@
 						"translation.y": 6824.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
-					"file": "application/modules/m_kecamatan/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16584,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7667,
-								8407
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3212.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 34,
-					"file": "application/modules/m_tahun_ajar/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15113,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9535,
-								9535
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "application/modules/m_kelurahan/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 19124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2643,
-								2643
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 374.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 36,
+					"buffer": 50,
 					"file": "application/modules/m_unit/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2324,8 +2947,8 @@
 						"selection":
 						[
 							[
-								4465,
-								4465
+								12952,
+								13185
 							]
 						],
 						"settings":
@@ -2335,74 +2958,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1685.0,
+						"translation.y": 4709.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
-					"file": "application/modules/m_provinsi/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14467,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3002,
-								3002
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 899.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 34,
-					"type": "text"
-				},
-				{
-					"buffer": 38,
-					"file": "application/modules/m_kota/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14971,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1522,
-								1522
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 615.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
-					"type": "text"
-				},
-				{
-					"buffer": 39,
+					"buffer": 51,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2426,7 +2989,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 33,
 					"type": "text"
 				}
 			]

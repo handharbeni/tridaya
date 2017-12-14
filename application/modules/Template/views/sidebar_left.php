@@ -49,6 +49,85 @@
           <li>
             <a href="<?php echo base_url();?>master/tingkat_jenjang">Tingkat Jenjang</a>
           </li>
+          <!-- <li>
+            <a href="<?php echo base_url();?>master/guru">Guru</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a href="javascript:void(0);">
+              <span>Sekolah (PG/TK/SD)</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo base_url()?>sekolah/siswa">Data Siswa</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>sekolah/guru">Data Guru</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>master/sekolah">Data Sekolah</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>sekolah/kelas">Data Kelas</a>
+              </li>
+              <!-- <li>
+                <a href="<?php echo base_url()?>master/kelas">Kelas</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>reg/batik">Batik</a>
+              </li> -->
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="javascript:void(0);">
+              <span>Privat</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo base_url()?>privat/siswa">Data Siswa</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>privat/guru">Data Guru</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="javascript:void(0);">
+              <span>Bimbel</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo base_url()?>bimbel/siswa">Data Siswa</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>bimbel/guru">Data Guru</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="javascript:void(0);">
+              <span>Batik</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo base_url()?>batik/siswa">Data Siswa</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>batik/guru">Data Guru</a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item dropdown">
             <a href="javascript:void(0);">
               <span>Data Pendukung</span>
@@ -113,37 +192,6 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a href="javascript:void(0);">
-              <span>Sekolah</span>
-              <span class="arrow">
-                <i class="ti-angle-right"></i>
-              </span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="<?php echo base_url()?>sekolah/pendaftar">Data Pendaftar</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>sekolah/siswa">Data Siswa</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>master/sekolah">Data Sekolah</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>sekolah/guru">Data Guru</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>sekolah/kelas">Data Kelas</a>
-              </li>
-              <!-- <li>
-                <a href="<?php echo base_url()?>master/kelas">Kelas</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>reg/batik">Batik</a>
-              </li> -->
-            </ul>
-          </li>
         </ul>
       </li>
 
@@ -170,7 +218,7 @@
         </ul>
       </li> -->
       
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">
             <i class="ti-time"></i>
@@ -188,7 +236,7 @@
             <a href="invoice.html">Absensi Guru</a>
           </li>   
         </ul>
-      </li> -->
+      </li>
       <li class="nav-item dropdown">
         <a class="dropdown-toggle" href="javascript:void(0);">
           <span class="icon-holder">
@@ -201,12 +249,8 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="account.html">Jadwal Major</a>
+            <a href="<?php echo base_url()?>sekolah/jadwal">Kalender Akademik (PG/TK/SD)</a>
           </li>
-          <li>
-            <a href="account.html">Jadwal Minor</a>
-          </li>
-          
         </ul>
       </li>
       <li class="nav-item dropdown">

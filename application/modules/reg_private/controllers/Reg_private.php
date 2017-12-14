@@ -27,8 +27,9 @@ class Reg_private extends MX_Controller {
 	{
     $data['list'] = $this->get_data_list()->result();
     $data['list_agama'] = $this->model_adm->select(array('deleted' => 0), 'm_agama')->result();
-    $data['list_pertanyaan'] = $this->model_adm->select(array('deleted' => 0), 'm_kesehatan_pertanyaan')->result();
-    $data['list_isian'] = $this->model_adm->select(array('deleted' => 0), 'm_isian_pertanyaan')->result();
+    $data['list_unit'] = $this->model_adm->select(array('deleted' => 0), 
+      'm_unit')->result();
+    $data['list_isian'] = $this->model_adm->select(array('deleted' => 0, 'kategori_unit' => 2), 'm_isian_pertanyaan')->result();//kategori_unit (1=Sekolah, 2=Privat, 3=Bimbel, 4=batik)
     $data['list_akun'] = $this->model_adm->select(array('level' => 1), 'm_akun')->result();
     $this->load->view('index', $data);
   }
@@ -94,14 +95,14 @@ class Reg_private extends MX_Controller {
     foreach ($params['arr_data'] as $key => $param) {
       parse_str($param, $arr_data[$key]);
     }
-    // print("<pre>".urldecode(print_r($arr_data, true))."</pre>"); 
-    // die();
+    /*print("<pre>".urldecode(print_r($arr_data, true))."</pre>"); 
+    die();*/
     
     if(!empty($arr_data['siswa'])) {
       $result = []; //for debugging purpose
       //INSERTING DATA SISWA
       $data_db = $arr_data['siswa'];
-      $id_siswa = $this->model_adm->insert_id($data_db, 'm_siswa_sekolah');
+      $id_siswa = $this->model_adm->insert_id($data_db, 'm_siswa_private');
       $results['siswa'] = $id_siswa;
 
       $data = [];
@@ -124,28 +125,23 @@ class Reg_private extends MX_Controller {
           $data_db[] = $data_ibu;
         }
         //INSERTING DATA ORANG TUA
-        $result = $this->model_adm->insert_batch($data_db, 'm_orangtua_sekolah');
+        $result = $this->model_adm->insert_batch($data_db, 'm_orangtua_private');
         $results['ortu'] = $result;
 
-        //PREPARING DATA KESEHATAN
-        if(!empty($arr_data['kesehatan'])){
-          $data_db = $arr_data['kesehatan'];
-          //preparing array pertanyaan & jawaban
-          $pertanyaan = []; $jawaban = [];
-          foreach ($data_db as $key => $kesehatan) {
-            $id_pertanyaan = str_replace('jawaban-', '', $key);
-            $pertanyaan[] = $id_pertanyaan;
-            $jawaban[$id_pertanyaan] = $kesehatan;
+        //PREPARING DATA NILAI
+        if(!empty($arr_data['nilai'])){
+          $data_db = $arr_data['nilai'];
+          //PREPARING NAMA_MAPEL & NILAI MAPEL
+          $data_nilai = [];
+          foreach ($data_db['nama_mapel'] as $key => $mapel) {
+            $data_nilai[$mapel] = $data_db['nilai_mapel'][$key];
           }
-          //preparing JSON pertanyaan & jawaban
-          $data_db = array(
-            'siswa_id' => $id_siswa,
-            'pertanyaan' => json_encode($pertanyaan),
-            'jawaban' => json_encode($jawaban)
-          );
-          //INSERTING DATA KESEHATAN
-          $result = $this->model_adm->insert($data_db, 'm_kesehatan_sekolah');
-          $results['kesehatan'] = $result;
+          unset($data_db['nama_mapel']);
+          //INSERTING DATA NILAI
+          $data_db['siswa_id'] = $id_siswa;
+          $data_db['nilai_mapel'] = json_encode($data_nilai);
+          $result = $this->model_adm->insert($data_db, 'reg_nilai_private');
+          $results['nilai'] = $result;
         }
 
         //PREPARING DATA ISIAN
@@ -165,7 +161,7 @@ class Reg_private extends MX_Controller {
             'jawaban' => json_encode($jawaban)
           );
           //INSERTING DATA ISIAN
-          $result = $this->model_adm->insert($data_db, 'm_isian_sekolah');
+          $result = $this->model_adm->insert($data_db, 'm_isian_private');
           $results['isian'] = $result;
         }
 
