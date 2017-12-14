@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"m_siswa",
+				"m_siswa_private"
+			],
+			[
+				"m_per",
+				"m_pertemuan_private"
+			],
+			[
+				"load",
+				"loadCalendarEvents"
+			],
+			[
+				"fullca",
+				"fullcalendar"
+			],
+			[
+				"cale",
+				"full-calendar"
+			],
+			[
+				"bullet",
+				"bulletClass"
+			],
+			[
+				"start",
+				"start_date"
+			],
+			[
 				"star",
 				"start-date"
 			],
@@ -30,10 +58,6 @@
 			[
 				"eve",
 				"eventList"
-			],
-			[
-				"load",
-				"loadEventList"
 			],
 			[
 				"bulle",
@@ -490,30 +514,6 @@
 			[
 				"c",
 				"container"
-			],
-			[
-				"timel",
-				"timelineContainer"
-			],
-			[
-				"hide",
-				"hideStyle"
-			],
-			[
-				"a",
-				"auto"
-			],
-			[
-				"cir",
-				"circleTimeline"
-			],
-			[
-				"circle",
-				"circle-timeline"
-			],
-			[
-				"defa",
-				"defaultHtml"
 			]
 		]
 	},
@@ -644,37 +644,36 @@
 			}
 		},
 		{
-			"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
+			"file": "application/modules/sekolah_registrasi/controllers/Sekolah_registrasi.php",
 			"settings":
 			{
-				"buffer_size": 8406,
+				"buffer_size": 8413,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/privat_registrasi/controllers/Privat_registrasi.php",
+			"settings":
+			{
+				"buffer_size": 8191,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/modules/reg_private/controllers/Reg_private.php",
+			"file": "application/modules/bimbel_registrasi/controllers/Bimbel_registrasi.php",
 			"settings":
 			{
-				"buffer_size": 8185,
+				"buffer_size": 7554,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/modules/reg_bimbel/controllers/Reg_bimbel.php",
+			"file": "application/modules/batik_registrasi/controllers/Batik_registrasi.php",
 			"settings":
 			{
-				"buffer_size": 7547,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/reg_batik/controllers/Reg_batik.php",
-			"settings":
-			{
-				"buffer_size": 8193,
+				"buffer_size": 8200,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -764,27 +763,54 @@
 			"file": "application/modules/sekolah_jadwal/controllers/Sekolah_jadwal.php",
 			"settings":
 			{
-				"buffer_size": 5831,
+				"buffer_size": 6194,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/privat_jadwal/controllers/Privat_jadwal.php",
+			"settings":
+			{
+				"buffer_size": 9713,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/batik_jadwal/controllers/Batik_jadwal.php",
+			"settings":
+			{
+				"buffer_size": 9632,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/batik_jadwal/views/index.php",
+			"settings":
+			{
+				"buffer_size": 23972,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/privat_jadwal/views/index.php",
+			"settings":
+			{
+				"buffer_size": 23980,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "application/modules/sekolah_jadwal/views/index.php",
 			"settings":
 			{
-				"buffer_size": 18781,
+				"buffer_size": 21137,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/sekolah_jadwal/views/js/calendar.js",
-			"settings":
-			{
-				"buffer_size": 1732,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
 			}
 		},
 		{
@@ -869,16 +895,7 @@
 			}
 		},
 		{
-			"file": "application/modules/reg_batik/views/index.php",
-			"settings":
-			{
-				"buffer_size": 47532,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/reg_bimbel/views/index.php",
+			"file": "application/modules/bimbel_registrasi/views/index.php",
 			"settings":
 			{
 				"buffer_size": 48160,
@@ -887,16 +904,25 @@
 			}
 		},
 		{
-			"file": "application/modules/reg_private/views/index.php",
+			"file": "application/modules/batik_registrasi/views/index.php",
 			"settings":
 			{
-				"buffer_size": 48231,
+				"buffer_size": 47532,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/modules/reg_sekolah/views/index.php",
+			"file": "application/modules/privat_registrasi/views/index.php",
+			"settings":
+			{
+				"buffer_size": 48226,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/sekolah_registrasi/views/index.php",
 			"settings":
 			{
 				"buffer_size": 63664,
@@ -917,7 +943,7 @@
 			"file": "application/modules/template/views/sidebar_left.php",
 			"settings":
 			{
-				"buffer_size": 10898,
+				"buffer_size": 11205,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1052,6 +1078,16 @@
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/github/tridaya/application/modules/sekolah_registrasi/controllers/sekolah_registrasi.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_sekolah/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_bimbel/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_batik/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_batik/controllers/Reg_batik.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_bimbel/controllers/Reg_bimbel.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_sekolah/controllers/Reg_sekolah.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_private/controllers/Reg_private.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/reg_private/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/sekolah_jadwal/views/js/calendar.js",
 		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/form-elements.html",
 		"/C/xampp/htdocs/github/tridaya/assets/plugins/bootstrap-daterangepicker/README.md",
 		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/assets/js/forms/form-elements.js",
@@ -1169,21 +1205,11 @@
 		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/views/sidebar_left.php",
 		"/C/xampp/htdocs/github/tridaya/assets/js/app.js",
 		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/modals.html",
-		"/C/xampp/htdocs/github/tridaya/application/config/autoload.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/views/head.php",
-		"/C/xampp/htdocs/github/iqbalpos/application/controllers/Index.php",
-		"/C/xampp/htdocs/github/iqbalpos/application/modules/Master_bank/models/Bankmodel.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/theme_config.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/sidebar_right.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/head.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/header.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/views/index.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/_template/controllers/Template.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/register/views/index.php"
+		"/C/xampp/htdocs/github/tridaya/application/config/autoload.php"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1197,6 +1223,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"privat/jadwal",
+			"m_guru_private",
+			"m_siswa_private",
+			"m_pertemuan_private",
+			"m_jadwal_private",
+			"registrasi/batik",
+			"registrasi/bimbel",
+			"registrasi/privat",
+			"registrasi",
+			"registrasi/sekolah",
+			"m_siswa_private.nama",
+			"m_siswa.",
+			"m_pertemuan.private",
+			"privat/guru/",
+			"m_guru_jadwal",
+			"m_siswa_private",
+			"m_agama",
+			"m_guru_privat",
+			"private",
+			"registrasi/private",
+			"private",
+			"today",
+			"request",
+			"full-cale",
+			"success",
+			"get",
+			"'#full-calendar')",
 			"loadCalendarEvents",
 			"loadEventList",
 			"loadCalendarEvents",
@@ -1297,34 +1350,7 @@
 			"isian",
 			"nilai",
 			"step2",
-			"Inves",
-			"inves",
-			"datepi",
-			"ranking",
-			"getdeta",
-			"selectizeUnit",
-			"step1",
-			"_bimbel",
-			"agama",
-			"m_siswa_bimbel",
-			"bimbe",
-			"Siswa Bimbel",
-			"Bimbel",
-			"bimbel/siswa",
-			"nilai",
-			"do_edit",
-			"getdeta",
-			"nama lengka",
-			"formaddo",
-			"modalformo",
-			"modalfor",
-			"loadTabelOrtu",
-			"modalOrtu",
-			"detail oran",
-			"tableDataOrtu",
-			"step2",
-			"peran",
-			"bimbel\"siswa"
+			"Inves"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1342,7 +1368,7 @@
 	"groups":
 	[
 		{
-			"selected": 27,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1372,7 +1398,7 @@
 						"translation.y": 1992.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
@@ -1400,7 +1426,7 @@
 						"translation.y": 3748.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
@@ -1430,7 +1456,7 @@
 						"translation.y": 6.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1458,7 +1484,7 @@
 						"translation.y": 724.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
@@ -1486,7 +1512,7 @@
 						"translation.y": 501.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
@@ -1502,8 +1528,8 @@
 						"selection":
 						[
 							[
-								1653,
-								1653
+								862,
+								862
 							]
 						],
 						"settings":
@@ -1513,10 +1539,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 324.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
@@ -1545,7 +1571,7 @@
 						"translation.y": 1101.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -1575,7 +1601,7 @@
 						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
@@ -1605,7 +1631,7 @@
 						"translation.y": 246.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
@@ -1635,7 +1661,7 @@
 						"translation.y": 291.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -1665,7 +1691,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
@@ -1695,7 +1721,7 @@
 						"translation.y": 27.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
@@ -1725,7 +1751,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
@@ -1752,27 +1778,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 390.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
 					"buffer": 14,
-					"file": "application/modules/reg_sekolah/controllers/Reg_sekolah.php",
+					"file": "application/modules/sekolah_registrasi/controllers/Sekolah_registrasi.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8406,
+						"buffer_size": 8413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1272,
-								1328
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1782,7 +1808,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 11,
@@ -1790,19 +1816,19 @@
 				},
 				{
 					"buffer": 15,
-					"file": "application/modules/reg_private/controllers/Reg_private.php",
+					"file": "application/modules/privat_registrasi/controllers/Privat_registrasi.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8185,
+						"buffer_size": 8191,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5352,
-								5352
+								94,
+								94
 							]
 						],
 						"settings":
@@ -1812,27 +1838,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1751.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 16,
-					"file": "application/modules/reg_bimbel/controllers/Reg_bimbel.php",
+					"file": "application/modules/bimbel_registrasi/controllers/Bimbel_registrasi.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7547,
+						"buffer_size": 7554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3391,
-								2460
+								94,
+								94
 							]
 						],
 						"settings":
@@ -1842,27 +1868,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 439.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 17,
-					"file": "application/modules/reg_batik/controllers/Reg_batik.php",
+					"file": "application/modules/batik_registrasi/controllers/Batik_registrasi.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8193,
+						"buffer_size": 8200,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1125,
-								1029
+								93,
+								93
 							]
 						],
 						"settings":
@@ -1872,10 +1898,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 36.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1905,7 +1931,7 @@
 						"translation.y": 3329.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
@@ -1935,7 +1961,7 @@
 						"translation.y": 1232.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
@@ -1965,7 +1991,7 @@
 						"translation.y": 3134.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
@@ -1995,7 +2021,7 @@
 						"translation.y": 1731.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
@@ -2025,7 +2051,7 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
@@ -2055,7 +2081,7 @@
 						"translation.y": 267.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
@@ -2169,7 +2195,7 @@
 						"translation.y": 3837.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -2196,10 +2222,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -2215,8 +2241,8 @@
 						"selection":
 						[
 							[
-								1072,
-								976
+								2542,
+								2947
 							]
 						],
 						"settings":
@@ -2226,10 +2252,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 954.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -2238,15 +2264,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5831,
+						"buffer_size": 6194,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								358,
-								358
+								3574,
+								3574
 							]
 						],
 						"settings":
@@ -2256,33 +2282,93 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1139.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "application/modules/privat_jadwal/controllers/Privat_jadwal.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3135,
+								3135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 836.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "application/modules/batik_jadwal/controllers/Batik_jadwal.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1182,
+								1182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 222.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 17,
 			"sheets":
 			[
 				{
-					"buffer": 28,
-					"file": "application/modules/sekolah_jadwal/views/index.php",
+					"buffer": 30,
+					"file": "application/modules/batik_jadwal/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 18781,
+						"buffer_size": 23972,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12011,
-								12011
+								4068,
+								4068
 							]
 						],
 						"settings":
@@ -2292,42 +2378,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4304.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "application/modules/sekolah_jadwal/views/js/calendar.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1732,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								61
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 31,
+					"file": "application/modules/privat_jadwal/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23980,
+								23980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8950.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "application/modules/sekolah_jadwal/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14507,
+								14507
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 417.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
 					"file": "application/modules/batik_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2350,14 +2468,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 834.0,
+						"translation.y": 159.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 34,
 					"file": "application/modules/bimbel_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2383,11 +2501,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 35,
 					"file": "application/modules/privat_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2413,11 +2531,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 36,
 					"file": "application/modules/sekolah_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2443,11 +2561,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 37,
 					"file": "application/modules/m_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2473,11 +2591,11 @@
 						"translation.y": 10034.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 38,
 					"file": "application/modules/batik_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2503,11 +2621,11 @@
 						"translation.y": 7619.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 39,
 					"file": "application/modules/bimbel_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2533,11 +2651,11 @@
 						"translation.y": 8414.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 40,
 					"file": "application/modules/privat_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2571,11 +2689,11 @@
 						"translation.y": 13739.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 41,
 					"file": "application/modules/sekolah_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2601,42 +2719,12 @@
 						"translation.y": 10334.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
-					"file": "application/modules/reg_batik/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2364,
-								2365
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 674.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 40,
-					"file": "application/modules/reg_bimbel/views/index.php",
+					"buffer": 42,
+					"file": "application/modules/bimbel_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
@@ -2647,8 +2735,20 @@
 						"selection":
 						[
 							[
-								33847,
-								33847
+								36255,
+								36255
+							],
+							[
+								40618,
+								40618
+							],
+							[
+								42335,
+								42335
+							],
+							[
+								45816,
+								45816
 							]
 						],
 						"settings":
@@ -2658,27 +2758,39 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10484.0,
+						"translation.y": 11775.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
-					"file": "application/modules/reg_private/views/index.php",
+					"buffer": 43,
+					"file": "application/modules/batik_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 48231,
+						"buffer_size": 47532,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2218,
-								2218
+								34150,
+								34150
+							],
+							[
+								38538,
+								38538
+							],
+							[
+								40254,
+								40254
+							],
+							[
+								45257,
+								45257
 							]
 						],
 						"settings":
@@ -2688,15 +2800,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 644.0,
+						"translation.y": 11280.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
-					"file": "application/modules/reg_sekolah/views/index.php",
+					"buffer": 44,
+					"file": "application/modules/privat_registrasi/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5638,
+								5638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1845.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 45,
+					"file": "application/modules/sekolah_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
@@ -2707,8 +2849,8 @@
 						"selection":
 						[
 							[
-								8968,
-								9958
+								5364,
+								5364
 							]
 						],
 						"settings":
@@ -2718,14 +2860,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2729.0,
+						"translation.y": 1845.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
+					"buffer": 46,
 					"file": "application/modules/i_informasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2751,24 +2893,24 @@
 						"translation.y": 4997.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 47,
 					"file": "application/modules/template/views/sidebar_left.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10898,
+						"buffer_size": 11205,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1868,
-								1868
+								8912,
+								8912
 							]
 						],
 						"settings":
@@ -2778,14 +2920,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 576.0,
+						"translation.y": 3449.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
+					"buffer": 48,
 					"file": "application/modules/i_kategori/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2811,11 +2953,11 @@
 						"translation.y": 1394.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 49,
 					"file": "application/modules/i_tag/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2841,11 +2983,11 @@
 						"translation.y": 3753.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 50,
 					"file": "application/modules/m_tingkat_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2871,11 +3013,11 @@
 						"translation.y": 674.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 51,
 					"file": "application/modules/m_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2901,11 +3043,11 @@
 						"translation.y": 4784.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 52,
 					"file": "application/modules/m_mapel/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2931,11 +3073,11 @@
 						"translation.y": 6824.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 53,
 					"file": "application/modules/m_unit/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2961,11 +3103,11 @@
 						"translation.y": 4709.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 54,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2989,7 +3131,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 41,
 					"type": "text"
 				}
 			]
@@ -3071,7 +3213,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

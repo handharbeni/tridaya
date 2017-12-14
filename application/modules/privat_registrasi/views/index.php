@@ -53,7 +53,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Registrasi Bimbel
+              <h4>Registrasi Privat
                 <!-- <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -77,19 +77,25 @@
                               <li class="nav-item">
                                 <a href="#step2" data-toggle="tab">
                                   <span class="step">2</span>
-                                  <span class="title">Data Orang Tua</span>
+                                  <span class="title">Data Nilai</span>
                                 </a>
                               </li>
                               <li class="nav-item">
                                 <a href="#step3" data-toggle="tab">
                                   <span class="step">3</span>
-                                  <span class="title">Data Isian</span>
+                                  <span class="title">Data Orang Tua</span>
                                 </a>
                               </li>
                               <li class="nav-item">
                                 <a href="#step4" data-toggle="tab">
                                   <span class="step">4</span>
-                                  <span class="title">Data Konfirmasi</span>
+                                  <span class="title">Data Isian</span>
+                                </a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="#step5" data-toggle="tab">
+                                  <span class="step">5</span>
+                                  <span class="title">Konfirmasi</span>
                                 </a>
                               </li>
                             </ul>
@@ -98,7 +104,7 @@
                             </div>
                             <div class="tab-content">
                               <div id="step1" class="tab-pane fade in active">
-                                <form action ="" id="formReg1" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>privat/registrasi/do_add" id="formReg1" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div class="row">
@@ -138,13 +144,6 @@
                                           <input type="text" name="kelas" id="kelas" class="form-control" placeholder="Kelas/Sekolah" required="">
                                         </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Agama</label>
-                                          <select name="agama_id" id="agama" class="" placeholder="Kota" required=""></select>
-                                          <label for="agama" generated="true" class="error"></label>
-                                        </div>
-                                      </div>
                                     </div>
                                     <div class="row">
                                       <div class="col-md-12">
@@ -155,34 +154,25 @@
                                       </div>
                                     </div>
                                     <div class="row">
-                                      <div class="col-md-6">
+                                      <div class="col-md-7">
                                         <div class="form-group">
-                                          <label>Provinsi</label>
-                                          <select name="provinsi_id" id="provinsi" class="" placeholder="Provinsi" required=""></select>
-                                          <label for="provinsi" generated="true" class="error"></label>
+                                          <label>Patokan Rumah Siswa</label>
+                                          <input type="text" class="form-control" name="patokan" id="patokan" class="form-control" placeholder="Patokan Rumah Siswa">
                                         </div>
                                       </div>
-                                      <div class="col-md-6">
+                                      <div class="col-md-5">
                                         <div class="form-group">
-                                          <label>Kota</label>
-                                          <select name="kabkota_id" id="kota" class="" placeholder="Kota" required=""></select>
-                                          <label for="kota" generated="true" class="error"></label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Kecamatan</label>
-                                          <select name="kecamatan_id" id="kecamatan" class="" placeholder="Provinsi" required=""></select>
-                                          <label for="kecamatan" generated="true" class="error"></label>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Kelurahan</label>
-                                          <select name="kelurahan_id" id="kelurahan" class="" placeholder="Kota" required=""></select>
-                                          <label for="kelurahan" generated="true" class="error"></label>
+                                          <label>Tersedia Area Parkir Kendaraan</label>
+                                          <div class="-col-sm-12">
+                                            <div class="radio radio-inline">
+                                              <input type="radio" name="tersedia_parkir" id="tersedia_parkir-1" value="ya" checked="">
+                                              <label for="tersedia_parkir-1">Ya</label>
+                                            </div>
+                                            <div class="radio radio-inline">
+                                              <input type="radio" name="tersedia_parkir" id="tersedia_parkir-2" value="tidak">
+                                              <label for="tersedia_parkir-2">Tidak</label>
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -227,73 +217,62 @@
                                           <label for="no_telp" generated="true" class="error"></label>
                                         </div>
                                       </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Email</label>
-                                          <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Pin BB</label>
-                                          <input type="text" name="pin_bb" id="pin_bb" class="form-control" placeholder="Pin BB">
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Media Sosial</label>
-                                          <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-facebook"></i></span>
-                                            <input type="text" name="akun_fb" id="akun_fb" class="form-control" placeholder="Username FB">
-                                            <span class="input-group-addon"><i class="fa fa-twitter"></i></span>
-                                            <input type="text" name="akun_twitter" id="akun_twitter" class="form-control" placeholder="Username Twitter">
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Awal Masuk Tridaya</label>
-                                            <div class="timepicker-input input-group">
-                                              <span class="input-group-addon">
-                                                <i class="ti-calendar"></i>
-                                              </span>
-                                              <input type="text" name="awal_masuk" id="awal_masuk" class="form-control datepicker-2" placeholder="Awal Masuk Tridaya">
-                                            </div>
-                                            <label for="awal_masuk" generated="true" class="error"></label>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Nama Tutor Sebelumnya</label>
-                                          <input type="text" name="tutor_sebelumnya" id="tutor_sebelumnya" class="form-control" placeholder="Nama Tutor Sebelumnya">
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Unit Belajar Sebelumnya</label>
-                                          <input type="text" name="unit_sebelumnya" id="unit_sebelumnya" class="form-control" placeholder="Unit Belajar Sebelumnya">
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label>Ranking/Raport</label>
-                                          <input type="text" name="ranking" id="ranking" class="form-control" placeholder="Ranking/Raport">
-                                        </div>
-                                      </div>
                                     </div>
                                   </div>
-                                  </div>
+                                </div>
                                 </form>
                               </div>
 
                               <div id="step2" class="tab-pane fade">
-                                <form action ="" id="formReg2" class="width-100" method="post">
+                                <form action ="<?php echo base_url()?>privat/registrasi/do_add" id="formReg2" class="width-100" method="post">
+                                <div class="row">
+                                  <div class="col-md-10 mr-auto ml-auto">
+                                    <h4 class="card-title">Nilai Raport/rata-rata nilai ulangan sebelumnya (Mapel yang diprivatkan)</h4>
+                                    <div class="table-overflow">
+                                      <table id="tabelInputNilai" class="table">
+                                        <thead>
+                                          <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Mata Pelajaran</th>
+                                            <th>Nilai Raport/Rata-rata Nilai Ulangan</th>
+                                            <th class="text-center"><a href="javascript:void(0);" class="btn btn-default no-mrg" data-id="" onclick="addRowNilai(event);" title="Tambahkan Input Nilai"> <i class="fa fa-plus"></i> </a></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody><!-- 
+                                          <tr>
+                                            <td class="text-center">
+                                              <div class="list-info mrg-top-10">1</div>
+                                            </td>
+                                            <td><input type="text" name="nama_mapel[]" id="nama_mapel-1" class="form-control" placeholder="Nama mapel"></td>
+                                            <td><input type="number" name="nilai_mapel[]" id="nilai_mapel-1" class="form-control" min="0" placeholder="Nilai"></td>
+                                            <td class="text-center">
+                                              <a href="javascript:void(0);" class="btn btn-default" data-id="" onclick="delRowNilai(event);" title="Hapus Input Nilai"> <i class="fa fa-minus"></i> </a>
+                                            </td>
+                                          </tr>
+                                         --></tbody>
+                                      </table>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Mata Pelajaran yang Disukai</label>
+                                        <input type="text" name="mapel_suka" id="mapel_suka" class="form-control" placeholder="Mapel yang disukai">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <label>Mata Pelajaran yang Tidak Disukai</label>
+                                        <input type="text" name="mapel_benci" id="mapel_benci" class="form-control" placeholder="Mapel yang tidak disukai">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                               </form>
+                              </div>
+
+                              <div id="step3" class="tab-pane fade">
+                                <form action ="<?php echo base_url()?>privat/registrasi/do_add" id="formReg3" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div id="dataAyah">
@@ -401,8 +380,8 @@
                                </form>
                               </div>
                               
-                              <div id="step3" class="tab-pane fade">
-                                <form action ="" id="formReg3" class="width-100" method="post">
+                              <div id="step4" class="tab-pane fade">
+                                <form action ="<?php echo base_url()?>privat/registrasi/do_add" id="formReg4" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
                                     <div class="row">
@@ -468,7 +447,7 @@
                               </form>
                               </div>
 
-                              <div id="step4" class="tab-pane fade">
+                              <div id="step5" class="tab-pane fade">
                                 <div class="row">
                                   <div class="col-md-6 mr-auto ml-auto">
                                     <img class="img-fluid d-block mrg-horizon-auto" src="assets/images/others/cart.png" alt="">
@@ -549,7 +528,7 @@
     var jsonKota = <?php echo json_encode(get_kota()->result())?>;
     var jsonKecamatan = [];
     var jsonKelurahan = [];
-    // var jsonAkun = <?php echo json_encode($list_akun)?>;
+    var jsonAkun = <?php echo json_encode($list_akun)?>;
 
     // INITIALIZE DATATABLE
     var tableData = $("#tableData").DataTable({
@@ -572,11 +551,12 @@
 
     //LOADING TABLE BODY WITH JSON DATA
     // loadTabelUnit(jsonList);
+    addRowNilai();
 
     /*function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>registrasi/bimbel/get_unit_by_id',
+          url: '<?php echo base_url();?>master/unit/get_unit_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
@@ -614,7 +594,7 @@
     var selectizeKota, $selectizeKota;
     var selectizeKecamatan, $selectizeKecamatan;
     var selectizeKelurahan, $selectizeKelurahan;
-    // var selectizeAkun, $selectizeAkun;
+    var selectizeAkun, $selectizeAkun;
     //loading select option unit
     $selectizeUnit = $('#unit').selectize({
       options: $.map(jsonUnit, function(data, i) {
@@ -625,18 +605,18 @@
       placeholder: 'Pilih Unit/Cabang',
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });
-    // loading select option agama
-    $selectizeAgama = $('[name="agama_id"]').selectize({
-      options: $.map(jsonAgama, function(data, i) {
-        return [{ value: data.id, text: data.nama }];
-      }),
-      create: false,
-      sortField: { field: 'value', direction: 'asc' },
-      placeholder: 'Pilih Agama',
-      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    });
+    //loading select option agama
+    // $selectizeAgama = $('[name="agama_id"]').selectize({
+    //   options: $.map(jsonAgama, function(data, i) {
+    //     return [{ value: data.id, text: data.nama }];
+    //   }),
+    //   create: false,
+    //   sortField: { field: 'value', direction: 'asc' },
+    //   placeholder: 'Pilih Agama',
+    //   // valueField: 'value', labelField: 'name', dropdownParent: 'body'
+    // });
     //loading select option provinsi
-    $selectizeProvinsi = $('#provinsi').selectize({
+    /*$selectizeProvinsi = $('#provinsi').selectize({
       options: $.map(jsonProvinsi, function(data, i) {
         return [{ value: data.id, text: data.nama_provinsi }];
       }),
@@ -681,7 +661,7 @@
           selectizeKecamatan.load(function(callback) {
             // console.log('Loading Kecamatan!!');
             xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>registrasi/bimbel/get_kecamatan_by_kota", {id: val}, function(response, status) {
+            xhr = $.post("<?php echo base_url()?>master/unit/get_kecamatan_by_kota", {id: val}, function(response, status) {
                   if(status == 'success') {
                     let filteredArr = $.map(response.data, function(data, i) {
                       if((data.kabkota_id == val)){
@@ -722,7 +702,7 @@
           selectizeKelurahan.load(function(callback) {
             // console.log('Loading Kelurahan!!');
             xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>registrasi/bimbel/get_kelurahan_by_kecamatan", {id: val}, function(response, status) {
+            xhr = $.post("<?php echo base_url()?>master/unit/get_kelurahan_by_kecamatan", {id: val}, function(response, status) {
                   // console.log(response);
                   if(status == 'success') {
                     let filteredArr = $.map(response.data, function(data, i) {
@@ -757,7 +737,7 @@
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });
     //loading select option akun admin
-    /*$selectizeAkun = $('#akun_id').selectize({
+    $selectizeAkun = $('#akun_id').selectize({
       options: $.map(jsonAkun, function(data, i) {
         return [{ value: data.id, text: data.nama }];
       }),
@@ -767,12 +747,12 @@
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });*/
     selectizeUnit = $selectizeUnit[0].selectize;
-    selectizeAgama = $selectizeAgama[0].selectize;
-    selectizeProvinsi = $selectizeProvinsi[0].selectize;
+    // selectizeAgama = $selectizeAgama[0].selectize;
+    /*selectizeProvinsi = $selectizeProvinsi[0].selectize;
     selectizeKota = $selectizeKota[0].selectize;
     selectizeKecamatan = $selectizeKecamatan[0].selectize;
     selectizeKelurahan = $selectizeKelurahan[0].selectize;
-    // selectizeAkun = $selectizeAkun[0].selectize;
+    selectizeAkun = $selectizeAkun[0].selectize;*/
 
     //INITIALIZE FORM VALIDATION
     formValidation = $("#formAdd").validate({
@@ -794,21 +774,55 @@
       $('#'+target+' .error').removeClass('error');
     }); 
 
+    //ADD NEW ROW TO INPUT NILAI TABLE
+    function addRowNilai(e) {
+      // e.preventDefault();
+      let countRow = $('#tabelInputNilai tbody tr').length;
+      if(countRow < 15) {
+        let num = (countRow+1);
+        let html = '<tr>'
+                  +'<td class="text-center">'
+                    +'<div class="list-info mrg-top-10">'+num+'</div>'
+                  +'</td>'
+                  +'<td><input type="text" name="nama_mapel[]" class="form-control" placeholder="Nama mapel"></td>'
+                  +'<td><input type="number" name="nilai_mapel[]"  class="form-control" min="0" placeholder="Nilai"></td>'
+                  +'<td class="text-center">'
+                    +'<a href="javascript:void(0);" class="btn btn-default"  onclick="delRowNilai(event);" title="Hapus Input Nilai"> <i class="fa fa-minus"></i> </a>'
+                  +'</td>'
+                +'</tr>';
+        $(html).appendTo('#tabelInputNilai tbody').hide().fadeIn();
+      }
+    }
+    //REMOVE ROW FROM INPUT NILAI TABLE
+    function delRowNilai(e) {
+      e.preventDefault();
+      let target = $(e.currentTarget).closest('tr');
+      let countRow = $('#tabelInputNilai tbody tr').length;
+      let num = $(e.currentTarget).data('id') || null;
+      if(target && (countRow > 1)) {
+        $(target).remove();
+        //resetting table index number (#)
+        $('#tabelInputNilai tbody tr').each(function(idx) {
+          $(this).find('td:first-child').text(idx+1);
+        });
+      }
+    }
 
     //MODAL FORM SUBMIT HANDLER
     function doSubmit(form, event) {
       event.preventDefault();
       let arrData = {
             siswa:$("#formReg1 *[name]").serialize(),
-            ayah: $("#formReg2 #dataAyah *[name]").serialize(),
-            ibu: $("#formReg2 #dataIbu *[name]").serialize(),
-            isian: $("#formReg3 *[name]").serialize()
+            nilai:$("#formReg2 *[name]").serialize(),
+            ayah: $("#formReg3 #dataAyah *[name]").serialize(),
+            ibu: $("#formReg3 #dataIbu *[name]").serialize(),
+            isian: $("#formReg4 *[name]").serialize()
           };
       // console.log($("#formReg #step1 *[name]").serialize());
       // let id = $('#id').val() || '';
       if(form) {
         $.ajax({
-          url: '<?php echo base_url()?>registrasi/bimbel/do_add',
+          url: '<?php echo base_url()?>privat/registrasi/do_add',
           data: { arr_data: arrData},
           type: 'POST',
           dataType: 'json',
@@ -853,7 +867,6 @@
     var $valid = false;
     var currentIndex = $('#rootwizard').bootstrapWizard('currentIndex')+1;
     // console.log(currentIndex);
-    // return true;
     var $validator = $('#formReg'+currentIndex).validate({
       errorElement: 'label', validClass : ''
     });
@@ -866,9 +879,6 @@
   }
 
     $('#tanggal_lahir').datepicker({
-      format: "yyyy/mm/dd"
-    });
-    $('#awal_masuk').datepicker({
       format: "yyyy/mm/dd"
     });
 

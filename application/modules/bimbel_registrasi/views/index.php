@@ -53,7 +53,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Registrasi Batik
+              <h4>Registrasi Bimbel
                 <!-- <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -83,19 +83,13 @@
                               <li class="nav-item">
                                 <a href="#step3" data-toggle="tab">
                                   <span class="step">3</span>
-                                  <span class="title">Data Lainnya</span>
+                                  <span class="title">Data Isian</span>
                                 </a>
                               </li>
                               <li class="nav-item">
                                 <a href="#step4" data-toggle="tab">
                                   <span class="step">4</span>
-                                  <span class="title">Jadwal dan Investasi</span>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="#step5" data-toggle="tab">
-                                  <span class="step">5</span>
-                                  <span class="title">Konfirmasi</span>
+                                  <span class="title">Data Konfirmasi</span>
                                 </a>
                               </li>
                             </ul>
@@ -146,16 +140,9 @@
                                       </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
-                                          <label>Tempat/Tanggal Lahir</label>
-                                            <div class="timepicker-input input-group">
-                                              <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" placeholder="Tempat Lahir" required="">
-                                              <span class="input-group-addon">
-                                                <i class="ti-calendar"></i>
-                                              </span>
-                                              <input type="text" name="tanggal_lahir" id="tanggal_lahir" class="form-control datepicker-2" placeholder="Tanggal Lahir" required="">
-                                            </div>
-                                            <label for="tempat_lahir" generated="true" class="error"></label>
-                                            <label for="tanggal_lahir" generated="true" class="error"></label>
+                                          <label>Agama</label>
+                                          <select name="agama_id" id="agama" class="" placeholder="Kota" required=""></select>
+                                          <label for="agama" generated="true" class="error"></label>
                                         </div>
                                       </div>
                                     </div>
@@ -202,6 +189,34 @@
                                     <div class="row">
                                       <div class="col-md-6">
                                         <div class="form-group">
+                                          <label>Tempat/Tanggal Lahir</label>
+                                            <div class="timepicker-input input-group">
+                                              <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" placeholder="Tempat Lahir" required="">
+                                              <span class="input-group-addon">
+                                                <i class="ti-calendar"></i>
+                                              </span>
+                                              <input type="text" name="tanggal_lahir" id="tanggal_lahir" class="form-control datepicker-2" placeholder="Tanggal Lahir" required="">
+                                            </div>
+                                            <label for="tempat_lahir" generated="true" class="error"></label>
+                                            <label for="tanggal_lahir" generated="true" class="error"></label>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Anak ke</label>
+                                          <div class="input-group">
+                                            <input type="number" name="anak_ke" id="anak_ke" class="form-control" min="0" placeholder="Anak ke" required="">
+                                            <span class="input-group-addon">dari</span>
+                                            <input type="number" name="jml_bersaudara" id="jml_bersaudara" class="form-control" min="0" placeholder="Jumlah bersaudara">
+                                            <span class="input-group-addon">bersaudara</span>
+                                          </div>
+                                          <label for="anak_ke" generated="true" class="error"></label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
                                           <label>No. Telepon/HP</label>
                                           <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-phone"></i></span>
@@ -214,21 +229,66 @@
                                       </div>
                                       <div class="col-md-6">
                                         <div class="form-group">
-                                          <label>Pin BB</label>
-                                          <input type="text" name="pin_bb" id="pin_bb" class="form-control" placeholder="Pin BB">
+                                          <label>Email</label>
+                                          <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="">
                                         </div>
                                       </div>
                                     </div>
                                     <div class="row">
                                       <div class="col-md-6">
                                         <div class="form-group">
-                                          <label>Nilai Rapor (MTK)</label>
-                                          <input type="number" name="nilai_rapor" id="nilai_rapor" class="form-control" min="0" max="100" placeholder="Nilai Rapor">
+                                          <label>Pin BB</label>
+                                          <input type="text" name="pin_bb" id="pin_bb" class="form-control" placeholder="Pin BB">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Media Sosial</label>
+                                          <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-facebook"></i></span>
+                                            <input type="text" name="akun_fb" id="akun_fb" class="form-control" placeholder="Username FB">
+                                            <span class="input-group-addon"><i class="fa fa-twitter"></i></span>
+                                            <input type="text" name="akun_twitter" id="akun_twitter" class="form-control" placeholder="Username Twitter">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Awal Masuk Tridaya</label>
+                                            <div class="timepicker-input input-group">
+                                              <span class="input-group-addon">
+                                                <i class="ti-calendar"></i>
+                                              </span>
+                                              <input type="text" name="awal_masuk" id="awal_masuk" class="form-control datepicker-2" placeholder="Awal Masuk Tridaya">
+                                            </div>
+                                            <label for="awal_masuk" generated="true" class="error"></label>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Nama Tutor Sebelumnya</label>
+                                          <input type="text" name="tutor_sebelumnya" id="tutor_sebelumnya" class="form-control" placeholder="Nama Tutor Sebelumnya">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Unit Belajar Sebelumnya</label>
+                                          <input type="text" name="unit_sebelumnya" id="unit_sebelumnya" class="form-control" placeholder="Unit Belajar Sebelumnya">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-group">
+                                          <label>Ranking/Raport</label>
+                                          <input type="text" name="ranking" id="ranking" class="form-control" placeholder="Ranking/Raport">
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                  </div>
                                 </form>
                               </div>
 
@@ -345,29 +405,6 @@
                                 <form action ="" id="formReg3" class="width-100" method="post">
                                 <div class="row">
                                   <div class="col-md-10 mr-auto ml-auto">
-                                    <h4 class="card-title">Pilihan Jadwal</h4>
-                                    <div class="table-overflow">
-                                      <table id="tabelInputJadwal" class="table">
-                                        <thead>
-                                          <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Hari</th>
-                                            <th>Waktu</th>
-                                            <th class="text-center"><a href="javascript:void(0);" class="btn btn-default no-mrg" data-id="" onclick="addRowJadwal(event);" title="Tambahkan Input Jadwal"> <i class="fa fa-plus"></i> </a></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody> </tbody>
-                                      </table>
-                                  </div>
-                                </div>
-                                </div>
-                               </form>
-                              </div>
-
-                              <div id="step4" class="tab-pane fade">
-                                <form action ="" id="formReg4" class="width-100" method="post">
-                                <div class="row">
-                                  <div class="col-md-10 mr-auto ml-auto">
                                     <div class="row">
                                     <?php 
                                     foreach ($list_isian as $key => $isian) {
@@ -389,32 +426,21 @@
                                           <?php } ?>
                                         </div>
                                         <?php } 
-                                        else if($isian->tipe_input == "radio") {   ?>
+                                        else if($isian->tipe_input == "radio") { ?>
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label><?php echo $isian->pertanyaan?></label>
                                             <div class="row">
                                               <div class="col-md-12">
                                                 <div class="form-inline">
-                                                  <?php if(!empty($isian->opsi_radio)) { 
-                                                    foreach (json_decode($isian->opsi_radio) as $key => $opsi) {
-                                                    ?>
-                                                    <div class="radio radio-inline">
-                                                      <input type="radio" name="jawaban-<?php echo $isian->id?>[]" id="opsi-<?php echo $isian->id?>-<?php echo $key?>" value="<?php echo $opsi->value?>" <?php echo ($key == 0) ? 'checked=""' : ''?> >
-                                                      <label for="opsi-<?php echo $isian->id?>-<?php echo $key?>"><?php echo ucfirst($opsi->text)?></label>
-                                                    </div>
-                                                  <?php }
-                                                  } else { ?>
-                                                  <!-- OPSI DEFAULT -->
-                                                    <div class="radio radio-inline">
-                                                      <input type="radio" name="jawaban-<?php echo $isian->id?>[]" id="opsi-<?php echo $isian->id?>-1" value="ya" checked="">
-                                                      <label for="opsi-<?php echo $isian->id?>-1">Ya</label>
-                                                    </div>
-                                                    <div class="radio radio-inline">
-                                                      <input type="radio" name="jawaban-<?php echo $isian->id?>[]" id="opsi-<?php echo $isian->id?>-2" value="tidak">
-                                                      <label for="opsi-<?php echo $isian->id?>-2">Tidak</label>
-                                                    </div>
-                                                  <?php } ?>
+                                                  <div class="radio radio-inline">
+                                                    <input type="radio" name="jawaban-<?php echo $isian->id?>[]" id="opsi-<?php echo $isian->id?>-1" value="ya" checked="">
+                                                    <label for="opsi-<?php echo $isian->id?>-1">Ya</label>
+                                                  </div>
+                                                  <div class="radio radio-inline">
+                                                    <input type="radio" name="jawaban-<?php echo $isian->id?>[]" id="opsi-<?php echo $isian->id?>-2" value="tidak">
+                                                    <label for="opsi-<?php echo $isian->id?>-2">Tidak</label>
+                                                  </div>
                                                   <?php if(!empty($isian->pertanyaan_lanjutan)) { ?>
                                                     <input type="text" name="jawaban-<?php echo $isian->id?>[]" class="form-control" placeholder="<?php echo $isian->pertanyaan_lanjutan?>">
                                                   <?php } ?>
@@ -442,7 +468,7 @@
                               </form>
                               </div>
 
-                              <div id="step5" class="tab-pane fade">
+                              <div id="step4" class="tab-pane fade">
                                 <div class="row">
                                   <div class="col-md-6 mr-auto ml-auto">
                                     <img class="img-fluid d-block mrg-horizon-auto" src="assets/images/others/cart.png" alt="">
@@ -546,12 +572,11 @@
 
     //LOADING TABLE BODY WITH JSON DATA
     // loadTabelUnit(jsonList);
-    addRowJadwal();
 
     /*function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>registrasi/batik/get_unit_by_id',
+          url: '<?php echo base_url();?>bimbel/registrasi/get_unit_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
@@ -600,16 +625,16 @@
       placeholder: 'Pilih Unit/Cabang',
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });
-    //loading select option agama
-    // $selectizeAgama = $('[name="agama_id"]').selectize({
-    //   options: $.map(jsonAgama, function(data, i) {
-    //     return [{ value: data.id, text: data.nama }];
-    //   }),
-    //   create: false,
-    //   sortField: { field: 'value', direction: 'asc' },
-    //   placeholder: 'Pilih Agama',
-    //   // valueField: 'value', labelField: 'name', dropdownParent: 'body'
-    // });
+    // loading select option agama
+    $selectizeAgama = $('[name="agama_id"]').selectize({
+      options: $.map(jsonAgama, function(data, i) {
+        return [{ value: data.id, text: data.nama }];
+      }),
+      create: false,
+      sortField: { field: 'value', direction: 'asc' },
+      placeholder: 'Pilih Agama',
+      // valueField: 'value', labelField: 'name', dropdownParent: 'body'
+    });
     //loading select option provinsi
     $selectizeProvinsi = $('#provinsi').selectize({
       options: $.map(jsonProvinsi, function(data, i) {
@@ -656,7 +681,7 @@
           selectizeKecamatan.load(function(callback) {
             // console.log('Loading Kecamatan!!');
             xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>registrasi/batik/get_kecamatan_by_kota", {id: val}, function(response, status) {
+            xhr = $.post("<?php echo base_url()?>bimbel/registrasi/get_kecamatan_by_kota", {id: val}, function(response, status) {
                   if(status == 'success') {
                     let filteredArr = $.map(response.data, function(data, i) {
                       if((data.kabkota_id == val)){
@@ -697,7 +722,7 @@
           selectizeKelurahan.load(function(callback) {
             // console.log('Loading Kelurahan!!');
             xhr && xhr.abort();
-            xhr = $.post("<?php echo base_url()?>registrasi/batik/get_kelurahan_by_kecamatan", {id: val}, function(response, status) {
+            xhr = $.post("<?php echo base_url()?>bimbel/registrasi/get_kelurahan_by_kecamatan", {id: val}, function(response, status) {
                   // console.log(response);
                   if(status == 'success') {
                     let filteredArr = $.map(response.data, function(data, i) {
@@ -742,7 +767,7 @@
       // valueField: 'value', labelField: 'name', dropdownParent: 'body'
     });*/
     selectizeUnit = $selectizeUnit[0].selectize;
-    // selectizeAgama = $selectizeAgama[0].selectize;
+    selectizeAgama = $selectizeAgama[0].selectize;
     selectizeProvinsi = $selectizeProvinsi[0].selectize;
     selectizeKota = $selectizeKota[0].selectize;
     selectizeKecamatan = $selectizeKecamatan[0].selectize;
@@ -769,39 +794,6 @@
       $('#'+target+' .error').removeClass('error');
     }); 
 
-    //ADD NEW ROW TO INPUT NILAI TABLE
-    function addRowJadwal(e) {
-      // e.preventDefault();
-      let countRow = $('#tabelInputJadwal tbody tr').length;
-      if(countRow < 15) {
-        let num = (countRow+1);
-        let html = '<tr>'
-                  +'<td class="text-center">'
-                    +'<div class="list-info mrg-top-10">'+num+'</div>'
-                  +'</td>'
-                  +'<td><input type="text" name="hari[]" class="form-control" placeholder="Hari"></td>'
-                  +'<td><input type="text" name="waktu[]"  class="form-control" placeholder="Waktu"></td>'
-                  +'<td class="text-center">'
-                    +'<a href="javascript:void(0);" class="btn btn-default"  onclick="delRowJadwal(event);" title="Hapus Input Nilai"> <i class="fa fa-minus"></i> </a>'
-                  +'</td>'
-                +'</tr>';
-        $(html).appendTo('#tabelInputJadwal tbody').hide().fadeIn();
-      }
-    }
-    //REMOVE ROW FROM INPUT NILAI TABLE
-    function delRowJadwal(e) {
-      e.preventDefault();
-      let target = $(e.currentTarget).closest('tr');
-      let countRow = $('#tabelInputJadwal tbody tr').length;
-      let num = $(e.currentTarget).data('id') || null;
-      if(target && (countRow > 1)) {
-        $(target).remove();
-        //resetting table index number (#)
-        $('#tabelInputJadwal tbody tr').each(function(idx) {
-          $(this).find('td:first-child').text(idx+1);
-        });
-      }
-    }
 
     //MODAL FORM SUBMIT HANDLER
     function doSubmit(form, event) {
@@ -810,14 +802,13 @@
             siswa:$("#formReg1 *[name]").serialize(),
             ayah: $("#formReg2 #dataAyah *[name]").serialize(),
             ibu: $("#formReg2 #dataIbu *[name]").serialize(),
-            jadwal:$("#formReg3 *[name]").serialize(),
-            isian: $("#formReg4 *[name]").serialize()
+            isian: $("#formReg3 *[name]").serialize()
           };
       // console.log($("#formReg #step1 *[name]").serialize());
       // let id = $('#id').val() || '';
       if(form) {
         $.ajax({
-          url: '<?php echo base_url()?>registrasi/batik/do_add',
+          url: '<?php echo base_url()?>bimbel/registrasi/do_add',
           data: { arr_data: arrData},
           type: 'POST',
           dataType: 'json',
@@ -875,6 +866,9 @@
   }
 
     $('#tanggal_lahir').datepicker({
+      format: "yyyy/mm/dd"
+    });
+    $('#awal_masuk').datepicker({
       format: "yyyy/mm/dd"
     });
 

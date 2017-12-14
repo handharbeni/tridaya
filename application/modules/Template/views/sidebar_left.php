@@ -167,9 +167,9 @@
           </span>
         </a>
         <ul class="dropdown-menu">
-          <li>
+          <!-- <li>
             <a href="<?php echo base_url();?>master/kelas">Kelas</a>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a href="javascript:void(0);">
               <span>Registrasi</span>
@@ -179,16 +179,16 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="<?php echo base_url()?>registrasi/sekolah">Sekolah</a>
+                <a href="<?php echo base_url()?>sekolah/registrasi">Sekolah</a>
               </li>
               <li>
-                <a href="<?php echo base_url()?>registrasi/private">Private</a>
+                <a href="<?php echo base_url()?>privat/registrasi">Privat</a>
               </li>
               <li>
-                <a href="<?php echo base_url()?>registrasi/bimbel">Bimbel</a>
+                <a href="<?php echo base_url()?>bimbel/registrasi">Bimbel</a>
               </li>
               <li>
-                <a href="<?php echo base_url()?>registrasi/batik">Batik</a>
+                <a href="<?php echo base_url()?>batik/registrasi">Batik</a>
               </li>
             </ul>
           </li>
@@ -250,6 +250,15 @@
         <ul class="dropdown-menu">
           <li>
             <a href="<?php echo base_url()?>sekolah/jadwal">Kalender Akademik (PG/TK/SD)</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url()?>privat/jadwal">Riwayat Pertemuan (Privat)</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url()?>bimbel/jadwal">Penjadwalan Bimbel</a>
+          </li>
+          <li>
+            <a href="<?php echo base_url()?>batik/jadwal">Riwayat Pertemuan (Batik)</a>
           </li>
         </ul>
       </li>

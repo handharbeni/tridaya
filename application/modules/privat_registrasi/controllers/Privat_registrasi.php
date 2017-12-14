@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Reg_private extends MX_Controller {
+class Privat_registrasi extends MX_Controller {
   //Global variable
   var $data;
   private $response;
