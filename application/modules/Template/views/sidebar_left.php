@@ -230,10 +230,26 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="invoice.html">Absensi Siswa</a>
-          </li>   
-          <li>
-            <a href="invoice.html">Absensi Guru</a>
+            <a href="<?php echo base_url()?>absensi/guru">Absensi Guru</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="javascript:void(0);">
+              <span>Absensi Siswa</span>
+              <span class="arrow">
+                <i class="ti-angle-right"></i>
+              </span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="<?php echo base_url()?>privat/absensi_siswa">Privat</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>bimbel/absensi_siswa">Bimbel</a>
+              </li>
+              <li>
+                <a href="<?php echo base_url()?>bimbel/absensi_guru">Batik</a>
+              </li>
+            </ul>
           </li>   
         </ul>
       </li>
@@ -249,16 +265,10 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="<?php echo base_url()?>sekolah/jadwal">Kalender Akademik (PG/TK/SD)</a>
+            <a href="<?php echo base_url()?>sekolah/jadwal">PG/TK/SD (Kalender Akademik)</a>
           </li>
           <li>
-            <a href="<?php echo base_url()?>privat/jadwal">Riwayat Pertemuan (Privat)</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url()?>bimbel/jadwal">Penjadwalan Bimbel</a>
-          </li>
-          <li>
-            <a href="<?php echo base_url()?>batik/jadwal">Riwayat Pertemuan (Batik)</a>
+            <a href="<?php echo base_url()?>bimbel/jadwal">Bimbel</a>
           </li>
         </ul>
       </li>

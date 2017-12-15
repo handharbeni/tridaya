@@ -33,12 +33,12 @@ class Privat_guru extends MX_Controller {
 
   private function get_data_list($id=null)
   {
-    $sql = "SELECT m_guru_privat.*, m_agama.nama AS nama_agama, m_unit.nama AS nama_unit FROM m_guru_privat"
-      ." LEFT JOIN m_unit ON m_guru_privat.unit_id = m_unit.id" 
-      ." LEFT JOIN m_agama ON m_guru_privat.agama_id = m_agama.id" 
-      ." WHERE m_guru_privat.deleted = '0'";
-      if($id) { $sql .= " AND m_guru_privat.id = ".$id; }
-    $sql .= " ORDER BY m_guru_privat.timestamp DESC";
+    $sql = "SELECT m_guru_private.*, m_agama.nama AS nama_agama, m_unit.nama AS nama_unit FROM m_guru_private"
+      ." LEFT JOIN m_unit ON m_guru_private.unit_id = m_unit.id" 
+      ." LEFT JOIN m_agama ON m_guru_private.agama_id = m_agama.id" 
+      ." WHERE m_guru_private.deleted = '0'";
+      if($id) { $sql .= " AND m_guru_private.id = ".$id; }
+    $sql .= " ORDER BY m_guru_private.timestamp DESC";
     return $this->model_adm->rawQuery($sql);
   }
 
@@ -81,7 +81,7 @@ class Privat_guru extends MX_Controller {
         'deleted' => 0, 
         'id' => $params['id']
       );
-      $result = $this->model_adm->select($condition, 'm_guru_privat')->row();
+      $result = $this->model_adm->select($condition, 'm_guru_private')->row();
       $response = array('status' => 1, 'data' => $result);
     }
     echo json_encode($response);
@@ -102,18 +102,18 @@ class Privat_guru extends MX_Controller {
     $query = $this->get_data_list();
     $totalData = $query->num_rows();
     
-    $sql = "SELECT m_guru_privat.*, m_unit.nama AS nama_unit, m_agama.nama AS nama_agama FROM m_guru_privat "
-      ." LEFT JOIN m_unit ON m_guru_privat.unit_id = m_unit.id "
-      ." LEFT JOIN m_agama ON m_guru_privat.agama_id = m_agama.id "
-      ." WHERE m_guru_privat.deleted = 0";
+    $sql = "SELECT m_guru_private.*, m_unit.nama AS nama_unit, m_agama.nama AS nama_agama FROM m_guru_private "
+      ." LEFT JOIN m_unit ON m_guru_private.unit_id = m_unit.id "
+      ." LEFT JOIN m_agama ON m_guru_private.agama_id = m_agama.id "
+      ." WHERE m_guru_private.deleted = 0";
     if(!empty($requestData['search']['value'])) {
-      $sql.=" AND (m_guru_privat.nama_lengkap LIKE '%".$requestData['search']['value']."%'"; 
+      $sql.=" AND (m_guru_private.nama_lengkap LIKE '%".$requestData['search']['value']."%'"; 
       $sql.=" OR m_unit.nama LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_guru_privat.tempat_lahir LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_guru_privat.tanggal_lahir LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_guru_privat.alamat LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_guru_privat.no_telp LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR m_guru_privat.no_hp LIKE '%".$requestData['search']['value']."%')";
+      $sql.=" OR m_guru_private.tempat_lahir LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_guru_private.tanggal_lahir LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_guru_private.alamat LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_guru_private.no_telp LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR m_guru_private.no_hp LIKE '%".$requestData['search']['value']."%')";
     }
     $query = $this->model_adm->rawQuery($sql);
     $totalFiltered = $query->num_rows();
@@ -173,7 +173,7 @@ class Privat_guru extends MX_Controller {
     if(!empty($params)) {
       $data_db = $params;
       if(isset($data_db['id'])) { unset($data_db['id']); }
-      $result = $this->model_adm->insert($data_db, 'm_guru_privat');
+      $result = $this->model_adm->insert($data_db, 'm_guru_private');
 
       $data = [];
       $message = "Data gagal ditambahkan!";
@@ -200,7 +200,7 @@ class Privat_guru extends MX_Controller {
       $data_db['timestamp'] = date("Y-m-d H:i:s");
       unset($data_db['id']);
       unset($data_db['idSiswa']);
-      $result = $this->model_adm->update($condition, $data_db, 'm_guru_privat');
+      $result = $this->model_adm->update($condition, $data_db, 'm_guru_private');
 
       $data = [];
       $message = "Data gagal diubah!";
@@ -254,7 +254,7 @@ class Privat_guru extends MX_Controller {
                 'timestamp' => date("Y-m-d H:i:s")
         );
       }
-      $result = $this->model_adm->update_batch($data_db, 'm_guru_privat', 'id');
+      $result = $this->model_adm->update_batch($data_db, 'm_guru_private', 'id');
 
       $data = [];
       $message = "Data gagal dihapus!";
