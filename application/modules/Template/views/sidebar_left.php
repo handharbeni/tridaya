@@ -66,17 +66,11 @@
               <li>
                 <a href="<?php echo base_url()?>sekolah/guru">Data Guru</a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="<?php echo base_url()?>master/sekolah">Data Sekolah</a>
               </li>
               <li>
                 <a href="<?php echo base_url()?>sekolah/kelas">Data Kelas</a>
-              </li>
-              <!-- <li>
-                <a href="<?php echo base_url()?>master/kelas">Kelas</a>
-              </li>
-              <li>
-                <a href="<?php echo base_url()?>reg/batik">Batik</a>
               </li> -->
             </ul>
           </li>

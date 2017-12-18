@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"m_u",
+				"m_unit"
+			],
+			[
+				"m_uni",
+				"m_unit_kategori"
+			],
+			[
+				"jenja",
+				"jenjang_id"
+			],
+			[
+				"tingkat",
+				"tingkat_id"
+			],
+			[
 				"m_siswa",
 				"m_siswa_private"
 			],
@@ -498,22 +514,6 @@
 			[
 				"ge",
 				"get_date"
-			],
-			[
-				"seg",
-				"segments"
-			],
-			[
-				"loaded",
-				"loadedLength"
-			],
-			[
-				"timeline",
-				"timelineContainer"
-			],
-			[
-				"c",
-				"container"
 			]
 		]
 	},
@@ -567,7 +567,7 @@
 			"file": "application/controllers/Access.php",
 			"settings":
 			{
-				"buffer_size": 2544,
+				"buffer_size": 2546,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -586,15 +586,6 @@
 			"settings":
 			{
 				"buffer_size": 5188,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "application/modules/m_mapel/controllers/M_mapel.php",
-			"settings":
-			{
-				"buffer_size": 4314,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -736,7 +727,7 @@
 			"file": "application/modules/privat_guru/controllers/Privat_guru.php",
 			"settings":
 			{
-				"buffer_size": 10896,
+				"buffer_size": 10918,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -769,37 +760,162 @@
 			}
 		},
 		{
-			"file": "application/modules/privat_jadwal/controllers/Privat_jadwal.php",
+			"file": "application/modules/batik_absensi_siswa/controllers/Batik_absensi_siswa.php",
 			"settings":
 			{
-				"buffer_size": 9713,
+				"buffer_size": 9413,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/modules/batik_jadwal/controllers/Batik_jadwal.php",
+			"file": "application/modules/batik_absensi_guru/controllers/Batik_absensi_guru.php",
 			"settings":
 			{
-				"buffer_size": 9632,
+				"buffer_size": 9100,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/modules/batik_jadwal/views/index.php",
+			"file": "application/modules/privat_absensi_siswa/controllers/Privat_absensi_siswa.php",
 			"settings":
 			{
-				"buffer_size": 23972,
+				"buffer_size": 9480,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/privat_absensi_guru/controllers/Privat_absensi_guru.php",
+			"settings":
+			{
+				"buffer_size": 9165,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_absensi_siswa/controllers/Bimbel_absensi_siswa.php",
+			"settings":
+			{
+				"buffer_size": 9447,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/m_mapel/controllers/M_mapel.php",
+			"settings":
+			{
+				"buffer_size": 4314,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/user/Downloads/db_tridaya.sql",
+			"settings":
+			{
+				"buffer_size": 11527263,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_jadwal/controllers/Bimbel_jadwal.php",
+			"settings":
+			{
+				"buffer_size": 4863,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/modules/absensi_guru/controllers/Absensi_guru.php",
+			"settings":
+			{
+				"buffer_size": 11338,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "SELECT absensi_guru.*, \nCASE \n WHEN absensi_guru.kategori_id = 1 THEN m_guru_sekolah.nama_lengkap\n WHEN absensi_guru.kategori_id = 2 THEN m_guru_private.nama_lengkap\n WHEN absensi_guru.kategori_id = 3 THEN m_guru_bimbel.nama_lengkap \n WHEN absensi_guru.kategori_id = 4 THEN m_guru_batik.nama_lengkap \nEND AS nama_guru\nFROM absensi_guru\n LEFT OUTER JOIN m_guru_sekolah ON absensi_guru.guru_id = m_guru_sekolah.id\n LEFT OUTER JOIN m_guru_private ON absensi_guru.guru_id = m_guru_private.id\n LEFT OUTER JOIN m_guru_bimbel ON absensi_guru.guru_id = m_guru_bimbel.id\n LEFT OUTER JOIN m_guru_batik ON absensi_guru.guru_id = m_guru_batik.id\nWHERE\n (absensi_guru.kategori_id = 1 and m_guru_sekolah.id IS NOT null) OR\n (absensi_guru.kategori_id = 2 and m_guru_private.id IS NOT null) OR\n (absensi_guru.kategori_id = 3 and m_guru_bimbel.id IS NOT null) OR\n (absensi_guru.kategori_id = 4 and m_guru_batik.id IS NOT null)\n        ",
+			"settings":
+			{
+				"buffer_size": 918,
+				"line_ending": "Windows",
+				"name": "SELECT absensi_guru.*,"
+			}
+		},
+		{
+			"file": "application/modules/absensi_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 24012,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/modules/privat_jadwal/views/index.php",
+			"file": "application/modules/bimbel_jadwal/views/index.php",
 			"settings":
 			{
-				"buffer_size": 23980,
+				"buffer_size": 21120,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/m_mapel/views/index.php",
+			"settings":
+			{
+				"buffer_size": 17917,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/bimbel_absensi_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 24026,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/batik_absensi_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 23952,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/batik_absensi_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 24018,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/privat_absensi_siswa/views/index.php",
+			"settings":
+			{
+				"buffer_size": 24026,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/modules/privat_absensi_guru/views/index.php",
+			"settings":
+			{
+				"buffer_size": 23960,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -943,7 +1059,7 @@
 			"file": "application/modules/template/views/sidebar_left.php",
 			"settings":
 			{
-				"buffer_size": 11205,
+				"buffer_size": 11347,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -980,15 +1096,6 @@
 			"settings":
 			{
 				"buffer_size": 15795,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/modules/m_mapel/views/index.php",
-			"settings":
-			{
-				"buffer_size": 17917,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -1078,6 +1185,11 @@
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/github/tridaya/application/modules/privat_absensi_guru/controllers/Batik_absensi_guru.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/privat_jadwal/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/privat_jadwal/controllers/Privat_jadwal.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/batik_jadwal/views/index.php",
+		"/C/xampp/htdocs/github/tridaya/application/modules/batik_jadwal/controllers/Batik_jadwal.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/sekolah_registrasi/controllers/sekolah_registrasi.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/reg_sekolah/views/index.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/reg_bimbel/views/index.php",
@@ -1200,16 +1312,11 @@
 		"/C/xampp/htdocs/github/tridaya/application/modules/Dashboard/controllers/Dashboard.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/Login/views/index.php",
 		"/C/xampp/htdocs/github/tridaya/application/modules/Signin/views/index.php",
-		"/C/xampp/htdocs/github/tridaya/application/modules/Signin/controllers/Signin.php",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/sign-in2.html",
-		"/C/xampp/htdocs/github/tridaya/application/modules/M_akun/views/sidebar_left.php",
-		"/C/xampp/htdocs/github/tridaya/assets/js/app.js",
-		"/D/Urusan/Urusan Kuliah/SKRIPSI/Project/Web Templates/Admin Templates/From Faiz/Espire/Espire/html/modals.html",
-		"/C/xampp/htdocs/github/tridaya/application/config/autoload.php"
+		"/C/xampp/htdocs/github/tridaya/application/modules/Signin/controllers/Signin.php"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -1223,6 +1330,75 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CUD',\n)",
+			"CUD',",
+			"CUD',\n)",
+			"CUD'",
+			"text",
+			"mediumte",
+			"`timestamp` timestamp",
+			"NOT NULL DEFAULT CURRENT_TIMESTAMP",
+			"timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP",
+			"privat/absensi_siswa",
+			"_private",
+			"privat",
+			"private",
+			"privat/absensi_guru",
+			"_priva",
+			"_private",
+			"sekolah",
+			"_private",
+			"absens",
+			"privat_",
+			"m_guru_privat",
+			"privat",
+			"privat ",
+			"privat",
+			"selectizeTingkat",
+			"selectizeMapel",
+			"getDetail",
+			"disable",
+			"m_tingkat_jenjang",
+			"unit_id",
+			"unit",
+			"Unit/Cabang",
+			"Pilih Unit/Cabang",
+			"unit",
+			"Mapel",
+			"mapel",
+			"Tingkat",
+			"Jenjang",
+			"Unit",
+			"jsontin",
+			"Akun",
+			"Unit/Cabang",
+			".hari",
+			"master/unit",
+			"m_unit",
+			"m_akun",
+			"absens",
+			"batik/",
+			"batik",
+			"_batik",
+			"_guru",
+			"batik/absensi_siswa",
+			"bati",
+			"_batik",
+			"batik",
+			"m_pertemuan_batik",
+			"absensi_siswa_batik",
+			"siswa_id",
+			"batik/absensi_siswa",
+			"nama_siswa",
+			"m_siswa_batik",
+			"absensi_siswa_batik",
+			"start_",
+			"guru",
+			"guru.",
+			"m_pertemuan_batik.siswa",
+			"absensi_siswa_batik.uni",
+			"batik/jadwal",
+			"m_jadwal_batik",
 			"privat/jadwal",
 			"m_guru_private",
 			"m_siswa_private",
@@ -1281,76 +1457,7 @@
 			"loadEventList",
 			"do_de",
 			"loade",
-			"prepde",
-			"showde",
-			"deleted",
-			"DD-MM-YYYY",
-			"momen",
-			"html",
-			"loadEventList",
-			"start_date",
-			"scroll",
-			"patch",
-			"patc",
-			"scroll",
-			"                        </div>\ndate-range-picker",
-			"date-range-picker",
-			"no_telp",
-			"alamat",
-			"unit_id",
-			"nama",
-			"m_unit",
-			"id",
-			"m_unit",
-			"event ti",
-			"Kelurahan",
-			"akun",
-			"Akun",
-			"master/unit",
-			"Unit/Cabang",
-			"tambah un",
-			"../bower_components/",
-			"../bower_components",
-			"master/",
-			"master",
-			"m_guru",
-			"master/guru",
-			"m_guru",
-			"master/guru",
-			"m_guru",
-			"/$3",
-			"idsiswa",
-			"let idSiswa = $('#idSiswa').val() || '';",
-			"m_siswa_bimbel",
-			"siswa",
-			"bimbe",
-			"idSiswa",
-			"tersedia_parkir",
-			"Siswa Bimbel",
-			"jenis",
-			"tambah",
-			"Tambah",
-			"tambah",
-			"bimbel/siswa",
-			"unit",
-			"m_siswa_bimbel",
-			"m_siswa_sekolah",
-			"response.data",
-			"fo",
-			"response.data",
-			"privat",
-			"privat/siswa",
-			"modaljad",
-			"modalNilai",
-			"MODAL DETAIL ISI",
-			"modalni",
-			"nilai_mapel",
-			"show modal isian",
-			"show isian",
-			"isian",
-			"nilai",
-			"step2",
-			"Inves"
+			"prepde"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1368,7 +1475,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 33,
 			"sheets":
 			[
 				{
@@ -1398,7 +1505,7 @@
 						"translation.y": 1992.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
@@ -1426,7 +1533,7 @@
 						"translation.y": 3748.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
@@ -1442,8 +1549,8 @@
 						"selection":
 						[
 							[
-								171,
-								171
+								518,
+								518
 							]
 						],
 						"settings":
@@ -1456,7 +1563,7 @@
 						"translation.y": 6.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -1484,7 +1591,7 @@
 						"translation.y": 724.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
@@ -1512,7 +1619,7 @@
 						"translation.y": 501.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
@@ -1521,15 +1628,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2544,
+						"buffer_size": 2546,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								862,
-								862
+								875,
+								875
 							]
 						],
 						"settings":
@@ -1539,10 +1646,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 36.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -1571,7 +1678,7 @@
 						"translation.y": 1101.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
@@ -1601,41 +1708,11 @@
 						"translation.y": 594.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "application/modules/m_mapel/controllers/M_mapel.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4314,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1176,
-								1176
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 246.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 53,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
 					"file": "application/modules/m_jenjang/controllers/M_jenjang.php",
 					"semi_transient": false,
 					"settings":
@@ -1661,11 +1738,11 @@
 						"translation.y": 291.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "application/modules/m_tingkat_jenjang/controllers/M_tingkat_jenjang.php",
 					"semi_transient": false,
 					"settings":
@@ -1691,11 +1768,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 10,
 					"file": "application/modules/i_tag/controllers/I_tag.php",
 					"semi_transient": false,
 					"settings":
@@ -1721,11 +1798,11 @@
 						"translation.y": 27.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 11,
 					"file": "application/modules/i_kategori/controllers/I_kategori.php",
 					"semi_transient": false,
 					"settings":
@@ -1751,11 +1828,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 12,
 					"file": "application/modules/i_informasi/controllers/I_informasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1781,11 +1858,11 @@
 						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 13,
 					"file": "application/modules/sekolah_registrasi/controllers/Sekolah_registrasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1811,11 +1888,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 14,
 					"file": "application/modules/privat_registrasi/controllers/Privat_registrasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1841,11 +1918,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 15,
 					"file": "application/modules/bimbel_registrasi/controllers/Bimbel_registrasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1871,11 +1948,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 16,
 					"file": "application/modules/batik_registrasi/controllers/Batik_registrasi.php",
 					"semi_transient": false,
 					"settings":
@@ -1901,11 +1978,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 17,
 					"file": "application/modules/sekolah_siswa/controllers/Sekolah_siswa.php",
 					"semi_transient": false,
 					"settings":
@@ -1931,11 +2008,11 @@
 						"translation.y": 3329.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 18,
 					"file": "application/modules/privat_siswa/controllers/Privat_siswa.php",
 					"semi_transient": false,
 					"settings":
@@ -1961,11 +2038,11 @@
 						"translation.y": 1232.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 19,
 					"file": "application/modules/bimbel_siswa/controllers/Bimbel_siswa.php",
 					"semi_transient": false,
 					"settings":
@@ -1991,11 +2068,11 @@
 						"translation.y": 3134.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 20,
 					"file": "application/modules/batik_siswa/controllers/Batik_siswa.php",
 					"semi_transient": false,
 					"settings":
@@ -2021,11 +2098,11 @@
 						"translation.y": 1731.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 21,
 					"file": "application/modules/m_guru/controllers/M_guru.php",
 					"semi_transient": false,
 					"settings":
@@ -2051,11 +2128,11 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 22,
 					"file": "application/modules/sekolah_guru/controllers/Sekolah_guru.php",
 					"semi_transient": false,
 					"settings":
@@ -2067,8 +2144,8 @@
 						"selection":
 						[
 							[
-								1199,
-								1199
+								1121,
+								1127
 							]
 						],
 						"settings":
@@ -2078,111 +2155,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 267.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 23,
 					"file": "application/modules/privat_guru/controllers/Privat_guru.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10896,
+						"buffer_size": 10918,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1197,
-								1197
-							],
-							[
-								1272,
-								1272
-							],
-							[
-								1316,
-								1316
-							],
-							[
-								1382,
-								1382
-							],
-							[
-								1435,
-								1435
-							],
-							[
-								1495,
-								1495
-							],
-							[
-								1546,
-								1546
-							],
-							[
-								2844,
-								2844
-							],
-							[
-								3358,
-								3358
-							],
-							[
-								3433,
-								3433
-							],
-							[
-								3478,
-								3478
-							],
-							[
-								3544,
-								3544
-							],
-							[
-								3597,
-								3597
-							],
-							[
-								3694,
-								3694
-							],
-							[
-								3862,
-								3862
-							],
-							[
-								3953,
-								3953
-							],
-							[
-								4045,
-								4045
-							],
-							[
-								4130,
-								4130
-							],
-							[
-								4216,
-								4216
-							],
-							[
-								7219,
-								7219
-							],
-							[
-								8043,
-								8043
-							],
-							[
-								9696,
-								9696
+								805,
+								805
 							]
 						],
 						"settings":
@@ -2192,14 +2185,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3837.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 24,
 					"file": "application/modules/bimbel_guru/controllers/Bimbel_guru.php",
 					"semi_transient": false,
 					"settings":
@@ -2225,11 +2218,11 @@
 						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 25,
 					"file": "application/modules/batik_guru/controllers/Batik_guru.php",
 					"semi_transient": false,
 					"settings":
@@ -2241,8 +2234,8 @@
 						"selection":
 						[
 							[
-								2542,
-								2947
+								3597,
+								3562
 							]
 						],
 						"settings":
@@ -2252,14 +2245,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 954.0,
+						"translation.y": 1509.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 26,
 					"file": "application/modules/sekolah_jadwal/controllers/Sekolah_jadwal.php",
 					"semi_transient": false,
 					"settings":
@@ -2271,8 +2264,8 @@
 						"selection":
 						[
 							[
-								3574,
-								3574
+								4474,
+								4474
 							]
 						],
 						"settings":
@@ -2282,27 +2275,57 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1139.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "application/modules/batik_absensi_siswa/controllers/Batik_absensi_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2744,
+								2744
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 648.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 28,
-					"file": "application/modules/privat_jadwal/controllers/Privat_jadwal.php",
+					"file": "application/modules/batik_absensi_guru/controllers/Batik_absensi_guru.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9713,
+						"buffer_size": 9100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3135,
-								3135
+								2113,
+								2113
 							]
 						],
 						"settings":
@@ -2312,27 +2335,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 836.0,
+						"translation.y": 525.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 29,
-					"file": "application/modules/batik_jadwal/controllers/Batik_jadwal.php",
+					"file": "application/modules/privat_absensi_siswa/controllers/Privat_absensi_siswa.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9632,
+						"buffer_size": 9480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1182,
-								1182
+								2803,
+								2803
 							]
 						],
 						"settings":
@@ -2342,33 +2365,331 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 222.0,
+						"translation.y": 888.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "application/modules/privat_absensi_guru/controllers/Privat_absensi_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "application/modules/bimbel_absensi_siswa/controllers/Bimbel_absensi_siswa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1117,
+								1117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 224.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "application/modules/m_mapel/controllers/M_mapel.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								886,
+								1089
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "/C/Users/user/Downloads/db_tridaya.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11527263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								797,
+								11527263
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2418600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "application/modules/bimbel_jadwal/controllers/Bimbel_jadwal.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1750,
+								1750
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 581.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "application/modules/absensi_guru/controllers/Absensi_guru.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5651,
+								5651
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1752.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								918
+							]
+						],
+						"settings":
+						{
+							"auto_name": "SELECT absensi_guru.*,",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 17,
+			"selected": 23,
 			"sheets":
 			[
 				{
-					"buffer": 30,
-					"file": "application/modules/batik_jadwal/views/index.php",
+					"buffer": 37,
+					"file": "application/modules/absensi_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23972,
+						"buffer_size": 24012,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4068,
-								4068
+								4115,
+								4115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1635.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "application/modules/bimbel_jadwal/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9768,
+								9768
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
+					"file": "application/modules/m_mapel/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10825,
+								12247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4584.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 40,
+					"file": "application/modules/bimbel_absensi_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4067,
+								4067
 							]
 						],
 						"settings":
@@ -2385,20 +2706,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 31,
-					"file": "application/modules/privat_jadwal/views/index.php",
+					"buffer": 41,
+					"file": "application/modules/batik_absensi_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23980,
+						"buffer_size": 23952,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23980,
-								23980
+								4019,
+								4019
 							]
 						],
 						"settings":
@@ -2408,14 +2729,104 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8950.0,
+						"translation.y": 627.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 42,
+					"file": "application/modules/batik_absensi_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24018,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3343,
+								3343
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 998.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 43,
+					"file": "application/modules/privat_absensi_siswa/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3395,
+								3395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 930.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 44,
+					"file": "application/modules/privat_absensi_guru/views/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3341,
+								3327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 930.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 45,
 					"file": "application/modules/sekolah_jadwal/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2441,11 +2852,11 @@
 						"translation.y": 417.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 46,
 					"file": "application/modules/batik_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2471,11 +2882,11 @@
 						"translation.y": 159.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 47,
 					"file": "application/modules/bimbel_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2501,11 +2912,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
+					"buffer": 48,
 					"file": "application/modules/privat_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2531,11 +2942,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 36,
+					"buffer": 49,
 					"file": "application/modules/sekolah_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2561,11 +2972,11 @@
 						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 37,
+					"buffer": 50,
 					"file": "application/modules/m_guru/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2591,11 +3002,11 @@
 						"translation.y": 10034.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 51,
 					"file": "application/modules/batik_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2621,11 +3032,11 @@
 						"translation.y": 7619.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 52,
 					"file": "application/modules/bimbel_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2651,11 +3062,11 @@
 						"translation.y": 8414.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
+					"buffer": 53,
 					"file": "application/modules/privat_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2689,11 +3100,11 @@
 						"translation.y": 13739.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 54,
 					"file": "application/modules/sekolah_siswa/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2719,11 +3130,11 @@
 						"translation.y": 10334.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
+					"buffer": 55,
 					"file": "application/modules/bimbel_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2761,11 +3172,11 @@
 						"translation.y": 11775.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 43,
+					"buffer": 56,
 					"file": "application/modules/batik_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2777,20 +3188,8 @@
 						"selection":
 						[
 							[
-								34150,
-								34150
-							],
-							[
-								38538,
-								38538
-							],
-							[
-								40254,
-								40254
-							],
-							[
-								45257,
-								45257
+								8580,
+								8742
 							]
 						],
 						"settings":
@@ -2800,14 +3199,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11280.0,
+						"translation.y": 2459.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 44,
+					"buffer": 57,
 					"file": "application/modules/privat_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2833,11 +3232,11 @@
 						"translation.y": 1845.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 45,
+					"buffer": 58,
 					"file": "application/modules/sekolah_registrasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2863,11 +3262,11 @@
 						"translation.y": 1845.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 59,
 					"file": "application/modules/i_informasi/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2893,24 +3292,24 @@
 						"translation.y": 4997.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 60,
 					"file": "application/modules/template/views/sidebar_left.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11205,
+						"buffer_size": 11347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8912,
-								8912
+								2366,
+								2366
 							]
 						],
 						"settings":
@@ -2920,14 +3319,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3449.0,
+						"translation.y": 711.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 61,
 					"file": "application/modules/i_kategori/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2953,11 +3352,11 @@
 						"translation.y": 1394.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 62,
 					"file": "application/modules/i_tag/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -2983,11 +3382,11 @@
 						"translation.y": 3753.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 63,
 					"file": "application/modules/m_tingkat_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -3013,11 +3412,11 @@
 						"translation.y": 674.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 64,
 					"file": "application/modules/m_jenjang/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -3043,41 +3442,11 @@
 						"translation.y": 4784.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
-					"file": "application/modules/m_mapel/views/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17917,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17073,
-								17082
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6824.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 51,
-					"type": "text"
-				},
-				{
-					"buffer": 53,
+					"buffer": 65,
 					"file": "application/modules/m_unit/views/index.php",
 					"semi_transient": false,
 					"settings":
@@ -3103,11 +3472,11 @@
 						"translation.y": 4709.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 66,
 					"semi_transient": false,
 					"settings":
 					{
@@ -3131,7 +3500,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 55,
 					"type": "text"
 				}
 			]

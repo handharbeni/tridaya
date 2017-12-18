@@ -48,8 +48,9 @@ class Batik_absensi_siswa extends MX_Controller {
       0   =>  'id', 
       1   =>  'nama_unit',
       2   =>  'nama_siswa',
-      3   =>  'waktu',
-      4   =>  'tempat',
+      3   =>  'start',
+      4   =>  'end',
+      5   =>  'tempat',
     );
     $query = $this->get_data_list();
     $totalData = $query->num_rows();
@@ -61,7 +62,8 @@ class Batik_absensi_siswa extends MX_Controller {
       ." WHERE absensi_siswa_batik.deleted = 0";
     if(!empty($requestData['search']['value'])) {
       $sql.=" AND (absensi_siswa_batik.tempat LIKE '%".$requestData['search']['value']."%'"; 
-      $sql.=" OR absensi_siswa_batik.waktu LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR absensi_siswa_batik.start LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR absensi_siswa_batik.end LIKE '%".$requestData['search']['value']."%'";
       $sql.=" OR m_unit.nama LIKE '%".$requestData['search']['value']."%'";
       $sql.=" OR  m_siswa_batik.nama_lengkap LIKE '%".$requestData['search']['value']."%')";
     }
@@ -86,7 +88,10 @@ class Batik_absensi_siswa extends MX_Controller {
                         .'<p>'.$row["nama_siswa"].'</p>'
                         .'</div>';
       $tableData[] = '<div class="list-info mrg-top-10">'
-                        .'<p>'.date("d/m/Y H:i", strtotime($row["waktu"])).'</p>'
+                        .'<p>'.date("d/m/Y H:i", strtotime($row["start"])).'</p>'
+                      .'</div>';
+      $tableData[] = '<div class="list-info mrg-top-10">'
+                        .'<p>'.date("d/m/Y H:i", strtotime($row["end"])).'</p>'
                       .'</div>';
       $tableData[] = '<div class="list-info mrg-top-10">'
                         .'<p>'.$row["tempat"].'</p>'

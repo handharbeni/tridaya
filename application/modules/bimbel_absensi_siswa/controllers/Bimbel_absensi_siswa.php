@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Privat_absensi_siswa extends MX_Controller {
+class Bimbel_absensi_siswa extends MX_Controller {
   //Global variable
   var $data;
   private $response;
@@ -32,13 +32,13 @@ class Privat_absensi_siswa extends MX_Controller {
 
   private function get_data_list($id=null)
   {
-    $sql = "SELECT absensi_siswa_private.*, m_pertemuan_private.*, m_siswa_private.nama_lengkap AS nama_siswa, m_unit.nama AS nama_unit FROM absensi_siswa_private"
-      ." LEFT JOIN m_pertemuan_private ON absensi_siswa_private.pertemuan_id = m_pertemuan_private.id" 
-      ." LEFT JOIN m_siswa_private ON absensi_siswa_private.siswa_id = m_siswa_private.id" 
-      ." LEFT JOIN m_unit ON m_siswa_private.unit_id = m_unit.id" 
-      ." WHERE absensi_siswa_private.deleted = '0'";
-      if($id) { $sql .= " AND absensi_siswa_private.id = ".$id; }
-    $sql .= " ORDER BY absensi_siswa_private.timestamp DESC";
+    $sql = "SELECT absensi_siswa_bimbel.*, m_pertemuan_bimbel.*, m_siswa_bimbel.nama_lengkap AS nama_siswa, m_unit.nama AS nama_unit FROM absensi_siswa_bimbel"
+      ." LEFT JOIN m_pertemuan_bimbel ON absensi_siswa_bimbel.pertemuan_id = m_pertemuan_bimbel.id" 
+      ." LEFT JOIN m_siswa_bimbel ON absensi_siswa_bimbel.siswa_id = m_siswa_bimbel.id" 
+      ." LEFT JOIN m_unit ON m_siswa_bimbel.unit_id = m_unit.id" 
+      ." WHERE absensi_siswa_bimbel.deleted = '0'";
+      if($id) { $sql .= " AND absensi_siswa_bimbel.id = ".$id; }
+    $sql .= " ORDER BY absensi_siswa_bimbel.timestamp DESC";
     return $this->model_adm->rawQuery($sql);
   }
 
@@ -55,17 +55,17 @@ class Privat_absensi_siswa extends MX_Controller {
     $query = $this->get_data_list();
     $totalData = $query->num_rows();
     
-    $sql = "SELECT absensi_siswa_private.*, m_pertemuan_private.*, m_siswa_private.nama_lengkap AS nama_siswa, m_unit.nama AS nama_unit FROM absensi_siswa_private "
-      ." LEFT JOIN m_pertemuan_private ON absensi_siswa_private.pertemuan_id = m_pertemuan_private.id" 
-      ." LEFT JOIN m_siswa_private ON absensi_siswa_private.siswa_id = m_siswa_private.id"
-      ." LEFT JOIN m_unit ON m_siswa_private.unit_id = m_unit.id"
-      ." WHERE absensi_siswa_private.deleted = 0";
+    $sql = "SELECT absensi_siswa_bimbel.*, m_pertemuan_bimbel.*, m_siswa_bimbel.nama_lengkap AS nama_siswa, m_unit.nama AS nama_unit FROM absensi_siswa_bimbel "
+      ." LEFT JOIN m_pertemuan_bimbel ON absensi_siswa_bimbel.pertemuan_id = m_pertemuan_bimbel.id" 
+      ." LEFT JOIN m_siswa_bimbel ON absensi_siswa_bimbel.siswa_id = m_siswa_bimbel.id"
+      ." LEFT JOIN m_unit ON m_siswa_bimbel.unit_id = m_unit.id"
+      ." WHERE absensi_siswa_bimbel.deleted = 0";
     if(!empty($requestData['search']['value'])) {
-      $sql.=" AND (absensi_siswa_private.tempat LIKE '%".$requestData['search']['value']."%'"; 
-      $sql.=" OR absensi_siswa_private.start LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR absensi_siswa_private.end LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" AND (absensi_siswa_bimbel.tempat LIKE '%".$requestData['search']['value']."%'"; 
+      $sql.=" OR absensi_siswa_bimbel.start LIKE '%".$requestData['search']['value']."%'";
+      $sql.=" OR absensi_siswa_bimbel.end LIKE '%".$requestData['search']['value']."%'";
       $sql.=" OR m_unit.nama LIKE '%".$requestData['search']['value']."%'";
-      $sql.=" OR  m_siswa_private.nama_lengkap LIKE '%".$requestData['search']['value']."%')";
+      $sql.=" OR  m_siswa_bimbel.nama_lengkap LIKE '%".$requestData['search']['value']."%')";
     }
     $query = $this->model_adm->rawQuery($sql);
     $totalFiltered = $query->num_rows();
@@ -121,7 +121,7 @@ class Privat_absensi_siswa extends MX_Controller {
     if(!empty($params)) {
       $data_db = $params;
       if(isset($data_db['id'])) { unset($data_db['id']); }
-      $result = $this->model_adm->insert($data_db, 'absensi_siswa_private');
+      $result = $this->model_adm->insert($data_db, 'absensi_siswa_bimbel');
 
       $data = [];
       $message = "Data gagal ditambahkan!";
@@ -148,7 +148,7 @@ class Privat_absensi_siswa extends MX_Controller {
       $data_db['timestamp'] = date("Y-m-d H:i:s");
       unset($data_db['id']);
       unset($data_db['idSiswa']);
-      $result = $this->model_adm->update($condition, $data_db, 'absensi_siswa_private');
+      $result = $this->model_adm->update($condition, $data_db, 'absensi_siswa_bimbel');
 
       $data = [];
       $message = "Data gagal diubah!";
@@ -202,7 +202,7 @@ class Privat_absensi_siswa extends MX_Controller {
                 'timestamp' => date("Y-m-d H:i:s")
         );
       }
-      $result = $this->model_adm->update_batch($data_db, 'absensi_siswa_private', 'id');
+      $result = $this->model_adm->update_batch($data_db, 'absensi_siswa_bimbel', 'id');
 
       $data = [];
       $message = "Data gagal dihapus!";

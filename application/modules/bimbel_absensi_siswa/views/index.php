@@ -53,7 +53,7 @@
         <div class="main-content">
           <div class="container-fluid">
             <div class="page-title">
-              <h4>Absensi Siswa Batik
+              <h4>Absensi Siswa Bimbel
                 <!-- <div class="pull-right">
                   <a href="javascript:void(0)" class="btn btn-rounded btn-success edit-notif" onclick="showModalForm(event);" title="Tambah data"><i class="ti-plus pdd-right-5"></i> Tambah</a>
                   <a href="javascript:void(0)" id="btnDelete" class="btn btn-rounded btn-danger delete-notif" onclick="prepMultiDelete(event);" title="Hapus banyak data"><i class="ti-trash pdd-right-5"></i> Hapus</a>
@@ -93,7 +93,7 @@
           <div class="modal fade" id="modalForm">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
-                <form action="<?php echo base_url()?>batik/absensi_siswa/do_add" method="POST" id="formAdd">      
+                <form action="<?php echo base_url()?>bimbel/absensi_siswa/do_add" method="POST" id="formAdd">      
                   <div class="modal-header">
                     <h4 id="modalFormHeader">Ubah Guru</h4>
                   </div>
@@ -293,7 +293,7 @@
       "bServerSide": true,
       "order": [[1, 'ASC']],
       "ajax":{
-            url :"<?php echo base_url()?>batik/absensi_siswa/get_datatable",
+            url :"<?php echo base_url()?>bimbel/absensi_siswa/get_datatable",
             type: "post",  // type of method  , by default would be get
             error: function(){  // error handling code
               // $("#employee_grid_processing").css("display","none");
@@ -315,7 +315,7 @@
     function getDetail(id, callback) {
       if(id) {
         $.ajax({
-          url: '<?php echo base_url();?>batik/absensi_siswa/get_guru_by_id',
+          url: '<?php echo base_url();?>bimbel/absensi_siswa/get_guru_by_id',
           data: { id: id },
           type: 'POST',
           dataType: 'json',
@@ -400,13 +400,13 @@
 
       //jika klik tombol tambah data:
       if(!id) {
-        $('#formAdd').attr('action', "<?php echo base_url()?>batik/absensi_siswa/do_add");
+        $('#formAdd').attr('action', "<?php echo base_url()?>bimbel/absensi_siswa/do_add");
         $('#modalFormHeader').text('Tambah Guru');
         $('#modalForm').modal('show');
       }
       //jika klik tombol edit data:
       else {
-        $('#formAdd').attr('action', "<?php echo base_url()?>batik/absensi_siswa/do_edit");
+        $('#formAdd').attr('action', "<?php echo base_url()?>bimbel/absensi_siswa/do_edit");
         $('#modalFormHeader').text('Ubah Guru');
         getDetail(id);
       }
@@ -438,9 +438,9 @@
     function doMultiDelete(arrData, targetTable='') {
       let ids = arrData || [];
       // let idSiswa = $('#idSiswa').val() || '';
-      let url = "<?php echo base_url()?>batik/absensi_siswa/do_delete";
+      let url = "<?php echo base_url()?>bimbel/absensi_siswa/do_delete";
       if(targetTable == 'ortu') {
-        url = "<?php echo base_url()?>batik/absensi_siswa/do_delete_ortu";
+        url = "<?php echo base_url()?>bimbel/absensi_siswa/do_delete_ortu";
       }
       if(ids[0] != null) {
         //konfirmasi hapus banyak data

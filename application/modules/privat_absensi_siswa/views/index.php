@@ -71,7 +71,8 @@
                             <th class="no-search"></th>
                             <th>Unit/Cabang</th>
                             <th>Nama Siswa</th>
-                            <th>Waktu</th>
+                            <th>Waktu Mulai</th>
+                            <th>Waktu Selesai</th>
                             <th>Tempat</th>
                             <!-- <th class="no-sort">Aksi</th> -->
                           </tr>

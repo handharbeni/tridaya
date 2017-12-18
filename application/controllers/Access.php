@@ -43,13 +43,13 @@ class Access extends MX_Controller {
       echo modules::run('i_informasi/index');
     }
   }
-  public function registrasi($params=null, $params2='index', $params3=null)
+  public function absensi($params=null, $params2='index', $params3=null)
   {
     if($params) {
-      echo modules::run('reg_'.$params.'/'.$params2);
+      echo modules::run('absensi_'.$params.'/'.$params2);
     }
     else {
-      echo modules::run('reg_sekolah/index');
+      echo modules::run('absensi_guru/index');
     }
   }
   public function sekolah($params=null, $params2='index', $params3=null)
